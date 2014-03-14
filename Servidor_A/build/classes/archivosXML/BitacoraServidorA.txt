@@ -84,3 +84,5 @@
 12-03-2014 , 22:43:51 , Linea: 1 Columna :26 Descr: Error sintactico Identificador lista no reconocido.
 12-03-2014 , 22:45:04 , Linea: 1 Columna :26 Descr: Error sintactico Identificador lista no reconocido.
 12-03-2014 , 22:46:47 , Session iniciada: usuario99@servidorA.com
+13-03-2014 , 22:02:40 , Session iniciada: usuario99@servidorA.com
+13-03-2014 , 22:03:03 , Session iniciada: usuario99@servidorA.com
