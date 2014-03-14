@@ -1,0 +1,146 @@
+package parser;
+import java.io.*;
+import java.util.LinkedList;
+import java.util.ArrayList;
+import java_cup.runtime.*;
+import java.util.Iterator;
+parser code
+{:
+public  String lUsuario;
+public  String lNombre;
+public  String pass;
+
+public String msjCuenta;
+
+    
+        public LinkedList<Errores> lista=new LinkedList<Errores>();
+        public LinkedList<listaUsuarios> listaU=new LinkedList<listaUsuarios>();
+        public listaUsuarios usuario = new listaUsuarios();
+        public LinkedList<listaMensajes> listaM =new LinkedList<listaMensajes>();
+
+        /*Variable de salida*/
+        public String Salida=new String();
+
+            /**Metodo al que se llama automaticamente ante algun error sintactico.*/
+public void syntax_error(Symbol s){
+       // System.out.println("Error en la Linea " + (s.right+1) +" Columna "+s.left+ ". Identificador " +s.value + " no reconocido." );
+        lista.add(new Errores(s.right+1,s.left,"Error sintactico Identificador " +s.value + " no reconocido." ));
+}
+             /**Metodo al que se llama en el momento en que ya no es posible una recuperacion de errores.*/
+public void unrecovered_syntax_error(Symbol s) throws java.lang.Exception{
+       // System.out.println("Error en la Linea " + (s.right+1)+ "Columna "+s.left+". Identificador " + s.value + " no reconocido.");
+       // lista.add(new Errores(s.right+1,s.left,"Error sintactico2 Identificador " +s.value + " no reconocido." ));
+}
+
+:}
+action code
+{:
+
+
+:}
+
+terminal String  signos, num, cad, c2, fecha, hora;
+terminal String inicio, usuarios1, usuarios2;
+terminal String id, tipo, correo, registro, abrir, cerrar, coma, igual, sesion1, sesion2, usuario1, usuario2, clave1, clave2, nombre1, nombre2, fecha1, fecha2, error1, error2, registro1, registro2;
+terminal String peticion, listaC;
+terminal String usuario, correos1, correos2, correo1, correo2, asunto1, asunto2, de1, de2, contenido1, contenido2, archivo1, archivo2;
+
+non terminal String INICIA, RC1, RC2, TEXTO, CADENA;
+non terminal listaUsuarios C1, C2, C3, C4, C5, U1, U2, U3, U4, U5, U6, IS1, IS2, IS3;
+non terminal listaMensajes LC1, LC2, LC3, RLC1, RLC2, RLC3;
+
+non terminal String PLC1, PLC2; 
+
+start with INICIA;
+
+INICIA::= C1
+         |U1
+        |RC1
+        |IS1
+        |PLC1
+        |LC1
+        |RLC1;
+
+/********** Crear Cuenta ***************************************/
+
+C1::= abrir sesion1 id igual c2 correo c2 tipo igual c2 registro c2 cerrar C2 sesion2;
+
+C2::= usuario1 correo:t1 usuario2 C3:nt1          {: listaUsuarios l = new listaUsuarios();  l.setUsuario(t1);  l.setNombre(nt1.getNombre());  l.setFecha(nt1.getFecha()); l.setClave(nt1.getClave());  parser.usuario=l; RESULT= l; :};
+
+C3::= nombre1 TEXTO:t1 nombre2 C4:nt1             {: listaUsuarios l = new listaUsuarios();  l.setNombre(t1);  l.setFecha(nt1.getFecha()); l.setClave(nt1.getClave());  RESULT= l;  :};
+
+C4::= fecha1 fecha:t1 coma hora:t2 fecha2 C5:nt1  {: listaUsuarios l = new listaUsuarios();  l.setFecha(t1+","+t2); l.setClave(nt1.getClave());   RESULT= l;  :};
+
+C5::= clave1 TEXTO:t1 clave2                      {: listaUsuarios l = new listaUsuarios();  l.setClave(t1);   RESULT= l;  :};
+
+
+/****************** LISTA USUARIOS *********************/
+
+U1::= usuarios1 U2 usuarios2;
+
+U2::= U3:nt1 U2:nt2  {:   :}
+     | U3:nt1       {:  :};
+
+U3::= usuario1 usuario1 correo:t1 usuario2 U4:nt1 {: listaUsuarios l = new listaUsuarios();  l.setUsuario(t1);  l.setNombre(nt1.getNombre());  l.setFecha(nt1.getFecha()); l.setClave(nt1.getClave());  parser.listaU.add(l); RESULT= l; :};
+
+U4::= nombre1 TEXTO:t1 nombre2 U5:nt1             {: listaUsuarios l = new listaUsuarios();  l.setNombre(t1);  l.setFecha(nt1.getFecha()); l.setClave(nt1.getClave());  RESULT= l;  :};
+
+U5::= fecha1 fecha:t1 coma hora:t2 fecha2 U6:nt1  {: listaUsuarios l = new listaUsuarios();  l.setFecha(t1+","+t2); l.setClave(nt1.getClave());   RESULT= l;  :};
+
+U6::= clave1 TEXTO:t1 clave2 usuario2             {: listaUsuarios l = new listaUsuarios();  l.setClave(t1);   RESULT= l;  :};
+
+
+
+
+/******************Inicia Sesion ****************************/
+
+IS1::= abrir sesion1 id igual c2 correo c2 tipo igual c2 inicio c2 cerrar IS2 sesion2;
+
+IS2::= usuario1 correo:t1 usuario2 IS3:nt1          {: listaUsuarios l = new listaUsuarios();  l.setUsuario(t1);   l.setClave(nt1.getClave());  parser.usuario=l; RESULT= l; :};
+
+IS3::= clave1 TEXTO:t1 clave2                      {: listaUsuarios l = new listaUsuarios();  l.setClave(t1);  RESULT= l;  :};
+
+
+/******************Respuesta Mensaje *********************/
+
+RC1::= abrir sesion1 id igual c2 correo c2 cerrar RC2 sesion2; 
+
+RC2::= registro1 TEXTO:t1 registro2 {: parser.msjCuenta= t1;  :}
+      | error1 TEXTO:t1   error2    {: parser.msjCuenta= t1;  :};
+
+
+/**********************Texto archivos ****************************************/
+TEXTO::=  CADENA:t1 TEXTO:t2   {:  t1 = t1+" "+t2;  RESULT=t1; :}
+        | CADENA:t             {:  RESULT= t.toString();  :};
+
+CADENA::= cad:t     {:  RESULT=t; :}
+         |num:t     {:  RESULT=t; :}
+         |signos:t  {:  RESULT=t; :} ;
+
+
+/********************peticion lista correos *****************************/
+
+PLC1::= abrir sesion1 id igual c2 correo c2 peticion igual c2 listaC c2 cerrar PLC2 sesion2;
+
+PLC2::= usuario1 correo:t1 usuario2          {: parser.lUsuario = t1; :};
+
+
+/******************* Lista Correos **************************************/
+
+LC1 ::= abrir correos1 usuario igual c2 correo c2 cerrar LC2 correos2;
+
+LC2 ::= LC3 LC2
+        |LC3;
+
+LC3 ::= correo1 asunto1 TEXTO:t1 asunto2 fecha1 fecha:t21 coma hora:t22 fecha2 de1 TEXTO:t3 de2 nombre1 TEXTO:t4 nombre2 contenido1 TEXTO:t5 contenido2 archivo1 archivo2 correo2{: parser.listaM.add(new listaMensajes("","",t1,t21+","+t22,t3,t4,t5,"")); :};
+
+
+RLC1::= abrir sesion1 id igual c2 correo c2 tipo igual c2 TEXTO c2 cerrar RLC2 sesion2;
+
+RLC2 ::= RLC3 RLC2
+        |RLC3;
+
+RLC3 ::= correo1 usuario1 correo:t1 usuario2 nombre1 TEXTO:t2 nombre2 asunto1 TEXTO:t3 asunto2 fecha1 fecha:t41 coma hora:t42 fecha2 de1 TEXTO:t5 de2 nombre1 TEXTO:t6 nombre2  correo2{: parser.listaM.add(new listaMensajes(t1,t2, t3, t41+","+t42,t5,t6,"","")); :};
+
+
+

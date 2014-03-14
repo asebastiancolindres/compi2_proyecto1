@@ -1,0 +1,23 @@
+<correos usuario="usuario99@servidorA.com">
+<correo>
+<asunto>sebastian </asunto>
+<fecha> 10-03-2014,12:40:02 </fecha>
+<de> emisor1 </de>
+<nombre> sebas </nombre>
+<contenido> contenido1 </contenido>
+<archivo>
+</archivo>
+</correo>
+<correo>
+<asunto>yoc </asunto>
+<fecha> 10-03-2014,12:40:02 </fecha>
+<de> emisor2 </de>
+<nombre> yoc </nombre>
+<contenido> contenido2 </contenido>
+<archivo>
+</archivo>
+</correo>
+</correos>
+
+
+

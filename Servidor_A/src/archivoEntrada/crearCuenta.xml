@@ -1,0 +1,30 @@
+<sesion id="correo" tipo="registro">
+<usuario> Usuario@servidorA.com </usuario>
+<nombre> nombres </nombre>
+<fecha> 10-03-2014, 12:40:02</fecha>
+<clave> clave </clave>
+</sesion>
+
+<sesion id="correo">
+<Registro> Usuario registrado </Registro>
+</sesion>
+
+
+<sesion id="correo">
+<Error> descripción del error </Error>
+</sesion>
+
+ "//" {yybegin(estado1);}   
+
+[^\n] {}
+
+[\n] {yybegin(YYINITIAL); yychar=0;}
+
+
+<YYINITIAL> "<REGISTRO>" {yybegin(estado1); System.out.println("entro"); }
+
+<estado1> [^*]*  { System.out.println("una linea"); }
+<estado1> "</REGISTRO>"     {System.out.println("fin"); }
+
+
+

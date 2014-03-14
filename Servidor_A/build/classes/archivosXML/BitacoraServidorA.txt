@@ -1,0 +1,86 @@
+10-03-2014 , 22:28:03 , Session iniciada: Usuario@servidorA.com
+10-03-2014 , 22:28:07 , Session iniciada: Usuario@servidorA.com
+10-03-2014 , 22:35:22 , Session iniciada: Usuario@servidorA.com
+10-03-2014 , 22:35:39 , Usuario Registrado: Usuario20@servidorA.com
+10-03-2014 , 22:35:55 , Linea: 5 Columna :172 Descr: Error sintactico Identificador 22 no reconocido.
+11-03-2014 , 21:39:42 , Session iniciada: Usuario@servidorA.com
+11-03-2014 , 21:40:32 , Usuario : Usuario@servidorA.comintento iniciar session
+11-03-2014 , 21:40:37 , Session iniciada: Usuario@servidorA.com
+11-03-2014 , 21:40:47 , Session iniciada: Usuario1@servidorA.com
+11-03-2014 , 21:42:37 , Session iniciada: Usuario@servidorA.com
+11-03-2014 , 21:43:09 , Session iniciada: usuario@servidorA.com
+11-03-2014 , 21:43:15 , Usuario : usuario2@servidorA.comintento iniciar session
+11-03-2014 , 21:43:21 , Session iniciada: Usuario2@servidorA.com
+11-03-2014 , 21:59:29 , Session iniciada: usuario@servidorA.com
+11-03-2014 , 22:13:49 , Usuario Registrado: Usuario10@servidorA.com
+11-03-2014 , 22:18:31 , Usuario Registrado: Usuario77@servidorA.com
+11-03-2014 , 22:18:31 , El archivo de mensajes deusuario77se ha creado correctamente
+11-03-2014 , 22:20:35 , Usuario Registrado: Usuario99@servidorA.com
+11-03-2014 , 22:20:35 , El archivo de mensajes de usuario99 se ha creado correctamente
+11-03-2014 , 23:28:42 , Linea: 1 Columna :67 Descr: Error sintactico Identificador usuario no reconocido.
+11-03-2014 , 23:28:42 , Usuario : usuario99@servidorA.comintento iniciar session
+11-03-2014 , 23:28:55 , Linea: 1 Columna :67 Descr: Error sintactico Identificador usuario no reconocido.
+11-03-2014 , 23:28:55 , Usuario : usuario99@servidorA.comintento iniciar session
+11-03-2014 , 23:30:02 , Session iniciada: usuario99@servidorA.com
+11-03-2014 , 23:30:03 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+11-03-2014 , 23:34:33 , Session iniciada: usuario99@servidorA.com
+11-03-2014 , 23:34:35 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+11-03-2014 , 23:36:53 , Session iniciada: usuario99@servidorA.com
+11-03-2014 , 23:36:54 , Linea: 1 Columna :60 Descr: Error sintactico Identificador asunto1 no reconocido.
+11-03-2014 , 23:41:12 , Session iniciada: usuario99@servidorA.com
+11-03-2014 , 23:41:14 , Linea: 3 Columna :89 Descr: Error sintactico Identificador </sesion> no reconocido.
+11-03-2014 , 23:46:29 , Session iniciada: usuario99@servidorA.com
+11-03-2014 , 23:46:31 , Linea: 1 Columna :60 Descr: Error sintactico Identificador asunto1 no reconocido.
+11-03-2014 , 23:48:06 , Session iniciada: usuario99@servidorA.com
+11-03-2014 , 23:48:08 , Linea: 1 Columna :60 Descr: Error sintactico Identificador asunto1 no reconocido.
+11-03-2014 , 23:50:16 , Session iniciada: usuario99@servidorA.com
+11-03-2014 , 23:50:17 , Linea: 1 Columna :59 Descr: Error sintactico Identificador sebastian no reconocido.
+11-03-2014 , 23:51:23 , Linea: 1 Columna :83 Descr: Error sintactico Identificador clave no reconocido.
+11-03-2014 , 23:51:23 , Linea: 2 Columna :29 Descr: Error sintactico Identificador Error no reconocido.
+11-03-2014 , 23:52:23 , Linea: 1 Columna :83 Descr: Error sintactico Identificador clave no reconocido.
+11-03-2014 , 23:52:23 , Linea: 2 Columna :29 Descr: Error sintactico Identificador Error no reconocido.
+11-03-2014 , 23:54:22 , Linea: 1 Columna :83 Descr: Error sintactico Identificador clave no reconocido.
+11-03-2014 , 23:54:22 , Linea: 2 Columna :29 Descr: Error sintactico Identificador Error no reconocido.
+11-03-2014 , 23:54:47 , Session iniciada: usuario99@servidorA.com
+11-03-2014 , 23:54:48 , Linea: 1 Columna :91 Descr: Error sintactico Identificador , no reconocido.
+11-03-2014 , 23:56:17 , Session iniciada: usuario99@servidorA.com
+11-03-2014 , 23:56:19 , Linea: 1 Columna :86 Descr: Error sintactico Identificador fecha no reconocido.
+11-03-2014 , 23:57:24 , Session iniciada: usuario99@servidorA.com
+12-03-2014 , 00:06:09 , Session iniciada: usuario99@servidorA.com
+12-03-2014 , 21:50:42 , Usuario : Usuario99@servidorA.comintento iniciar session
+12-03-2014 , 21:51:01 , Session iniciada: usuario99@servidorA.com
+12-03-2014 , 21:51:02 , Linea: 1 Columna :26 Descr: Error sintactico Identificador lista no reconocido.
+12-03-2014 , 22:11:01 , Usuario : usuario99@servidorA.comintento iniciar session
+12-03-2014 , 22:11:06 , Session iniciada: usuario99@servidorA.com
+12-03-2014 , 22:11:08 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+12-03-2014 , 22:11:08 , Linea: 1 Columna :26 Descr: Error sintactico Identificador lista no reconocido.
+12-03-2014 , 22:14:24 , Session iniciada: usuario@servidorA.com
+12-03-2014 , 22:14:25 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+12-03-2014 , 22:14:25 , Linea: 1 Columna :26 Descr: Error sintactico Identificador lista no reconocido.
+12-03-2014 , 22:15:22 , Session iniciada: usuario99@servidorA.com
+12-03-2014 , 22:15:23 , Linea: 1 Columna :26 Descr: Error sintactico Identificador lista no reconocido.
+12-03-2014 , 22:19:08 , Session iniciada: usuario99@servidorA.com
+12-03-2014 , 22:19:09 , Linea: 1 Columna :26 Descr: Error sintactico Identificador lista no reconocido.
+12-03-2014 , 22:20:05 , Session iniciada: usuario99@servidorA.com
+12-03-2014 , 22:20:06 , Linea: 1 Columna :26 Descr: Error sintactico Identificador listados no reconocido.
+12-03-2014 , 22:20:28 , Session iniciada: usuario99@servidorA.com
+12-03-2014 , 22:20:29 , Linea: 1 Columna :26 Descr: Error sintactico Identificador listados no reconocido.
+12-03-2014 , 22:28:37 , Linea: 1 Columna :12 Descr: Error sintactico Identificador correo no reconocido.
+12-03-2014 , 22:28:37 , Linea: 1 Columna :12 Descr: Error sintactico Identificador correo no reconocido.
+12-03-2014 , 22:30:25 , Session iniciada: usuario99@servidorA.com
+12-03-2014 , 22:30:26 , Linea: 1 Columna :26 Descr: Error sintactico Identificador listados no reconocido.
+12-03-2014 , 22:31:32 , Session iniciada: usuario99@servidorA.com
+12-03-2014 , 22:31:35 , Linea: 6 Columna :170 Descr: Error sintactico Identificador < no reconocido.
+12-03-2014 , 22:32:27 , Session iniciada: usuario99@servidorA.com
+12-03-2014 , 22:36:16 , Session iniciada: usuario99@servidorA.com
+12-03-2014 , 22:37:04 , Session iniciada: usuario99@servidorA.com
+12-03-2014 , 22:41:28 , Session iniciada: usuario99@servidorA.com
+12-03-2014 , 22:41:30 , Linea: 1 Columna :26 Descr: Error sintactico Identificador peticion no reconocido.
+12-03-2014 , 22:42:15 , Session iniciada: usuario99@servidorA.com
+12-03-2014 , 22:42:16 , Linea: 1 Columna :26 Descr: Error sintactico Identificador lista no reconocido.
+12-03-2014 , 22:43:07 , Session iniciada: usuario99@servidorA.com
+12-03-2014 , 22:43:08 , Linea: 1 Columna :26 Descr: Error sintactico Identificador lista no reconocido.
+12-03-2014 , 22:43:36 , Linea: 1 Columna :26 Descr: Error sintactico Identificador lista no reconocido.
+12-03-2014 , 22:43:51 , Linea: 1 Columna :26 Descr: Error sintactico Identificador lista no reconocido.
+12-03-2014 , 22:45:04 , Linea: 1 Columna :26 Descr: Error sintactico Identificador lista no reconocido.
+12-03-2014 , 22:46:47 , Session iniciada: usuario99@servidorA.com
