@@ -8,6 +8,8 @@ package servidor_a;
 
 import java.util.Iterator;
 import java.util.LinkedList;
+import javax.swing.DefaultListModel;
+import javax.swing.ListModel;
 import parser.listaMensajes;
 import parser.listaUsuarios;
 import static servidor_a.Servidor_A.s;
@@ -21,6 +23,7 @@ public class correo extends javax.swing.JFrame {
     Servidor_A servidor = new Servidor_A();
     cliente cliente = new cliente();
     LinkedList<listaMensajes> listaM = new LinkedList<listaMensajes>();
+    DefaultListModel listModel;
     /**
      * Creates new form correo
      */
@@ -38,15 +41,21 @@ public class correo extends javax.swing.JFrame {
             Iterator<listaMensajes> itM = listaM.iterator(); /*
              * Listar los errores que se han guardado en la variable lista
              */
-
+  String[] correos = new String[1000];
+  int c =0;
             while (itM.hasNext()) {
+                c++;
                 listaMensajes listaM = itM.next();
-           //     System.out.println("nombre: " + listaM.getNombre_d() + " asunto :" + listaM.getAsunto() + " de: " + listaM.getEmisor());
-               txtBandeja.append(listaM.getNombre_d()+"-"+listaM.getAsunto()+"-"+listaM.getFecha()+"\n");
-               
+               // System.out.println("nombre: " + listaM.getNombre_d() + " asunto :" + listaM.getAsunto() + " de: " + listaM.getEmisor());
+              // txtBandeja.append(listaM.getNombre_d()+"-"+listaM.getAsunto()+"-"+listaM.getFecha()+"\n");
+             correos[c]= listaM.getNombre_d()+"-"+listaM.getAsunto()+"-"+listaM.getFecha();
                
             }
-        
+           
+           //  listModel.addElement("uno");
+           //  listModel.add(0, strings);
+             listBandeja.setListData(correos);
+        //listBandeja.setModel(listModel);
     }
 
     /**
@@ -67,6 +76,8 @@ public class correo extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         destinatario = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        listBandeja = new javax.swing.JList();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,29 +94,40 @@ public class correo extends javax.swing.JFrame {
         jScrollPane3.setViewportView(txtAdjunto);
 
         jButton1.setText("Redactar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Bandeja de Entrada");
 
         destinatario.setText("destinatario");
+
+        listBandeja.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "uno", "dos" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane4.setViewportView(listBandeja);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 629, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1)
+                            .addComponent(jLabel1)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(destinatario)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -123,12 +145,14 @@ public class correo extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 259, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1)
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(24, 24, 24))))
@@ -136,6 +160,10 @@ public class correo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,6 +207,8 @@ public class correo extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JList listBandeja;
     private javax.swing.JTextArea txtAdjunto;
     private javax.swing.JTextArea txtBandeja;
     private javax.swing.JTextArea txtContenido;
