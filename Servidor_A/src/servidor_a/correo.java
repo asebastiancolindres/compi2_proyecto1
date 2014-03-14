@@ -41,8 +41,8 @@ public class correo extends javax.swing.JFrame {
 
             while (itM.hasNext()) {
                 listaMensajes listaM = itM.next();
-                System.out.println("nombre: " + listaM.getNombre_d() + " asunto :" + listaM.getAsunto() + " de: " + listaM.getEmisor());
-               
+           //     System.out.println("nombre: " + listaM.getNombre_d() + " asunto :" + listaM.getAsunto() + " de: " + listaM.getEmisor());
+               txtBandeja.append(listaM.getNombre_d()+"-"+listaM.getAsunto()+"-"+listaM.getFecha()+"\n");
                
                
             }
