@@ -22,7 +22,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import parser.Errores;
 import parser.listaMensajes;
-import parser.listaUsuarios;
+import parser.usuario;
 import parser.parser;
 import parser.scanner;
 
@@ -119,7 +119,7 @@ public class Servidor_A {
    //  System.out.println("cotnent:"+content); 
         
         String exito = "<sesion id=\"correo\">\n" +
-                        "<Registro> Usuario registrado </Registro>\n" +
+                        "<Registro> Ussuario registrado </Registro>\n" +
                         "</sesion>";
 
          compilar(content);
@@ -130,7 +130,7 @@ public class Servidor_A {
                       String fecha = s.usuario.getFecha();
                       String clave = s.usuario.getClave();
                       
-                      listaUsuarios lu = new listaUsuarios();
+                      usuario lu = new usuario();
                       lu.setNombre(nombre);
                       lu.setFecha(fecha);
                       lu.setClave(clave);
@@ -191,12 +191,12 @@ public class Servidor_A {
         String contenido="<usuarios>\n";
         
 
-    Iterator<listaUsuarios> itU = s.listaU.iterator(); /*
+    Iterator<usuario> itU = s.listaU.iterator(); /*
              * Listar los errores que se han guardado en la variable lista
              */
              System.out.println("Nuevos Usuarios");
             while (itU.hasNext()) {
-                listaUsuarios listaU = itU.next();
+                usuario listaU = itU.next();
                 contenido+="<usuario>\n<usuario>" + listaU.usuario + "</usuario>\n<nombre>" + listaU.nombre + "</nombre>\n<fecha>" + listaU.fecha+"</fecha>\n<clave>"+listaU.clave+"</clave>\n</usuario>\n";
               
             }
@@ -235,12 +235,12 @@ public class Servidor_A {
        //    if (s.listaU.size() > 0) {
             System.out.println("####USUARIOS ----");
 
-            Iterator<listaUsuarios> itU = s.listaU.iterator(); /*
+            Iterator<usuario> itU = s.listaU.iterator(); /*
              * Listar los errores que se han guardado en la variable lista
              */
 
             while (itU.hasNext()) {
-                listaUsuarios listaU = itU.next();
+                usuario listaU = itU.next();
               //  System.out.println("User: " + listaU.usuario + " Nombre :" + listaU.nombre + " Clave: " + listaU.clave);
                 System.out.println("User: " + listaU.usuario + " USer2 :" + usuario );
                
@@ -258,12 +258,12 @@ public class Servidor_A {
        //    if (s.listaU.size() > 0) {
             System.out.println("####USUARIOS ----");
 
-            Iterator<listaUsuarios> itU = s.listaU.iterator(); /*
+            Iterator<usuario> itU = s.listaU.iterator(); /*
              * Listar los errores que se han guardado en la variable lista
              */
 
             while (itU.hasNext()) {
-                listaUsuarios listaU = itU.next();
+                usuario listaU = itU.next();
               //  System.out.println("User: " + listaU.usuario + " Nombre :" + listaU.nombre + " Clave: " + listaU.clave);
                 System.out.println("User: " + listaU.usuario + " User2 :" + usuario );
                

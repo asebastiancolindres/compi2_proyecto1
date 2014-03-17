@@ -117,3 +117,64 @@
 16-03-2014 , 19:00:43 , Linea: 1 Columna :42 Descr: Error sintactico Identificador usuario2@servidorA.com no reconocido.
 16-03-2014 , 19:05:48 , Linea: 1 Columna :72 Descr: Error sintactico Identificador " no reconocido.
 16-03-2014 , 19:06:13 , Linea: 1 Columna :72 Descr: Error sintactico Identificador " no reconocido.
+16-03-2014 , 19:35:46 , Usuario Registrado: Usuario_sebas@servidorA.com
+16-03-2014 , 19:35:46 , El archivo de mensajes de [Ljava.lang.String;@1bd1302 se ha creado correctamente
+16-03-2014 , 19:35:46 , Linea: 2 Columna :32 Descr: Error sintactico Identificador Usuario no reconocido.
+16-03-2014 , 19:38:18 , Usuario : usuario_sebas@servidorA.comintento iniciar session
+16-03-2014 , 19:38:35 , Session iniciada: Usuario_sebas@servidorA.com
+16-03-2014 , 19:38:36 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+16-03-2014 , 19:38:36 , Linea: 2 Columna :35 Descr: Error sintactico Identificador </sesion> no reconocido.
+16-03-2014 , 23:47:02 , Usuario Registrado: UsuarioCindy@servidorA.com
+16-03-2014 , 23:47:02 , El archivo de mensajes de UsuarioCindy se ha creado correctamente
+16-03-2014 , 23:50:45 , Usuario Registrado: Usuario56@servidorA.com
+16-03-2014 , 23:50:45 , El archivo de mensajes de Usuario56 se ha creado correctamente
+16-03-2014 , 23:55:53 , Usuario Registrado: Usuarioxxx@servidorA.com
+16-03-2014 , 23:55:53 , El archivo de mensajes de Usuarioxxx se ha creado correctamente
+17-03-2014 , 00:00:46 , Usuario Registrado: Usuarioyy@servidorA.com
+17-03-2014 , 00:00:46 , El archivo de mensajes de Usuarioyy se ha creado correctamente
+17-03-2014 , 00:07:19 , Usuario Registrado: Usuario66@servidorA.com
+17-03-2014 , 00:07:19 , El archivo de mensajes de Usuario66 se ha creado correctamente
+17-03-2014 , 00:09:18 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+17-03-2014 , 00:09:18 , Usuario Registrado: Usuario1@servidorA.com
+17-03-2014 , 00:09:18 , El archivo de mensajes de Usuario1 se ha creado correctamente
+17-03-2014 , 00:09:36 , Usuario Registrado: Usuario2@servidorA.com
+17-03-2014 , 00:09:36 , El archivo de mensajes de Usuario2 se ha creado correctamente
+17-03-2014 , 00:13:49 , Usuario Registrado: Usuario3@servidorA.com
+17-03-2014 , 00:13:49 , El archivo de mensajes de Usuario3 se ha creado correctamente
+17-03-2014 , 00:13:49 , Linea: 1 Columna :19 Descr: Error sintactico Identificador > no reconocido.
+17-03-2014 , 00:16:42 , Usuario Registrado: Usuario6@servidorA.com
+17-03-2014 , 00:16:42 , El archivo de mensajes de Usuario6 se ha creado correctamente
+17-03-2014 , 00:16:42 , Linea: 1 Columna :19 Descr: Error sintactico Identificador > no reconocido.
+17-03-2014 , 00:18:58 , Usuario Registrado: Usuario13@servidorA.com
+17-03-2014 , 00:18:58 , El archivo de mensajes de Usuario13 se ha creado correctamente
+17-03-2014 , 00:19:10 , Usuario Registrado: Usuario13@servidorA.com
+17-03-2014 , 00:19:13 , Usuario Registrado: Usuario13@servidorA.com
+17-03-2014 , 00:19:14 , Usuario Registrado: Usuario13@servidorA.com
+17-03-2014 , 00:21:14 , Linea: 1 Columna :10 Descr: Error sintactico Identificador </usuarios> no reconocido.
+17-03-2014 , 00:21:14 , Usuario Registrado: Usuario1@servidorA.com
+17-03-2014 , 00:21:14 , El archivo de mensajes de Usuario1 se ha creado correctamente
+17-03-2014 , 00:21:19 , Error Registrar: Usuario1@servidorA.com
+17-03-2014 , 00:21:19 , Linea: 1 Columna :19 Descr: Error sintactico Identificador > no reconocido.
+17-03-2014 , 00:23:08 , Error Registrar: Usuario1@servidorA.com
+17-03-2014 , 00:23:08 , Linea: 1 Columna :19 Descr: Error sintactico Identificador > no reconocido.
+17-03-2014 , 00:24:02 , Error Registrar: Usuario1@servidorA.com
+17-03-2014 , 00:24:02 , Linea: 1 Columna :19 Descr: Error sintactico Identificador > no reconocido.
+17-03-2014 , 00:26:11 , Usuario Registrado: Usuario5@servidorA.com
+17-03-2014 , 00:26:11 , El archivo de mensajes de Usuario5 se ha creado correctamente
+17-03-2014 , 00:26:18 , Error Registrar: Usuario5@servidorA.com
+17-03-2014 , 00:27:43 , Usuario Registrado: Usuario7@servidorA.com
+17-03-2014 , 00:27:43 , El archivo de mensajes de Usuario7 se ha creado correctamente
+17-03-2014 , 00:27:46 , Error Registrar: Usuario7@servidorA.com
+17-03-2014 , 00:52:38 , Linea: 1 Columna :26 Descr: Error sintactico Identificador inicio no reconocido.
+17-03-2014 , 00:55:33 , Usuario : usuario1@servidorA.comintento iniciar session
+17-03-2014 , 00:55:54 , Session iniciada: Usuario1@servidorA.com
+17-03-2014 , 00:56:02 , Usuario : Usuario2@servidorA.comintento iniciar session
+17-03-2014 , 01:40:03 , Usuario : usuario@servidorA.comintento iniciar session
+17-03-2014 , 01:40:43 , Usuario Registrado: Usuario2@servidorA.com
+17-03-2014 , 01:40:43 , El archivo de mensajes de Usuario2 se ha creado correctamente
+17-03-2014 , 01:42:54 , Usuario : Usuario1@servidorA.comintento iniciar session
+17-03-2014 , 01:43:14 , Session iniciada: Usuario1@servidorA.com
+17-03-2014 , 01:45:17 , Session iniciada: Usuario2@servidorA.com
+17-03-2014 , 01:47:28 , Usuario : usuario@servidorA.comintento iniciar session
+17-03-2014 , 01:47:40 , Usuario : Usuario1@servidorA.comintento iniciar session
+17-03-2014 , 01:47:57 , Session iniciada: Usuario1@servidorA.com

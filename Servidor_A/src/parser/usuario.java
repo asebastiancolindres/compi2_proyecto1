@@ -10,12 +10,29 @@ package parser;
  *
  * @author sebastian
  */
-public class listaUsuarios {
+public class usuario {
     
     public String usuario;
+    public String username;
     public String nombre;
     public String fecha;
     public String clave;
+
+    public usuario(String usuario, String username, String nombre, String fecha, String clave) {
+        this.usuario = usuario;
+        this.username = username;
+        this.nombre = nombre;
+        this.fecha = fecha;
+        this.clave = clave;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
    
    

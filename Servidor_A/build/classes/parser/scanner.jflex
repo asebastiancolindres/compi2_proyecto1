@@ -50,7 +50,7 @@ lista.add(new Errores(linea, columna, "Error lexico en el caracter "+valor) );}
 
 "ID"           {return new Symbol(simbolo.id, yychar,yyline,new String(yytext()));}
 "TIPO"         {return new Symbol(simbolo.tipo, yychar,yyline,new String(yytext()));}
-"CORREO"       {return new Symbol(simbolo.correo, yychar,yyline,new String(yytext()));}
+"CORREO"       {return new Symbol(simbolo.correo_t, yychar,yyline,new String(yytext()));}
 "REGISTRO"       {return new Symbol(simbolo.registro, yychar,yyline,new String(yytext()));}
 "INICIO"        {return new Symbol(simbolo.inicio, yychar,yyline,new String(yytext()));}
 

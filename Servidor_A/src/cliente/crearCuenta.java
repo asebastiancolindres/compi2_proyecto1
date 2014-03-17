@@ -4,26 +4,18 @@
  * and open the template in the editor.
  */
 
-package servidor_a;
+package cliente;
 
-import java.io.BufferedReader;
-import java.io.StringReader;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.LinkedList;
+
 import javax.swing.JOptionPane;
-import parser.Errores;
-import parser.usuario;
-import parser.parser;
-import parser.scanner;
+import server.*;
+
 
 /**
  *
  * @author sebastian
  */
-public class crearCuenta extends javax.swing.JFrame {
+public class crearCuenta extends javax.swing.JFrame{
     
      static String txtCuenta = "<sesion id=\"correo\" tipo=\"registro\">\n" +
                                 "<usuario> Usuario@servidorA.com </usuario>\n" +
@@ -32,9 +24,9 @@ public class crearCuenta extends javax.swing.JFrame {
                                 "<clave> clave </clave>\n" +
                                 "</sesion>";
 
-     Servidor_A servidor = new Servidor_A();
+     server servidor = new server();
      cliente cliente = new cliente();
-      parser s;
+     // parser s;
     /**
      * Creates new form crearCuenta
      */
@@ -99,15 +91,16 @@ public class crearCuenta extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
-        // TODO add your handling code here:    
+        // TODO add your handling code here:}
         crearCuenta(txtContent.getText());
     }//GEN-LAST:event_btnCrearActionPerformed
 
     public void crearCuenta(String contentCuenta){
     
-       String msj=""; 
+        String msj=""; 
         
       //  System.out.println("c:"+contentCuenta);
+       
        msj = servidor.crearCuenta(contentCuenta);
        
        msj = cliente.procesarMsjCuenta(msj);
@@ -118,7 +111,7 @@ public class crearCuenta extends javax.swing.JFrame {
    
     public int compilar(String content){
         
-        LinkedList<Errores> lista = new LinkedList<Errores>();
+/*        LinkedList<Errores> lista = new LinkedList<Errores>();
         
         
         
@@ -140,20 +133,20 @@ public class crearCuenta extends javax.swing.JFrame {
         Iterator<Errores> it = lista.iterator(); /*
          * Listar los errores que se han guardado en la variable lista
          */
-        while (it.hasNext()) {
+    /*    while (it.hasNext()) {
             Errores error = it.next();
             System.out.println("Linea: " + error.Linea + " Columna :" + error.Columna + " Descr: " + error.Descripcion);
         }  
          System.out.println("####USUARIOS ----");
         
-        Iterator<usuario> itU = s.listaU.iterator(); /*
+        Iterator<listaUsuarios> itU = s.listaU.iterator(); /*
          * Listar los errores que se han guardado en la variable lista
          */
-        while (itU.hasNext()) {
-            usuario listaU = itU.next();
+   /*     while (itU.hasNext()) {
+            listaUsuarios listaU = itU.next();
             System.out.println("User: " + listaU.usuario + " Nombre :" + listaU.nombre + " Clave: " + listaU.clave);
         }  
-        
+        */
         return 0;
     
     }
