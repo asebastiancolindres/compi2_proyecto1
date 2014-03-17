@@ -35,21 +35,21 @@ public void unrecovered_syntax_error(Symbol s) throws java.lang.Exception{
 :}
 action code
 {:
-
+int c=0;
 
 :}
 
 terminal String  signos, num, cad, c2, fecha, hora;
-terminal String inicio, usuarios1, usuarios2;
+terminal String inicio, usuarios1, usuarios2, fecha_t;
 terminal String id, tipo, correo, registro, abrir, cerrar, coma, igual, sesion1, sesion2, usuario1, usuario2, clave1, clave2, nombre1, nombre2, fecha1, fecha2, error1, error2, registro1, registro2;
-terminal String peticion, listaC;
+terminal String peticion, listaC, de;
 terminal String usuario, correos1, correos2, correo1, correo2, asunto1, asunto2, de1, de2, contenido1, contenido2, archivo1, archivo2;
 
 non terminal String INICIA, RC1, RC2, TEXTO, CADENA;
 non terminal listaUsuarios C1, C2, C3, C4, C5, U1, U2, U3, U4, U5, U6, IS1, IS2, IS3;
 non terminal listaMensajes LC1, LC2, LC3, RLC1, RLC2, RLC3;
 
-non terminal String PLC1, PLC2; 
+non terminal String PLC1, PLC2, PC1; 
 
 start with INICIA;
 
@@ -59,7 +59,8 @@ INICIA::= C1
         |IS1
         |PLC1
         |LC1
-        |RLC1;
+        |RLC1
+        |PC1;
 
 /********** Crear Cuenta ***************************************/
 
@@ -132,15 +133,17 @@ LC1 ::= abrir correos1 usuario igual c2 correo c2 cerrar LC2 correos2;
 LC2 ::= LC3 LC2
         |LC3;
 
-LC3 ::= correo1 asunto1 TEXTO:t1 asunto2 fecha1 fecha:t21 coma hora:t22 fecha2 de1 TEXTO:t3 de2 nombre1 TEXTO:t4 nombre2 contenido1 TEXTO:t5 contenido2 archivo1 archivo2 correo2{: parser.listaM.add(new listaMensajes("","",t1,t21+","+t22,t3,t4,t5,"")); :};
+LC3 ::= correo1 asunto1 TEXTO:t1 asunto2 fecha1 fecha:t21 coma hora:t22 fecha2 de1 correo:t3 de2 nombre1 TEXTO:t4 nombre2 contenido1 TEXTO:t5 contenido2 archivo1 archivo2 correo2{: c++; parser.listaM.add(new listaMensajes(c,"","",t1,t21+","+t22,t3,t4,t5,"")); :};
 
+/******************* Respuesta Lista Correos **************************************/
 
 RLC1::= abrir sesion1 id igual c2 correo c2 tipo igual c2 TEXTO c2 cerrar RLC2 sesion2;
 
 RLC2 ::= RLC3 RLC2
         |RLC3;
 
-RLC3 ::= correo1 usuario1 correo:t1 usuario2 nombre1 TEXTO:t2 nombre2 asunto1 TEXTO:t3 asunto2 fecha1 fecha:t41 coma hora:t42 fecha2 de1 TEXTO:t5 de2 nombre1 TEXTO:t6 nombre2  correo2{: parser.listaM.add(new listaMensajes(t1,t2, t3, t41+","+t42,t5,t6,"","")); :};
+RLC3 ::= correo1 usuario1 correo:t1 usuario2 nombre1 TEXTO:t2 nombre2 asunto1 TEXTO:t3 asunto2 fecha1 fecha:t41 coma hora:t42 fecha2 de1 correo:t5 de2 nombre1 TEXTO:t6 nombre2  correo2{: c++; parser.listaM.add(new listaMensajes(c, t1,t2, t3, t41+","+t42,t5,t6,"","")); :};
 
+/******************* PETICION DE UN CORREO **************************************/
 
-
+PC1::=  abrir sesion1 id igual c2 correo c2 peticion igual c2 correo c2 de igual c2 correo c2 fecha_t igual c2 fecha coma hora c2 cerrar usuario1 correo usuario2 sesion2;

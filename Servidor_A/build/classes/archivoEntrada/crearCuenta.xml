@@ -28,3 +28,6 @@
 
 
 
+<sesion id="correo" peticion="correo" de="Usuario1@servidorA.com" fecha="10-03-2014,12:40:02">
+<usuario> Usuario1@servidorA.com </usuario>
+</sesion>

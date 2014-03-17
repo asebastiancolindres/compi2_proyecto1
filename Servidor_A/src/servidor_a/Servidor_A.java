@@ -364,6 +364,15 @@ public class Servidor_A {
     return xml;
     }
     
+    public String getMensaje(String content){
+        
+        compilar(content);
+        
+        
+        
+    return content;
+    }
+    
     public void compilar(String content){
         LinkedList<Errores> lista = new LinkedList<Errores>();
         

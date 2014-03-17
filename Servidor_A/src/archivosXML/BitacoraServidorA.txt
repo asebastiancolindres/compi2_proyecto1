@@ -86,3 +86,34 @@
 12-03-2014 , 22:46:47 , Session iniciada: usuario99@servidorA.com
 13-03-2014 , 22:02:40 , Session iniciada: usuario99@servidorA.com
 13-03-2014 , 22:03:03 , Session iniciada: usuario99@servidorA.com
+13-03-2014 , 22:11:00 , Session iniciada: usuario99@servidorA.com
+13-03-2014 , 22:20:12 , Session iniciada: usuario99@servidorA.com
+13-03-2014 , 22:22:12 , Session iniciada: usuario99@servidorA.com
+13-03-2014 , 22:26:36 , Session iniciada: usuario99@servidorA.com
+13-03-2014 , 22:27:58 , Session iniciada: usuario99@servidorA.com
+13-03-2014 , 22:28:46 , Usuario : usuario99@servidorA.comintento iniciar session
+13-03-2014 , 22:28:51 , Session iniciada: usuario99@servidorA.com
+13-03-2014 , 22:29:53 , Session iniciada: usuario99@servidorA.com
+13-03-2014 , 22:35:52 , Session iniciada: usuario99@servidorA.com
+16-03-2014 , 17:52:10 , Session iniciada: usuario99@servidorA.com
+16-03-2014 , 18:02:17 , Session iniciada: usuario99@servidorA.com
+16-03-2014 , 18:03:01 , Session iniciada: usuario99@servidorA.com
+16-03-2014 , 18:04:02 , Session iniciada: usuario99@servidorA.com
+16-03-2014 , 18:06:59 , Session iniciada: usuario99@servidorA.com
+16-03-2014 , 18:14:42 , Session iniciada: usuario99@servidorA.com
+16-03-2014 , 18:25:11 , Session iniciada: usuario99@servidorA.com
+16-03-2014 , 18:27:25 , Session iniciada: usuario99@servidorA.com
+16-03-2014 , 18:28:10 , Session iniciada: usuario99@servidorA.com
+16-03-2014 , 18:28:58 , Session iniciada: usuario99@servidorA.com
+16-03-2014 , 18:29:19 , Session iniciada: usuario99@servidorA.com
+16-03-2014 , 18:36:59 , Session iniciada: usuario99@servidorA.com
+16-03-2014 , 18:42:24 , Session iniciada: usuario99@servidorA.com
+16-03-2014 , 18:42:25 , Linea: 1 Columna :119 Descr: Error sintactico Identificador usuario1@servidorA.com no reconocido.
+16-03-2014 , 18:42:25 , Linea: 2 Columna :35 Descr: Error sintactico Identificador </sesion> no reconocido.
+16-03-2014 , 18:43:41 , Session iniciada: usuario99@servidorA.com
+16-03-2014 , 18:44:44 , Session iniciada: usuario99@servidorA.com
+16-03-2014 , 18:59:50 , Linea: 0 Columna :11 Descr: Error lexico en el caracter ”
+16-03-2014 , 18:59:50 , Linea: 1 Columna :12 Descr: Error sintactico Identificador correo no reconocido.
+16-03-2014 , 19:00:43 , Linea: 1 Columna :42 Descr: Error sintactico Identificador usuario2@servidorA.com no reconocido.
+16-03-2014 , 19:05:48 , Linea: 1 Columna :72 Descr: Error sintactico Identificador " no reconocido.
+16-03-2014 , 19:06:13 , Linea: 1 Columna :72 Descr: Error sintactico Identificador " no reconocido.

@@ -36,9 +36,17 @@ public class listaMensajes {
     public String nombre;
     public String contenido;
     public String archivo;
+    public int no;
 
-    
-    public listaMensajes(String correo_d, String nombre_d, String asunto, String fecha, String emisor, String nombre, String contenido, String archivo) {
+    public int getNo() {
+        return no;
+    }
+
+    public void setNo(int no) {
+        this.no = no;
+    }
+
+    public listaMensajes(int no, String correo_d, String nombre_d, String asunto, String fecha, String emisor, String nombre, String contenido, String archivo) {
         this.correo_d = correo_d;
         this.nombre_d = nombre_d;
         this.asunto = asunto;
@@ -47,7 +55,11 @@ public class listaMensajes {
         this.nombre = nombre;
         this.contenido = contenido;
         this.archivo = archivo;
+        this.no = no;
     }
+
+      
+    
 
     public String getAsunto() {
         return asunto;

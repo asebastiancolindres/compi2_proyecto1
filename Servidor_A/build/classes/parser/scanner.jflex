@@ -101,6 +101,9 @@ lista.add(new Errores(linea, columna, "Error lexico en el caracter "+valor) );}
 "<ARCHIVO>"      {return new Symbol(simbolo.archivo1, yychar,yyline,new String(yytext()));}
 "</ARCHIVO>"     {return new Symbol(simbolo.archivo2, yychar,yyline,new String(yytext()));}
 
+"DE"           {return new Symbol(simbolo.de, yychar,yyline,new String(yytext()));}
+
+"FECHA"           {return new Symbol(simbolo.fecha_t, yychar,yyline,new String(yytext()));}
 
 {num}          {return new Symbol(simbolo.num, yychar,yyline,new String(yytext()));}
 {cad}          {return new Symbol(simbolo.cad, yychar,yyline,new String(yytext()));}
