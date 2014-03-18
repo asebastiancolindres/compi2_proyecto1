@@ -29,7 +29,7 @@ import static servidor_a.ini.*; /*ini*/
 
 /**
  *
- * @author sebastian
+ * @author sebastian_
  */
 public  class compilador {
     
