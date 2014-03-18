@@ -66,12 +66,24 @@ public class loginCorreo extends javax.swing.JFrame implements Runnable {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        mainCorreo = new javax.swing.JFrame();
         jLabel1 = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         btnIniciarSesion = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         txtPass = new javax.swing.JPasswordField();
+
+        javax.swing.GroupLayout mainCorreoLayout = new javax.swing.GroupLayout(mainCorreo.getContentPane());
+        mainCorreo.getContentPane().setLayout(mainCorreoLayout);
+        mainCorreoLayout.setHorizontalGroup(
+            mainCorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        mainCorreoLayout.setVerticalGroup(
+            mainCorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -241,6 +253,7 @@ public class loginCorreo extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JFrame mainCorreo;
     private javax.swing.JPasswordField txtPass;
     private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables

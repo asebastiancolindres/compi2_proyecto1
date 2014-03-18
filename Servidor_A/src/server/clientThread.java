@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.net.Socket;
 import javax.swing.JTextArea;
+import parser.usuario;
 
 /**
  *
@@ -34,6 +35,7 @@ class clientThread extends Thread {
   private final clientThread[] threads;
   private int maxClientsCount;
   public compilador compi = new compilador();
+  private usuario usuario;
 
   public clientThread(Socket clientSocket, clientThread[] threads) {
     this.clientSocket = clientSocket;
@@ -59,23 +61,27 @@ class clientThread extends Thread {
       is = new DataInputStream(clientSocket.getInputStream());
       os = new DataOutputStream(clientSocket.getOutputStream());
       String login;
-      String name ="sebas";
+      String name;
       while (true) {
        // os.writeUTF("Enter your name.");
         login = is.readUTF().trim();
         System.out.println("login: "+login);
-        int res = compi.iniciarSesion(login);
+        String res = compi.iniciarSesion(login);
         
-        if (res==1){
-            System.err.println("login correcto: "+name);
-            os.writeUTF("Usuario correcto");
-            break;
+        if (res==""){
+             System.err.println("login incorrecto: ");
+          os.writeUTF("Usuario Incorrecto");
       //  }
        // if (name.indexOf('@') == -1) {          
       //    break;
         } else {
-              System.err.println("login inccorrecto: "+name);
-          os.writeUTF("Usuario Incorrecto");
+             
+          
+          usuario = compi.getUsuario(res);
+          name = usuario.username;
+            System.err.println("login correcto: "+name);
+            os.writeUTF("Usuario correcto");
+            break;
         }
       }
 

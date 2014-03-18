@@ -29,7 +29,7 @@ import static servidor_a.ini.*; /*ini*/
 
 /**
  *
- * @author sebastian_
+ * @author sebastian
  */
 public  class compilador {
     
@@ -269,7 +269,7 @@ public  class compilador {
     }
     
      
-     public int iniciarSesion(String content){
+     public String iniciarSesion(String content){
     
          System.out.println("entro"+content);
        usuario user = compilar(content).usuario;
@@ -281,20 +281,20 @@ public  class compilador {
          if (comprobarSesion(listaUsuarios, user.getUsuario(), user.getClave())==1){
              
                     insertLog("Session iniciada: "+user.getUsuario());   
-                    return 1;
+                    return user.getUsuario();
                //  return "<sesion id=\"correo\">\n" +
                   //      "<Registro> Session iniciada </Registro>\n" +
                  //       "</sesion>";
          }else{
              insertLog("Usuario : "+user.getUsuario() +"intento iniciar session");  
-             return 0;
+             return "";
            //  return "<sesion id=\"correo\">\n" +
                  //   "<Error> Verifique credenciales </Error>\n" +
                  //   "</sesion>";
          }
                 // System.out.println("existe");            
          }else{
-             return 0;
+             return "";
             //  return "<sesion id=\"correo\">\n" +
                 //    "<Error> Error procesar parser </Error>\n" +
                //     "</sesion>";
@@ -326,5 +326,28 @@ public  class compilador {
         //}
        // return 1;
     }
+     
+     public usuario getUsuario(String username){
+         
+         LinkedList<usuario> lista= getListaUsuarios();
+         usuario usuario;
+          Iterator<usuario> itU = lista.iterator(); /*
+             * Listar los errores que se han guardado en la variable lista
+             */
+
+            while (itU.hasNext()) {
+                usuario listaU = itU.next();
+              //  System.out.println("User: " + listaU.usuario + " Nombre :" + listaU.nombre + " Clave: " + listaU.clave);
+                System.out.println("User: " + listaU.usuario + " User2 :" + username );
+            //   String usuario, String username, String nombre, String fecha, String clave
+                if (listaU.getUsuario().equals(username)) {
+                    usuario = new usuario(listaU.getUsuario(), listaU.getUsername(), listaU.getNombre(), listaU.getFecha(), listaU.getClave());
+                    return usuario;
+                }
+            }
+         
+         return null;
+     
+     }
     
 }

@@ -178,3 +178,7 @@
 17-03-2014 , 01:47:28 , Usuario : usuario@servidorA.comintento iniciar session
 17-03-2014 , 01:47:40 , Usuario : Usuario1@servidorA.comintento iniciar session
 17-03-2014 , 01:47:57 , Session iniciada: Usuario1@servidorA.com
+18-03-2014 , 12:46:54 , Session iniciada: Usuario1@servidorA.com
+18-03-2014 , 15:25:45 , Session iniciada: Usuario1@servidorA.com
+18-03-2014 , 15:27:55 , Session iniciada: Usuario2@servidorA.com
+18-03-2014 , 15:30:37 , Session iniciada: Usuario7@servidorA.com
