@@ -182,3 +182,29 @@
 18-03-2014 , 15:25:45 , Session iniciada: Usuario1@servidorA.com
 18-03-2014 , 15:27:55 , Session iniciada: Usuario2@servidorA.com
 18-03-2014 , 15:30:37 , Session iniciada: Usuario7@servidorA.com
+18-03-2014 , 22:06:45 , Usuario : usuario@servidorA.comintento iniciar session
+18-03-2014 , 22:11:05 , Usuario : usuario@servidorA.comintento iniciar session
+18-03-2014 , 22:11:55 , Usuario : usuario@servidorA.comintento iniciar session
+18-03-2014 , 22:15:30 , Usuario : usuario@servidorA.comintento iniciar session
+18-03-2014 , 22:18:18 , Session iniciada: Usuario1@servidorA.com
+18-03-2014 , 22:20:04 , Session iniciada: Usuario1@servidorA.com
+18-03-2014 , 22:20:19 , Usuario : usuario@servidorA.comintento iniciar session
+18-03-2014 , 22:22:31 , Usuario : Usuario1@servidorA.comintento iniciar session
+18-03-2014 , 22:22:39 , Session iniciada: Usuario1@servidorA.com
+18-03-2014 , 22:23:13 , Usuario : usuario@servidorA.comintento iniciar session
+18-03-2014 , 22:23:21 , Session iniciada: Usuario2@servidorA.com
+18-03-2014 , 22:52:01 , Session iniciada: Usuario1@servidorA.com
+18-03-2014 , 22:52:02 , Linea: 1 Columna :0 Descr: Error sintactico Identificador Welcome no reconocido.
+18-03-2014 , 22:52:03 , Linea: 1 Columna :0 Descr: Error sintactico Identificador aprobado no reconocido.
+18-03-2014 , 22:53:40 , Session iniciada: Usuario1@servidorA.com
+18-03-2014 , 22:54:06 , Usuario : usuario@servidorA.comintento iniciar session
+18-03-2014 , 22:59:52 , Session iniciada: Usuario1@servidorA.com
+18-03-2014 , 23:00:03 , Usuario : usuario@servidorA.comintento iniciar session
+18-03-2014 , 23:24:27 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 00:04:48 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 00:06:15 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 00:07:14 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 00:08:14 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 00:09:37 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 00:20:34 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 00:23:15 , Session iniciada: Usuario1@servidorA.com

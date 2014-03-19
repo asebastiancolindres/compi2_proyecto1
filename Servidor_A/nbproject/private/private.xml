@@ -3,7 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/sebastian/NetBeansProjects/git/compi2_proyecto1/Servidor_A/src/servidor_a/correo.java</file>
+            <file>file:/home/sebastian/NetBeansProjects/git/compi2_proyecto1/Servidor_A/src/parser/usuario.java</file>
+            <file>file:/home/sebastian/NetBeansProjects/git/compi2_proyecto1/Servidor_A/src/archivoEntrada/backup</file>
+            <file>file:/home/sebastian/NetBeansProjects/git/compi2_proyecto1/Servidor_A/src/cliente/crearCuenta.java</file>
+            <file>file:/home/sebastian/NetBeansProjects/git/compi2_proyecto1/Servidor_A/src/archivosXML/UsuariosServidorA.xml</file>
+            <file>file:/home/sebastian/NetBeansProjects/git/compi2_proyecto1/Servidor_A/src/cliente/Login2.java</file>
+            <file>file:/home/sebastian/NetBeansProjects/git/compi2_proyecto1/Servidor_A/src/parser/parser.cup</file>
+            <file>file:/home/sebastian/NetBeansProjects/git/compi2_proyecto1/Servidor_A/src/server/compilador.java</file>
+            <file>file:/home/sebastian/NetBeansProjects/git/compi2_proyecto1/Servidor_A/src/server/clientThread.java</file>
+            <file>file:/home/sebastian/NetBeansProjects/git/compi2_proyecto1/Servidor_A/src/server/server.java</file>
+            <file>file:/home/sebastian/NetBeansProjects/git/compi2_proyecto1/Servidor_A/src/servidor_a/cliente.java</file>
+            <file>file:/home/sebastian/NetBeansProjects/git/compi2_proyecto1/Servidor_A/src/cliente/mainCorreo.java</file>
+            <file>file:/home/sebastian/NetBeansProjects/git/compi2_proyecto1/Servidor_A/src/servidor_a/Servidor_A.java</file>
+            <file>file:/home/sebastian/NetBeansProjects/git/compi2_proyecto1/Servidor_A/src/cliente/loginCorreo.java</file>
+            <file>file:/home/sebastian/NetBeansProjects/git/compi2_proyecto1/Servidor_A/src/cliente/cliente.java</file>
         </group>
     </open-files>
 </project-private>

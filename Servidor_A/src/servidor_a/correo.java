@@ -10,7 +10,6 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import javax.swing.DefaultListModel;
 import javax.swing.ListModel;
-import parser.listaMensajes;
 import parser.usuario;
 import static servidor_a.Servidor_A.s;
 
@@ -22,7 +21,7 @@ public class correo extends javax.swing.JFrame {
     
     Servidor_A servidor = new Servidor_A();
     cliente cliente = new cliente();
-    LinkedList<listaMensajes> listaM = new LinkedList<listaMensajes>();
+    LinkedList<parser.correo> listaM = new LinkedList<parser.correo>();
     DefaultListModel listModel;
     /**
      * Creates new form correo
@@ -38,14 +37,14 @@ public class correo extends javax.swing.JFrame {
         listaM = cliente.getListaMensajes(respuesta);
          System.out.println("####CORREOS ----");
 
-            Iterator<listaMensajes> itM = listaM.iterator(); /*
+            Iterator<parser.correo> itM = listaM.iterator(); /*
              * Listar los errores que se han guardado en la variable lista
              */
   String[] correos = new String[1000];
   int c =0;
             while (itM.hasNext()) {
                 c++;
-                listaMensajes listaM = itM.next();
+                parser.correo listaM = itM.next();
                // System.out.println("nombre: " + listaM.getNombre_d() + " asunto :" + listaM.getAsunto() + " de: " + listaM.getEmisor());
               // txtBandeja.append(listaM.getNombre_d()+"-"+listaM.getAsunto()+"-"+listaM.getFecha()+"\n");
              correos[c]= listaM.getNombre_d()+"-"+listaM.getAsunto()+"-"+listaM.getFecha();

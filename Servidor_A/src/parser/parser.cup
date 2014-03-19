@@ -9,14 +9,14 @@ parser code
 public  String lUsuario;
 public  String lNombre;
 public  String pass;
-
+public int respuesta;
 public String msjCuenta;
 
     
         public LinkedList<Errores> lista         = new LinkedList<Errores>();
         public LinkedList<usuario> listaUsuarios = new LinkedList<usuario>();
         public usuario usuario;
-        public LinkedList<listaMensajes> listaM =new LinkedList<listaMensajes>();
+        public LinkedList<correo> listaCorreos =new LinkedList<correo>();
 
         /*Variable de salida*/
         public String Salida=new String();
@@ -56,13 +56,16 @@ non terminal String IS1, IS2;
 
 non terminal PLC1, PLC2, PLC3;
 
+non terminal LC1, LC2, LC3;
+
 start with INICIA;
 
 INICIA::= C1
         |LU1
         |RC1
         |IS1
-        |PCL1;
+        |PLC1
+        |LC1;
 
 /********** Crear Cuenta ***************************************/
 
@@ -108,5 +111,15 @@ LU3::= usuario1 usuario1 correo:t1 usuario2 nombre1 TEXTO:t2 nombre2  fecha1 fec
 
 RC1::= abrir sesion1 id igual c2 correo_t c2 cerrar RC2 sesion2; 
 
-RC2::= registro1 TEXTO:t1 registro2 {: parser.msjCuenta= t1;  :}
-      | error1 TEXTO:t1   error2    {: parser.msjCuenta= t1;  :};
+RC2::= registro1 TEXTO:t1 registro2 {: parser.msjCuenta= t1; parser.respuesta=2; :}
+      | error1 TEXTO:t1   error2    {: parser.msjCuenta= t1; parser.respuesta=1; :};
+
+
+/******************* Lista Correos **************************************/
+
+LC1 ::= abrir correos1 usuario igual c2 correo c2 cerrar LC2 correos2;
+
+LC2 ::= LC3 LC2
+        |LC3;
+
+LC3 ::= correo1 asunto1 TEXTO:t1 asunto2 fecha1 fecha:t21 coma hora:t22 fecha2 de1 correo:t3 de2 nombre1 TEXTO:t4 nombre2 contenido1 TEXTO:t5 contenido2 archivo1 archivo2 correo2{: c++; parser.listaCorreos.add(new correo(c,"","",t1,t21+","+t22,t3,t4,t5,"")); :};

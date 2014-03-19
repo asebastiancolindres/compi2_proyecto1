@@ -18,7 +18,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
 import parser.Errores;
-import parser.listaMensajes;
+import parser.correo;
 import parser.parser;
 import parser.scanner;
 
@@ -74,13 +74,13 @@ public class cliente {
         }
     }
     
-    public LinkedList<listaMensajes> getListaMensajes(String content){
+   /* public LinkedList<listaMensajes> getListaMensajes(String content){
     
        parser s = compilar(content);
         
         return s.listaM;
         
-    }
+    }*/
     
     public parser compilar(String content){
         LinkedList<Errores> lista = new LinkedList<Errores>();
@@ -112,4 +112,6 @@ public class cliente {
         
         return s;
     }
+    
+    
 }

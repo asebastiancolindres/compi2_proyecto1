@@ -21,7 +21,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
 import parser.Errores;
-import parser.listaMensajes;
+import parser.correo;
 import parser.usuario;
 import parser.parser;
 import parser.scanner;
@@ -332,7 +332,7 @@ public class Servidor_A {
     
         System.out.println("####MENSAJES ----");
 
-            Iterator<listaMensajes> itM = s.listaM.iterator(); /*
+            Iterator<correo> itM = s.listaM.iterator(); /*
              * Listar los errores que se han guardado en la variable lista
              */
 
@@ -341,7 +341,7 @@ public class Servidor_A {
 
             
             while (itM.hasNext()) {
-                listaMensajes listaM = itM.next();
+                correo listaM = itM.next();
               //  System.out.println("User: " + listaU.usuario + " Nombre :" + listaU.nombre + " Clave: " + listaU.clave);
                // System.out.println("User: " + listaU.usuario + " User2 :" + usuario );
                //xml+=listaM.getAsunto()+"-"+listaM.getContenido();

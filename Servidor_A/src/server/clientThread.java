@@ -11,7 +11,9 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.net.Socket;
+import java.util.LinkedList;
 import javax.swing.JTextArea;
+import parser.correo;
 import parser.usuario;
 
 /**
@@ -34,8 +36,9 @@ class clientThread extends Thread {
   private Socket clientSocket = null;
   private final clientThread[] threads;
   private int maxClientsCount;
-  public compilador compi = new compilador();
+  public compilador servidor = new compilador();
   private usuario usuario;
+  private LinkedList<correo> listaCorreos;
 
   public clientThread(Socket clientSocket, clientThread[] threads) {
     this.clientSocket = clientSocket;
@@ -45,7 +48,7 @@ class clientThread extends Thread {
   
   public String getNombre(){
       
-      return clientName;
+      return threads[0].clientName;
   }
   
    
@@ -53,7 +56,9 @@ class clientThread extends Thread {
   public void run() {
     int maxClientsCount = this.maxClientsCount;
     clientThread[] threads = this.threads;
-
+ String name="";
+ String res ="";
+ String msj = "";
     try {
       /*
        * Create input and output streams for this client.
@@ -61,38 +66,50 @@ class clientThread extends Thread {
       is = new DataInputStream(clientSocket.getInputStream());
       os = new DataOutputStream(clientSocket.getOutputStream());
       String login;
-      String name;
+     
       while (true) {
        // os.writeUTF("Enter your name.");
         login = is.readUTF().trim();
         System.out.println("login: "+login);
-        String res = compi.iniciarSesion(login);
-        
+        res = servidor.iniciarSesion(login);
+        System.out.println("res: "+res);
         if (res==""){
              System.err.println("login incorrecto: ");
-          os.writeUTF("Usuario Incorrecto");
+             msj = "<sesion id=\"correo\">\n" +
+                    "<Error> Verifique credenciales </Error>\n" +
+                    "</sesion>";
+             
+          os.writeUTF(msj);
       //  }
        // if (name.indexOf('@') == -1) {          
-      //    break;
+        //  break;
         } else {
              
           
-          usuario = compi.getUsuario(res);
-          name = usuario.username;
-            System.err.println("login correcto: "+name);
-            os.writeUTF("Usuario correcto");
+          
             break;
         }
       }
-
+      
+        usuario = servidor.getUsuario(res);
+          name = usuario.username;
+            System.err.println("login correcto: "+name);
+             msj = "<sesion id=\"correo\">\n" +
+                   "<Registro> Session iniciada </Registro>\n" +
+                   "</sesion>";
+              
+      //  listaCorreos = servidor.get
+             os.writeUTF(msj);
+         
+         System.out.println("respuesta login: "+is.readUTF());
       /* Welcome the new the client. */
-      os.writeUTF("Welcome " + name
-          + " to our chat room.\nTo leave enter /quit in a new line.");
+    //  os.writeUTF("Welcome " + name
+       //   + " to our chat room.\nTo leave enter /quit in a new line.");
       synchronized (this) {
         for (int i = 0; i < maxClientsCount; i++) {
           if (threads[i] != null && threads[i] == this) {
             clientName = "@" + name;
-            os.writeUTF("aprobado");
+          //  os.writeUTF("aprobado");
           //  new Login2().setVisible(true);
             
             break;
