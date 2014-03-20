@@ -41,7 +41,7 @@ String[] username;
 
 :}
 
-terminal String  signos, num, cad, c2, fecha, hora;
+terminal String  signos, num, cad, c2, fecha, hora, envio, destinatarios1, destinatarios2, destinatario1, destinatario2;
 terminal String inicio, usuarios1, usuarios2, fecha_t, correo_t;
 terminal String id, tipo, correo, registro, abrir, cerrar, coma, igual, sesion1, sesion2, usuario1, usuario2, clave1, clave2, nombre1, nombre2, fecha1, fecha2, error1, error2, registro1, registro2;
 terminal String peticion, listaC, de, lista;
@@ -65,6 +65,8 @@ non terminal PC1;
 
 non terminal RPC1;
 
+non terminal RNC1, LD1, LD2;
+
 start with INICIA;
 
 INICIA::= C1
@@ -75,7 +77,8 @@ INICIA::= C1
         |LC1
         |RLC1
         |PC1
-        |RPC1;
+        |RPC1
+        |RNC1;
 
 /********** Crear Cuenta ***************************************/
 
@@ -105,6 +108,7 @@ TEXTO::=  CADENA:t1 TEXTO:t2   {:  t1 = t1+" "+t2;  RESULT=t1; :}
 CADENA::= cad:t     {:  RESULT=t; :}
          |num:t     {:  RESULT=t; :}
          |signos:t  {:  RESULT=t; :} 
+        |envio:t  {:  RESULT=t; :} 
          |usuario:t  {:  RESULT=t; :};
 
 
@@ -154,3 +158,11 @@ PC1::=  abrir sesion1 id igual c2 correo_t c2 peticion igual c2 correo_t c2 de i
 
 RPC1::= correo1 usuario1 correo:t1 usuario2 asunto1 TEXTO:t2 asunto2 fecha1 fecha:t31 coma hora:t32 fecha2 de1 correo:t4 de2 contenido1 TEXTO:t5 contenido2 archivo1 archivo2 correo2{: parser.respuesta=6; c++; parser.correo = new correo(c,t1,"",t2,t31+","+t32,t4,"",t5,""); :};
 
+/**************************Redactar Correo ***********************************/
+
+RNC1::=  abrir sesion1 peticion igual c2 envio c2 cerrar usuario1 correo:t1 usuario2 destinatarios1 LD1 destinatarios2 asunto1 TEXTO asunto2 fecha1 fecha coma hora fecha2 contenido1 TEXTO contenido2 archivo1 archivo2 sesion2;
+
+LD1 ::= LD2 LD1
+        |LD2;
+
+LD2::= destinatario1 correo destinatario2;

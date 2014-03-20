@@ -315,3 +315,12 @@
 19-03-2014 , 22:54:36 , Linea: 6 Columna :145 Descr: Error sintactico Identificador <contenido> no reconocido.
 19-03-2014 , 22:56:46 , Session iniciada: Usuario1@servidorA.com
 19-03-2014 , 22:58:18 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 23:11:44 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 23:16:18 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 23:20:36 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 23:21:26 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 23:22:18 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 23:22:44 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 23:35:04 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 23:36:54 , Linea: 1 Columna :8 Descr: Error sintactico Identificador peticion no reconocido.
+19-03-2014 , 23:37:53 , Linea: 1 Columna :18 Descr: Error sintactico Identificador envio no reconocido.

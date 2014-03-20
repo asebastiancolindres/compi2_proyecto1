@@ -1,7 +1,7 @@
 <sesion id="correo" tipo="registro">
 <usuario> Usuario@servidorA.com </usuario>
 <nombre> nombres </nombre>
-<fecha> 10-03-2014, 12:40:02</fecha>
+<fecha> 10-03-2014,12:40:02</fecha>
 <clave> clave </clave>
 </sesion>
 
@@ -30,4 +30,18 @@
 
 <sesion id="correo" peticion="correo" de="Usuario1@servidorA.com" fecha="10-03-2014,12:40:02">
 <usuario> Usuario1@servidorA.com </usuario>
+</sesion>
+
+
+<sesion peticion="envio" >
+<usuario> Usuario1@servidorA.com </usuario>
+<destinatarios>
+<destinatario> Usuario1@servidorA.com </destinatario>
+<destinatario> Usuario2@servidorA.com </destinatario>
+<destinatario> Usuario3@servidorA.com </destinatario>
+</destinatarios>
+<asunto> asunto 1</asunto>
+<fecha> 10-03-2014,12:40:02 </fecha>
+<contenido> xxxxxxxx </contenido>
+<archivo></archivo>
 </sesion>

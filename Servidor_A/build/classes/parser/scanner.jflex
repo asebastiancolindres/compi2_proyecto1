@@ -106,6 +106,16 @@ lista.add(new Errores(linea, columna, "Error lexico en el caracter "+valor) );}
 
 "FECHA"           {return new Symbol(simbolo.fecha_t, yychar,yyline,new String(yytext()));}
 
+"ENVIO"           {return new Symbol(simbolo.envio, yychar,yyline,new String(yytext()));}
+
+"<DESTINATARIOS>"      {return new Symbol(simbolo.destinatarios1, yychar,yyline,new String(yytext()));}
+"</DESTINATARIOS>"     {return new Symbol(simbolo.destinatarios2, yychar,yyline,new String(yytext()));}
+
+"<DESTINATARIO>"      {return new Symbol(simbolo.destinatario1, yychar,yyline,new String(yytext()));}
+"</DESTINATARIO>"     {return new Symbol(simbolo.destinatario2, yychar,yyline,new String(yytext()));}
+
+
+
 {num}          {return new Symbol(simbolo.num, yychar,yyline,new String(yytext()));}
 {cad}          {return new Symbol(simbolo.cad, yychar,yyline,new String(yytext()));}
 

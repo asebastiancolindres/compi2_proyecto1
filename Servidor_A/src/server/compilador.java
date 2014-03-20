@@ -21,10 +21,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
 import parser.*;
-import static servidor_a.Servidor_A.DS;
-import static servidor_a.Servidor_A.dir;
-import static servidor_a.Servidor_A.leerArchivo;
-import static servidor_a.Servidor_A.s;
+
 
 
 

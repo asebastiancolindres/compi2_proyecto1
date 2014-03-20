@@ -13,6 +13,7 @@ package server;
 //Example 26 (updated)
 
 
+import cliente.loginCorreo;
 import java.io.PrintStream;
 import java.io.IOException;
 import java.net.Socket;
@@ -52,6 +53,7 @@ public class server extends compilador{
      */
     try {
       serverSocket = new ServerSocket(portNumber);
+       new loginCorreo().setVisible(true);
     } catch (IOException e) {
       System.out.println(e);
     }

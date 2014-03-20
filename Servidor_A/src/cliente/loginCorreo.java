@@ -81,6 +81,10 @@ public LinkedList<correo>  listaC;
         jScrollPane2 = new javax.swing.JScrollPane();
         txtContenido = new javax.swing.JTextArea();
         labelDestinatario = new javax.swing.JLabel();
+        redactarCorreo = new javax.swing.JFrame();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtCorreo = new javax.swing.JTextArea();
+        btnEnviar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -88,7 +92,7 @@ public LinkedList<correo>  listaC;
         jLabel3 = new javax.swing.JLabel();
         txtPass = new javax.swing.JPasswordField();
 
-        mainCorreo.setMinimumSize(new java.awt.Dimension(792, 334));
+        mainCorreo.setMinimumSize(new java.awt.Dimension(792, 354));
 
         jLabel5.setText("Bandeja de Entrada");
 
@@ -156,6 +160,44 @@ public LinkedList<correo>  listaC;
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(24, 24, 24))))
+        );
+
+        redactarCorreo.setMinimumSize(new java.awt.Dimension(597, 395));
+
+        txtCorreo.setColumns(20);
+        txtCorreo.setRows(5);
+        txtCorreo.setMinimumSize(new java.awt.Dimension(260, 95));
+        jScrollPane1.setViewportView(txtCorreo);
+
+        btnEnviar.setText("Enviar");
+        btnEnviar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEnviarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout redactarCorreoLayout = new javax.swing.GroupLayout(redactarCorreo.getContentPane());
+        redactarCorreo.getContentPane().setLayout(redactarCorreoLayout);
+        redactarCorreoLayout.setHorizontalGroup(
+            redactarCorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(redactarCorreoLayout.createSequentialGroup()
+                .addGroup(redactarCorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(redactarCorreoLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(redactarCorreoLayout.createSequentialGroup()
+                        .addGap(236, 236, 236)
+                        .addComponent(btnEnviar)))
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+        redactarCorreoLayout.setVerticalGroup(
+            redactarCorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(redactarCorreoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnEnviar)
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -251,11 +293,17 @@ public LinkedList<correo>  listaC;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-writeUTF(txtContenido.getText());
-txtAdjunto.append(txtContenido.getText()+"\n");
-
+//writeUTF(txtContenido.getText());
+//txtAdjunto.append(txtContenido.getText()+"\n");
+redactarCorreo.setVisible(true);
+redactarCorreo.setTitle("Redactar "+txtUser.getText());
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
+        // TODO add your handling code here:
+           writeUTF(txtCorreo.getText());
+    }//GEN-LAST:event_btnEnviarActionPerformed
 
     public void crearCuenta(String contentCuenta){
         
@@ -414,20 +462,24 @@ txtAdjunto.append(txtContenido.getText()+"\n");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnEnviar;
     private javax.swing.JButton btnIniciarSesion;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JLabel labelDestinatario;
     private javax.swing.JList listBandeja;
     private javax.swing.JFrame mainCorreo;
+    private javax.swing.JFrame redactarCorreo;
     private javax.swing.JTextArea txtAdjunto;
     private javax.swing.JTextArea txtContenido;
+    private javax.swing.JTextArea txtCorreo;
     private javax.swing.JPasswordField txtPass;
     private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
