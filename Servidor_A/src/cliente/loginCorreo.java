@@ -12,9 +12,12 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import parser.correo;
 import parser.parser;
 import server.*;
 
@@ -31,7 +34,7 @@ public class loginCorreo extends javax.swing.JFrame implements Runnable {
     // The input stream
    public DataInputStream is = null;
     public String responseLine = "";
-
+public LinkedList<correo>  listaC;
     Thread t = null;
     server servidor = new server();
      cliente cliente = new cliente();
@@ -71,7 +74,7 @@ public class loginCorreo extends javax.swing.JFrame implements Runnable {
         mainCorreo = new javax.swing.JFrame();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        listBandeja2 = new javax.swing.JList();
+        listBandeja = new javax.swing.JList();
         jButton1 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         txtAdjunto = new javax.swing.JTextArea();
@@ -89,12 +92,12 @@ public class loginCorreo extends javax.swing.JFrame implements Runnable {
 
         jLabel5.setText("Bandeja de Entrada");
 
-        listBandeja2.addMouseListener(new java.awt.event.MouseAdapter() {
+        listBandeja.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                listBandeja2MouseClicked(evt);
+                listBandejaMouseClicked(evt);
             }
         });
-        jScrollPane6.setViewportView(listBandeja2);
+        jScrollPane6.setViewportView(listBandeja);
 
         jButton1.setText("Redactar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -159,7 +162,7 @@ public class loginCorreo extends javax.swing.JFrame implements Runnable {
 
         jLabel1.setText("Usuario:");
 
-        txtUser.setText("usuario@servidorA.com");
+        txtUser.setText("Usuario1@servidorA.com");
 
         jLabel2.setText("Correo:");
 
@@ -230,7 +233,7 @@ public class loginCorreo extends javax.swing.JFrame implements Runnable {
         new crearCuenta().setVisible(true);
     }//GEN-LAST:event_jLabel3MouseClicked
 
-    private void listBandeja2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listBandeja2MouseClicked
+    private void listBandejaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listBandejaMouseClicked
         // TODO add your handling code here:
         //    System.out.println("click: "+listBandeja.getSelectedIndex());
         //    System.out.println("click: "+listBandeja.getSelectedValue().toString());
@@ -239,14 +242,17 @@ public class loginCorreo extends javax.swing.JFrame implements Runnable {
         no = listBandeja.getSelectedIndex();
 
    //     System.out.println("click"+listaM.get(no-1).correo_d);
-     //   String content = "<sesión id=\"correo\" peticion=\"correo\" de=\""+listaM.get(no-1).emisor+"\" fecha=\""+listaM.get(no-1).fecha +"\">\n" +
-     //   "<usuario>"+listaM.get(no-1).correo_d+"</usuario>\n" +
-     //   "</sesion>";
-     //   System.err.println("content: "+content);
-    }//GEN-LAST:event_listBandeja2MouseClicked
+        String content = "<sesión id=\"correo\" peticion=\"correo\" de=\""+listaC.get(no-1).de+"\" fecha=\""+listaC.get(no-1).fecha +"\">\n" +
+        "<usuario>"+listaC.get(no-1).usuario+"</usuario>\n" +
+        "</sesion>";
+        System.err.println("content: "+content);
+    }//GEN-LAST:event_listBandejaMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+writeUTF(txtContenido.getText());
+txtAdjunto.append(txtContenido.getText()+"\n");
+
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -295,6 +301,7 @@ public class loginCorreo extends javax.swing.JFrame implements Runnable {
        
            case 0:
                JOptionPane.showMessageDialog(null, "error parser", "Error",JOptionPane.INFORMATION_MESSAGE);
+              txtAdjunto.append(content+"\n");
                break;
            case 1:
                JOptionPane.showMessageDialog(null, parser.msjCuenta, "Inicio Sesion",JOptionPane.INFORMATION_MESSAGE);
@@ -306,14 +313,37 @@ public class loginCorreo extends javax.swing.JFrame implements Runnable {
                this.setVisible(false);
                mainCorreo.setVisible(true);
              //  jLabel3.setText("dos"+t.getName());
-               
+               mainCorreo.setTitle(txtUser.getText());
                String peticion = "<sesion id=\"correo\" peticion=\"Lista correos\">\n"+
                                 "<usuario>"+txtUser.getText()+"</usuario>\n"+
                                 "</sesion>";
                writeUTF(peticion);
                break;
+           case 4:
+            listaC = parser.listaCorreos;
+         //System.out.println("####CORREOS ----");
+
+            Iterator<correo> itM = listaC.iterator(); /*
+             * Listar los errores que se han guardado en la variable lista
+             */
+  String[] correos = new String[1000];
+  int c =0;
+            while (itM.hasNext()) {
+                c++;
+                correo correo = itM.next();
+               // System.out.println("nombre: " + listaM.getNombre_d() + " asunto :" + listaM.getAsunto() + " de: " + listaM.getEmisor());
+              // txtBandeja.append(listaM.getNombre_d()+"-"+listaM.getAsunto()+"-"+listaM.getFecha()+"\n");
+             correos[c]= correo.nombre_de+"-"+correo.asunto+"-"+correo.fecha;
+               
+            }
+           
+           //  listModel.addElement("uno");
+           //  listModel.add(0, strings);
+             listBandeja.setListData(correos);
+               break;
                
            default:
+               txtAdjunto.append(content+"\n");
                break;
                
        
@@ -368,7 +398,7 @@ public class loginCorreo extends javax.swing.JFrame implements Runnable {
                // }
                 compilar(responseLine);
               //  mostrarMensaje(responseLine);
-                System.out.println(responseLine);
+                System.out.println("response: "+responseLine);
 
             } catch (IOException e) {
                 System.out.println("Could not read from server");
@@ -389,12 +419,8 @@ public class loginCorreo extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JList listBandeja;
-    private javax.swing.JList listBandeja1;
-    private javax.swing.JList listBandeja2;
     private javax.swing.JFrame mainCorreo;
     private javax.swing.JTextArea txtAdjunto;
     private javax.swing.JTextArea txtContenido;

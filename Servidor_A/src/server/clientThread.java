@@ -14,6 +14,7 @@ import java.net.Socket;
 import java.util.LinkedList;
 import javax.swing.JTextArea;
 import parser.correo;
+import parser.parser;
 import parser.usuario;
 
 /**
@@ -92,7 +93,7 @@ class clientThread extends Thread {
       }
       
         usuario = servidor.getUsuario(res);
-          name = usuario.username;
+          name = usuario.usuario;
             System.err.println("login correcto: "+name);
              msj = "<sesion id=\"correo\">\n" +
                    "<Registro> Session iniciada </Registro>\n" +
@@ -100,15 +101,23 @@ class clientThread extends Thread {
               
       //  listaCorreos = servidor.get
              os.writeUTF(msj);
-         
-         System.out.println("respuesta login: "+is.readUTF());
+       //   System.out.println("respuesta login: "+is.readUTF());
+          
+          parser parser = servidor.compilar(is.readUTF());
+          System.out.println("res: "+parser.respuesta);
+          if(parser.respuesta==3){
+            String respuestaLC = servidor.getListaCorreos(usuario.usuario, usuario.nombre, usuario.username);
+         System.out.println("respuesta para cliente: "+respuestaLC);
+          os.writeUTF(respuestaLC);
+          }
       /* Welcome the new the client. */
     //  os.writeUTF("Welcome " + name
        //   + " to our chat room.\nTo leave enter /quit in a new line.");
       synchronized (this) {
         for (int i = 0; i < maxClientsCount; i++) {
           if (threads[i] != null && threads[i] == this) {
-            clientName = "@" + name;
+           // clientName = "@" + name;
+              clientName = usuario.getUsuario();
           //  os.writeUTF("aprobado");
           //  new Login2().setVisible(true);
             
@@ -118,7 +127,7 @@ class clientThread extends Thread {
         
         
         
-        for (int i = 0; i < maxClientsCount; i++) {
+     /*   for (int i = 0; i < maxClientsCount; i++) {
           if (threads[i] != null && threads[i] != this) {
             threads[i].os.writeUTF("*** A new user " + name
                 + " entered the chat room !!! ***");
@@ -129,7 +138,7 @@ class clientThread extends Thread {
           if (threads[i] != null)
              System.err.println("Cliente = "+threads[i].clientName);
              
-        }
+        }*/
       }
       /* Start the conversation. */
       while (true) {
@@ -140,9 +149,10 @@ class clientThread extends Thread {
           break;
         }
         /* If the message is private sent it to the given client. */
-        if (line.startsWith("@")) {
+      //  if (line.startsWith("@")) {
            
-          String[] words = line.split("\\s", 2);
+          String[] words = line.split("~");
+        //  line.split
           if (words.length > 1 && words[1] != null) {
             words[1] = words[1].trim();
             if (!words[1].isEmpty()) {
@@ -162,16 +172,17 @@ class clientThread extends Thread {
                 }
               }
             }
-          }
-        } else {
+          } else {
+              this.os.writeUTF("yo mismo");
+               System.out.println("compilar: "+line);
           /* The message is public, broadcast it to all other clients. */
-          synchronized (this) {
-            for (int i = 0; i < maxClientsCount; i++) {
-              if (threads[i] != null && threads[i].clientName != null) {
-                threads[i].os.writeUTF("<" + name + "> " + line);
-              }
-            }
-          }
+        //  synchronized (this) {
+          //  for (int i = 0; i < maxClientsCount; i++) {
+           //   if (threads[i] != null && threads[i].clientName != null) {
+           //     threads[i].os.writeUTF("<" + name + "> " + line);
+           //   }
+          //  }
+         // }
         }
       }
       synchronized (this) {

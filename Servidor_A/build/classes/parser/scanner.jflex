@@ -77,6 +77,7 @@ lista.add(new Errores(linea, columna, "Error lexico en el caracter "+valor) );}
 "</REGISTRO>"   {return new Symbol(simbolo.registro2, yychar,yyline,new String(yytext()));}
 
 "PETICION"       {return new Symbol(simbolo.peticion, yychar,yyline,new String(yytext()));}
+"LISTA"   {return new Symbol(simbolo.lista, yychar,yyline,new String(yytext()));}
 "LISTA CORREOS"   {return new Symbol(simbolo.listaC, yychar,yyline,new String(yytext()));}
 
 
