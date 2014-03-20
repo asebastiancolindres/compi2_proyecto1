@@ -11,6 +11,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.net.Socket;
+import java.util.Iterator;
 import java.util.LinkedList;
 import javax.swing.JTextArea;
 import parser.correo;
@@ -176,24 +177,61 @@ class clientThread extends Thread {
             }
           } else {
               
-             // String entrada = is.readUTF();
-               parser = servidor.compilar(line);
-               
-               System.out.println("get Correo: \n"+line);    
-               if(parser.respuesta==5){
-                   
-                   String content = servidor.getCorreo(listaCorreos, usuario.usuario, parser.correo.de, parser.correo.fecha);
-             
-System.out.println("correo click es: \n"+content);                   
+              // String entrada = is.readUTF();
+              parser = servidor.compilar(line);
+System.out.println("respuesta: "+parser.respuesta+"\n");
+              switch (parser.respuesta) {
+
+                  case 5:
+
+                      System.out.println("get Correo: \n" + line);
+              // if(parser.respuesta==5){
+
+                      String content = servidor.getCorreo(listaCorreos, usuario.usuario, parser.correo.de, parser.correo.fecha);
+
+                      System.out.println("correo click es: \n" + content);
 //    this.os.writeUTF(parser.);
-this.os.writeUTF(content);
+                      this.os.writeUTF(content);
+                      break;
+                      
+                  case 7:
+                      System.out.println("compilado correcto: \n");
+                      
+                      
+                      Iterator<String> itD = parser.correo_envio.destinatarios.iterator(); 
+   
+            System.out.println("TEXTO: " + parser.correo_envio.contenido);    
+            while (itD.hasNext()) {
+                String listaD = itD.next();
+                System.out.println("Destinatario: " + listaD.toString());   
+                
+                synchronized (this) {
+                for (int i = 0; i < maxClientsCount; i++) {
+                  if (threads[i] != null && threads[i] != this
+                      && threads[i].clientName != null
+                      && threads[i].clientName.equals(listaD.toString())) {
+                    threads[i].os.writeUTF("cayo correo");
+                    /*
+                     * Echo this message to let the client know the private
+                     * message was sent.
+                     */
+                  //  this.os.writeUTF(">" + name + "> " + words[1]);
+                    break;
+                  }
+                }
+              }
+                
+                
                }
+     
+                      break;
+              }
                
                
               
              
               
-              System.out.println("compilar: "+line);
+              System.out.println("compilar2: "+line);
           /* The message is public, broadcast it to all other clients. */
         //  synchronized (this) {
           //  for (int i = 0; i < maxClientsCount; i++) {

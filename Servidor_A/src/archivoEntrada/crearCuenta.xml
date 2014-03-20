@@ -45,3 +45,51 @@
 <contenido> xxxxxxxx </contenido>
 <archivo></archivo>
 </sesion>
+
+parser.correo_envio = new correo_envio(t1,destinatarios,t2,t31+","+t32,t4,"");
+
+
+RNC1::=  abrir sesion1 peticion igual c2 envio c2 cerrar usuario1 correo:t1 usuario2 destinatarios1 LD1 destinatarios2 asunto1 TEXTO:t2 asunto2 fecha1 fecha:t31 coma hora:t32 fecha2 contenido1 TEXTO:t4 contenido2 archivo1 archivo2 sesion2 {: parser.respuesta=7;  :};
+
+LD1 ::= LD2 LD1:t1    
+        |LD2:t1;
+
+LD2::= destinatario1 correo:t1 destinatario2 ;
+
+ switch (parser.respuesta) {
+
+                  case 5:
+
+                      System.out.println("get Correo: \n" + line);
+              // if(parser.respuesta==5){
+
+                      String content = servidor.getCorreo(listaCorreos, usuario.usuario, parser.correo.de, parser.correo.fecha);
+
+                      System.out.println("correo click es: \n" + content);
+//    this.os.writeUTF(parser.);
+                      this.os.writeUTF(content);
+                      break;
+                      
+                  case 7:
+                      System.out.println("compilado correcto: \n");
+                      
+                      
+                      Iterator<String> itD = parser.correo_envio.destinatarios.iterator(); 
+   
+            
+            while (itD.hasNext()) {
+                String listaD = itD.next();
+                System.out.println("Destinatario: " + listaD.toString());
+               // System.out.println("User: " + listaU.usuario + " User2 :" + usuario );
+               //xml+=listaM.getAsunto()+"-"+listaM.getContenido();
+              
+               }
+     
+                      break;
+              }
+                          
+                          
+                          LD1 ::= LD2:t1 LD1  {: destinatarios.add(t1.toString()); RESULT = t1; :}
+        |LD2:t1     {: destinatarios.add(t1.toString()); RESULT = t1; :};
+
+LD2::= destinatario1 correo:t1 destinatario2 {: RESULT= t1; :};

@@ -324,3 +324,46 @@
 19-03-2014 , 23:35:04 , Session iniciada: Usuario1@servidorA.com
 19-03-2014 , 23:36:54 , Linea: 1 Columna :8 Descr: Error sintactico Identificador peticion no reconocido.
 19-03-2014 , 23:37:53 , Linea: 1 Columna :18 Descr: Error sintactico Identificador envio no reconocido.
+20-03-2014 , 15:22:57 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 15:35:57 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 15:36:50 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 15:38:37 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 15:42:53 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 15:44:09 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:04:55 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:11:42 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:12:54 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:14:43 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:16:56 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:33:09 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:33:32 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:35:00 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:36:30 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:37:42 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:38:56 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:41:06 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:42:22 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:43:35 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:45:16 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:45:38 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:46:54 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:49:38 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:50:07 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:50:35 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:51:56 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:52:53 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:53:32 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 16:54:23 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 17:01:47 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 17:07:24 , Session iniciada: Usuario1@servidorA.com
+20-03-2014 , 17:07:38 , Session iniciada: Usuario2@servidorA.com
+20-03-2014 , 17:07:38 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+20-03-2014 , 17:07:39 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+20-03-2014 , 17:07:39 , Linea: 2 Columna :34 Descr: Error sintactico Identificador </sesion> no reconocido.
+20-03-2014 , 17:08:08 , Linea: 1 Columna :0 Descr: Error sintactico Identificador cayo no reconocido.
+20-03-2014 , 17:08:40 , Session iniciada: Usuario5@servidorA.com
+20-03-2014 , 17:08:40 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+20-03-2014 , 17:08:41 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+20-03-2014 , 17:08:41 , Linea: 2 Columna :34 Descr: Error sintactico Identificador </sesion> no reconocido.
+20-03-2014 , 17:09:05 , Linea: 1 Columna :0 Descr: Error sintactico Identificador cayo no reconocido.
+20-03-2014 , 17:09:05 , Linea: 1 Columna :0 Descr: Error sintactico Identificador cayo no reconocido.

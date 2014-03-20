@@ -303,6 +303,7 @@ redactarCorreo.setTitle("Redactar "+txtUser.getText());
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
         // TODO add your handling code here:
            writeUTF(txtCorreo.getText());
+           
     }//GEN-LAST:event_btnEnviarActionPerformed
 
     public void crearCuenta(String contentCuenta){

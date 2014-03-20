@@ -3,7 +3,7 @@
 <usuario>Usuario1@servidorA.com</usuario>
 <nombre>nombres1</nombre>
 <fecha>10-03-2014,12:40:02</fecha>
-<clave>clave1</clave>
+<clave>a</clave>
 </usuario>
 <usuario>
 <usuario>Usuario5@servidorA.com</usuario>
@@ -21,6 +21,6 @@
 <usuario>Usuario2@servidorA.com</usuario>
 <nombre>nombres</nombre>
 <fecha>10-03-2014,12:40:02</fecha>
-<clave>clave</clave>
+<clave>a</clave>
 </usuario>
 </usuarios>
