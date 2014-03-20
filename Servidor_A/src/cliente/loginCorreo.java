@@ -80,7 +80,7 @@ public LinkedList<correo>  listaC;
         txtAdjunto = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtContenido = new javax.swing.JTextArea();
-        destinatario = new javax.swing.JLabel();
+        labelDestinatario = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -114,7 +114,7 @@ public LinkedList<correo>  listaC;
         txtContenido.setRows(5);
         jScrollPane2.setViewportView(txtContenido);
 
-        destinatario.setText("destinatario");
+        labelDestinatario.setText("destinatario");
 
         javax.swing.GroupLayout mainCorreoLayout = new javax.swing.GroupLayout(mainCorreo.getContentPane());
         mainCorreo.getContentPane().setLayout(mainCorreoLayout);
@@ -131,7 +131,7 @@ public LinkedList<correo>  listaC;
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(mainCorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(destinatario)
+                    .addComponent(labelDestinatario)
                     .addGroup(mainCorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE)
                         .addComponent(jScrollPane3)))
@@ -143,7 +143,7 @@ public LinkedList<correo>  listaC;
                 .addGap(9, 9, 9)
                 .addGroup(mainCorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(destinatario))
+                    .addComponent(labelDestinatario))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(mainCorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainCorreoLayout.createSequentialGroup()
@@ -242,10 +242,11 @@ public LinkedList<correo>  listaC;
         no = listBandeja.getSelectedIndex();
 
    //     System.out.println("click"+listaM.get(no-1).correo_d);
-        String content = "<sesión id=\"correo\" peticion=\"correo\" de=\""+listaC.get(no-1).de+"\" fecha=\""+listaC.get(no-1).fecha +"\">\n" +
+        String content = "<sesion id=\"correo\" peticion=\"correo\" de=\""+listaC.get(no-1).de+"\" fecha=\""+listaC.get(no-1).fecha +"\">\n" +
         "<usuario>"+listaC.get(no-1).usuario+"</usuario>\n" +
         "</sesion>";
         System.err.println("content: "+content);
+        writeUTF(content);
     }//GEN-LAST:event_listBandejaMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -326,8 +327,8 @@ txtAdjunto.append(txtContenido.getText()+"\n");
             Iterator<correo> itM = listaC.iterator(); /*
              * Listar los errores que se han guardado en la variable lista
              */
-  String[] correos = new String[1000];
-  int c =0;
+            String[] correos = new String[1000];
+            int c =0;
             while (itM.hasNext()) {
                 c++;
                 correo correo = itM.next();
@@ -341,7 +342,10 @@ txtAdjunto.append(txtContenido.getText()+"\n");
            //  listModel.add(0, strings);
              listBandeja.setListData(correos);
                break;
-               
+           case 6:
+               labelDestinatario.setText("Mensaje de "+parser.correo.nombre_de);
+               txtContenido.setText(parser.correo.contenido);
+               break;
            default:
                txtAdjunto.append(content+"\n");
                break;
@@ -411,7 +415,6 @@ txtAdjunto.append(txtContenido.getText()+"\n");
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIniciarSesion;
-    private javax.swing.JLabel destinatario;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -420,6 +423,7 @@ txtAdjunto.append(txtContenido.getText()+"\n");
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JLabel labelDestinatario;
     private javax.swing.JList listBandeja;
     private javax.swing.JFrame mainCorreo;
     private javax.swing.JTextArea txtAdjunto;

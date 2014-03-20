@@ -17,6 +17,7 @@ public String msjCuenta;
         public LinkedList<usuario> listaUsuarios = new LinkedList<usuario>();
         public usuario usuario;
         public LinkedList<correo> listaCorreos =new LinkedList<correo>();
+        public correo correo;
 
         /*Variable de salida*/
         public String Salida=new String();
@@ -60,6 +61,10 @@ non terminal LC1, LC2, LC3;
 
 non terminal RLC1, RLC2, RLC3;
 
+non terminal PC1;
+
+non terminal RPC1;
+
 start with INICIA;
 
 INICIA::= C1
@@ -68,7 +73,9 @@ INICIA::= C1
         |IS1
         |PLC1
         |LC1
-        |RLC1;
+        |RLC1
+        |PC1
+        |RPC1;
 
 /********** Crear Cuenta ***************************************/
 
@@ -136,3 +143,14 @@ RLC2 ::= RLC3 RLC2
         |RLC3;
 
 RLC3 ::= correo1 usuario1 correo:t1 usuario2 nombre1 TEXTO:t2 nombre2 asunto1 TEXTO:t3 asunto2 fecha1 fecha:t41 coma hora:t42 fecha2 de1 correo:t5 de2 nombre1 TEXTO:t6 nombre2  correo2{: c++; parser.listaCorreos.add(new correo(c,t1,t2,t3,t41+","+t42,t5,t6, "", ""));  :};
+
+
+/******************* PETICION DE UN CORREO **************************************/
+
+PC1::=  abrir sesion1 id igual c2 correo_t c2 peticion igual c2 correo_t c2 de igual c2 correo:t3 c2 fecha_t igual c2 fecha:t21 coma hora:t22 c2 cerrar usuario1 correo:t1 usuario2 sesion2 {: parser.respuesta=5; c++; parser.correo = new correo(c,t1,"","",t21+","+t22,t3,"", "", "");  :};
+
+
+/*******************Respuesta de un correo ***************************/
+
+RPC1::= correo1 usuario1 correo:t1 usuario2 asunto1 TEXTO:t2 asunto2 fecha1 fecha:t31 coma hora:t32 fecha2 de1 correo:t4 de2 contenido1 TEXTO:t5 contenido2 archivo1 archivo2 correo2{: parser.respuesta=6; c++; parser.correo = new correo(c,t1,"",t2,t31+","+t32,t4,"",t5,""); :};
+

@@ -367,6 +367,20 @@ public  class compilador {
         return listaM;
     
     }
+     
+     public LinkedList<correo> getListaCorreo(String username){
+        
+        
+        
+        //LinkedList<correo> listaCorreos = compilar(content).listaCorreos;
+        
+       LinkedList<correo> listaCorreos= compilar(leerArchivo(dir_mensajes+username+ ".xml")).listaCorreos;
+        
+      // String listaM = getCorreos(listaCorreos, usuario, nombre);
+        
+        return listaCorreos;
+    
+    }
     
     public String getCorreos(LinkedList<correo> listaCorreos, String usuario, String nombre){
     
@@ -411,10 +425,56 @@ public  class compilador {
     
     return xml;
     }
-     
-         
+    
+    public String getCorreo(LinkedList<correo> listaCorreos, String usuario, String de_username, String de_fecha){
+    
+      //  System.out.println("####MENSAJES ----");
 
-     
+            Iterator<correo> itC = listaCorreos.iterator(); /*
+             * Listar los errores que se han guardado en la variable lista
+             */
+
+            String xml="";
+/*
+ public int no;
+    public String usuario;
+    public String nombre_usuario;  
+    public String asunto;
+    public String fecha;
+    public String de;
+    public String nombre_de;
+    public String contenido;
+    public String archivo;*/
+            
+            while (itC.hasNext()) {
+                correo listaC = itC.next();
+              //  System.out.println("User: " + listaU.usuario + " Nombre :" + listaU.nombre + " Clave: " + listaU.clave);
+               // System.out.println("User: " + listaU.usuario + " User2 :" + usuario );
+               //xml+=listaM.getAsunto()+"-"+listaM.getContenido();
+               if ( listaC.de.contains(de_username)&& listaC.fecha.contains(de_fecha)){
+               xml += "<correo>\n" +
+                    "<usuario>"+usuario+"</usuario>\n" +
+                    "<asunto>"+listaC.asunto+"</asunto>\n" +
+                    "<fecha>"+listaC.fecha+"</fecha>\n" +
+                    "<de>"+listaC.de+"</de>\n" +
+                    "<contenido>"+listaC.contenido+"</contenido>\n" +
+                    "<archivo>"+listaC.archivo+"</archivo>\n" +
+                    "</correo>";
+               }
+                
+                
+                
+//if (listaU.getUsuario().equals(usuario) && listaU.getClave().equals(clave)) {
+               //     return 1;
+                }
+           // xml+="</sesion>";
+            
+           // return 0;
+    
+    return xml;
+    }
+
+
      
     
 }

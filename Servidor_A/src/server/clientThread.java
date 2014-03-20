@@ -60,6 +60,7 @@ class clientThread extends Thread {
  String name="";
  String res ="";
  String msj = "";
+ parser parser;
     try {
       /*
        * Create input and output streams for this client.
@@ -93,6 +94,7 @@ class clientThread extends Thread {
       }
       
         usuario = servidor.getUsuario(res);
+        listaCorreos = servidor.getListaCorreo(usuario.getUsername());
           name = usuario.usuario;
             System.err.println("login correcto: "+name);
              msj = "<sesion id=\"correo\">\n" +
@@ -103,7 +105,7 @@ class clientThread extends Thread {
              os.writeUTF(msj);
        //   System.out.println("respuesta login: "+is.readUTF());
           
-          parser parser = servidor.compilar(is.readUTF());
+          parser = servidor.compilar(is.readUTF());
           System.out.println("res: "+parser.respuesta);
           if(parser.respuesta==3){
             String respuestaLC = servidor.getListaCorreos(usuario.usuario, usuario.nombre, usuario.username);
@@ -173,8 +175,25 @@ class clientThread extends Thread {
               }
             }
           } else {
-              this.os.writeUTF("yo mismo");
-               System.out.println("compilar: "+line);
+              
+             // String entrada = is.readUTF();
+               parser = servidor.compilar(line);
+               
+               System.out.println("get Correo: \n"+line);    
+               if(parser.respuesta==5){
+                   
+                   String content = servidor.getCorreo(listaCorreos, usuario.usuario, parser.correo.de, parser.correo.fecha);
+             
+System.out.println("correo click es: \n"+content);                   
+//    this.os.writeUTF(parser.);
+this.os.writeUTF(content);
+               }
+               
+               
+              
+             
+              
+              System.out.println("compilar: "+line);
           /* The message is public, broadcast it to all other clients. */
         //  synchronized (this) {
           //  for (int i = 0; i < maxClientsCount; i++) {

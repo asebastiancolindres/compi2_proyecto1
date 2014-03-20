@@ -294,3 +294,24 @@
 19-03-2014 , 17:44:23 , Session iniciada: Usuario1@servidorA.com
 19-03-2014 , 18:16:29 , Session iniciada: Usuario1@servidorA.com
 19-03-2014 , 18:51:26 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 21:44:12 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 21:44:20 , Linea: 1 Columna :0 Descr: Error sintactico Identificador yo no reconocido.
+19-03-2014 , 21:44:38 , Linea: 1 Columna :0 Descr: Error sintactico Identificador yo no reconocido.
+19-03-2014 , 22:27:07 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 22:29:51 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 22:29:57 , Linea: 1 Columna :1 Descr: Error sintactico Identificador sesi no reconocido.
+19-03-2014 , 22:29:57 , Linea: 1 Columna :0 Descr: Error sintactico Identificador yo no reconocido.
+19-03-2014 , 22:31:01 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 22:31:08 , Linea: 1 Columna :30 Descr: Error sintactico Identificador correo no reconocido.
+19-03-2014 , 22:31:08 , Linea: 1 Columna :0 Descr: Error sintactico Identificador yo no reconocido.
+19-03-2014 , 22:33:21 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 22:33:23 , Linea: 1 Columna :0 Descr: Error sintactico Identificador yo no reconocido.
+19-03-2014 , 22:35:24 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 22:35:29 , Linea: 1 Columna :0 Descr: Error sintactico Identificador <correo> no reconocido.
+19-03-2014 , 22:35:39 , Linea: 1 Columna :0 Descr: Error sintactico Identificador <correo> no reconocido.
+19-03-2014 , 22:50:12 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 22:50:23 , Linea: 2 Columna :18 Descr: Error sintactico Identificador </usuario> no reconocido.
+19-03-2014 , 22:54:33 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 22:54:36 , Linea: 6 Columna :145 Descr: Error sintactico Identificador <contenido> no reconocido.
+19-03-2014 , 22:56:46 , Session iniciada: Usuario1@servidorA.com
+19-03-2014 , 22:58:18 , Session iniciada: Usuario1@servidorA.com
