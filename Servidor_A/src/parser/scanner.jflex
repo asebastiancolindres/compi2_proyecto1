@@ -114,6 +114,9 @@ lista.add(new Errores(linea, columna, "Error lexico en el caracter "+valor) );}
 "<DESTINATARIO>"      {return new Symbol(simbolo.destinatario1, yychar,yyline,new String(yytext()));}
 "</DESTINATARIO>"     {return new Symbol(simbolo.destinatario2, yychar,yyline,new String(yytext()));}
 
+"<ENVIADO>"      {return new Symbol(simbolo.enviado1, yychar,yyline,new String(yytext()));}
+"</ENVIADO>"     {return new Symbol(simbolo.enviado2, yychar,yyline,new String(yytext()));}
+
 
 
 {num}          {return new Symbol(simbolo.num, yychar,yyline,new String(yytext()));}

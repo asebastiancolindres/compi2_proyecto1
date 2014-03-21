@@ -46,6 +46,19 @@
 <archivo></archivo>
 </sesion>
 
+<correo>
+<enviado>
+<destinatario>Usuario3@servidorA.com</destinatario>
+<error> destinatario no valido </error>
+</enviado>
+<enviado>
+<destinatario>Usuario2@servidorA.com</destinatario>
+</enviado>
+<enviado>
+<destinatario>Usuario1@servidorA.com</destinatario>
+</enviado>
+</correo>
+
 parser.correo_envio = new correo_envio(t1,destinatarios,t2,t31+","+t32,t4,"");
 
 
@@ -93,3 +106,31 @@ LD2::= destinatario1 correo:t1 destinatario2 ;
         |LD2:t1     {: destinatarios.add(t1.toString()); RESULT = t1; :};
 
 LD2::= destinatario1 correo:t1 destinatario2 {: RESULT= t1; :};
+                          
+                          
+                          <correos usuario="Usuario1@servidorA.com">
+<correo>
+<asunto>asunto 1</asunto>
+<fecha>10-03-2014,12:40:02</fecha>
+<de>Usuario1@servidorA.com</de>
+<nombre>nombres1</nombre>
+<contenido>xxxxxxxx</contenido>
+<archivo></archivo>
+</correo> 
+<correo>
+<asunto>sebastian</asunto>
+<fecha>10-03-2014,12:40:02</fecha>
+<de>usuario2@servidorA.com</de>
+<nombre>sebas</nombre>
+<contenido>contenido1</contenido>
+<archivo></archivo>
+</correo>
+<correo>
+<asunto>yoc</asunto>
+<fecha>10-03-2014,12:40:02</fecha>
+<de>usuario3@servidorA.com</de>
+<nombre>yoc</nombre>
+<contenido>contenido2</contenido>
+<archivo></archivo>
+</correo>
+</correos>

@@ -11,7 +11,7 @@ public  String lNombre;
 public  String pass;
 public int respuesta;
 public String msjCuenta;
-
+public String rCorreo="";
     
         public LinkedList<Errores> lista         = new LinkedList<Errores>();
         public LinkedList<usuario> listaUsuarios = new LinkedList<usuario>();
@@ -46,7 +46,7 @@ LinkedList<String> destinatarios = new LinkedList<String>();
 terminal String  signos, num, cad, c2, fecha, hora, envio, destinatarios1, destinatarios2, destinatario1, destinatario2;
 terminal String inicio, usuarios1, usuarios2, fecha_t, correo_t;
 terminal String id, tipo, correo, registro, abrir, cerrar, coma, igual, sesion1, sesion2, usuario1, usuario2, clave1, clave2, nombre1, nombre2, fecha1, fecha2, error1, error2, registro1, registro2;
-terminal String peticion, listaC, de, lista;
+terminal String peticion, listaC, de, lista, enviado1, enviado2;
 terminal String usuario, correos1, correos2, correo1, correo2, asunto1, asunto2, de1, de2, contenido1, contenido2, archivo1, archivo2;
 
 non terminal String INICIA, C1, C2, TEXTO, CADENA;
@@ -69,6 +69,10 @@ non terminal RPC1;
 
 non terminal RNC1, LD1, LD2;
 
+non terminal MR1;
+
+non terminal REC1, REC2, LREC2, REC3, REC4;
+
 start with INICIA;
 
 INICIA::= C1
@@ -80,7 +84,9 @@ INICIA::= C1
         |RLC1
         |PC1
         |RPC1
-        |RNC1;
+        |RNC1
+        |MR1
+        |REC1;
 
 /********** Crear Cuenta ***************************************/
 
@@ -168,3 +174,22 @@ LD1 ::= LD2:t1 LD1:t2  {: destinatarios.add(t1.toString());  :}
         |LD2:t1     {: destinatarios.add(t1.toString()); RESULT=t1; :};
 
 LD2::= destinatario1 correo:t1 destinatario2 {: RESULT= t1; :};
+
+/*********************Mensaje Recibido ***********************************/
+
+MR1::= correo1 TEXTO:t1 correo2 {: parser.respuesta=8; :};
+
+
+/*********************Respuesta envio Correos **************************/
+
+REC1::= correo1 LREC2 correo2 {: parser.respuesta=9; :};
+
+LREC2::= REC2 LREC2 
+        |REC2;
+
+REC2::= enviado1 REC3 enviado2;
+
+REC3::= destinatario1 correo:t1 destinatario2 REC4:t2 {: parser.rCorreo+=t1+":"+t2+"\n";  :};
+
+REC4::= error1 TEXTO:t1 error2 {: RESULT = t1;  :}
+        |{: RESULT= "EXITO"; :};

@@ -356,12 +356,17 @@ public  class compilador {
         
         
         //LinkedList<correo> listaCorreos = compilar(content).listaCorreos;
-        
-       LinkedList<correo> listaCorreos= compilar(leerArchivo(dir_mensajes+username+ ".xml")).listaCorreos;
+        String content = leerArchivo(dir_mensajes+username+ ".xml");
+         
+        if (content.length()>1){
+       LinkedList<correo> listaCorreos= compilar(content).listaCorreos;
         
        String listaM = getCorreos(listaCorreos, usuario, nombre);
-        
         return listaM;
+        }else{
+        return "";
+        }
+       
     
     }
      
@@ -469,6 +474,44 @@ public  class compilador {
            // return 0;
     
     return xml;
+    }
+    
+    public void actualizarCorreos(LinkedList<correo> lista, correo_envio correo, String de, String nombre_de, String username){
+    /*    
+        <correo>
+<asunto> asunto </asunto>
+<fecha> fecha,hora </fecha>
+<de> emisor </de>
+<nombre> nombre <nombre>
+<contenido> contenido </contenido>
+<archivo>
+<archivo tipo="PG" tama="100x100">
+<celda fila="1" columna="1" color="azul" >
+</celda>
+</archivo>
+</archivo>
+</correo>
+*/
+        
+        String contenido="<correos usuario=\""+correo.usuario+"\">\n";
+        
+
+    Iterator<correo> itC = lista.iterator(); /*
+             * Listar los errores que se han guardado en la variable lista
+             */
+        //     System.out.println("Nuevos Usuarios");
+       contenido+="<correo>\n<asunto>" + correo.asunto + "</asunto>\n<fecha>" + correo.fecha + "</fecha>\n<de>" +de+"</de>\n<nombre>"+nombre_de+"</nombre>\n<contenido>"+correo.contenido+"</contenido>\n<archivo></archivo>\n</correo>\n";
+            
+            while (itC.hasNext()) {
+                correo listaC = itC.next();
+                contenido+="<correo>\n<asunto>" + listaC.asunto + "</asunto>\n<fecha>" + listaC.fecha + "</fecha>\n<de>" + listaC.de+"</de>\n<nombre>"+listaC.nombre_de+"</nombre>\n<contenido>"+listaC.contenido+"</contenido>\n<archivo></archivo>\n</correo>\n";
+              
+            }
+           // contenido+="<usuario>\n<usuario>" + correo_envio + "</usuario>\n<nombre>" + correo_envio.nombre + "</nombre>\n<fecha>" + correo_envio.fecha+"</fecha>\n<clave>"+correo_envio.clave+"</clave>\n</usuario>\n";
+            contenido+="</correos>";
+            
+            System.out.println("update lista: "+contenido);
+            escribirArchivo(dir_mensajes+username+ ".xml", contenido);
     }
 
 

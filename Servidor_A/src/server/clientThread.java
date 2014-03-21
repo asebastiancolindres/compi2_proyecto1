@@ -20,7 +20,7 @@ import parser.usuario;
 
 /**
  *
- * @author jonhatan
+ * @author sebastian
  */
  /* The chat client thread. This client thread opens the input and the output
  * streams for a particular client, ask the client's name, informs all the
@@ -111,7 +111,9 @@ class clientThread extends Thread {
           if(parser.respuesta==3){
             String respuestaLC = servidor.getListaCorreos(usuario.usuario, usuario.nombre, usuario.username);
          System.out.println("respuesta para cliente: "+respuestaLC);
-          os.writeUTF(respuestaLC);
+         if (respuestaLC.length()>1) 
+         os.writeUTF(respuestaLC);
+          
           }
       /* Welcome the new the client. */
     //  os.writeUTF("Welcome " + name
@@ -177,10 +179,18 @@ class clientThread extends Thread {
             }
           } else {
               
+              
               // String entrada = is.readUTF();
               parser = servidor.compilar(line);
 System.out.println("respuesta: "+parser.respuesta+"\n");
               switch (parser.respuesta) {
+                  
+                  case 3:
+               String respuestaLC = servidor.getListaCorreos(usuario.usuario, usuario.nombre, usuario.username);
+         System.out.println("respuesta para cliente: "+respuestaLC);
+         if (respuestaLC.length()>1) 
+         os.writeUTF(respuestaLC);
+              break;
 
                   case 5:
 
@@ -200,31 +210,80 @@ System.out.println("respuesta: "+parser.respuesta+"\n");
                       
                       Iterator<String> itD = parser.correo_envio.destinatarios.iterator(); 
    
-            System.out.println("TEXTO: " + parser.correo_envio.contenido);    
+            System.out.println("TEXTO: " + parser.correo_envio.contenido); 
+             String response ="<correo>\n";
+             LinkedList<usuario> lU = servidor.getListaUsuarios();
             while (itD.hasNext()) {
                 String listaD = itD.next();
-                System.out.println("Destinatario: " + listaD.toString());   
+                System.out.println("Destinatario: " + listaD.toString());  
+              
+                
+                
+                 Iterator<usuario> itU = lU.iterator();
+                 int c=0;
+                 while (itU.hasNext()) {
+                      
+                usuario u = itU.next();
+                System.out.println("buscar compare: " + u.usuario+"="+ listaD.toString());
+                if (u.usuario.equals(listaD)){
+                   response+="<enviado>\n" +
+                            "<destinatario>"+listaD+"</destinatario>\n" +
+                            "</enviado>\n";
+                   usuario usuario = servidor.getUsuario(listaD);
+                   LinkedList<correo> listaCorreos = servidor.getListaCorreo(usuario.username);
+                   servidor.actualizarCorreos(listaCorreos, parser.correo_envio, listaD, usuario.nombre, usuario.username);
+                   c=0;
+                   break;
+                   
+                   }else{
+                    c++;    
+                    }
+                 }
+                 if (c>0){
+                  response+="<enviado>\n" +
+                            "<destinatario>"+listaD+"</destinatario>\n" +
+                             "<error> destinatario no valido </error>\n" +
+                            "</enviado>\n";
+                  //c=0;
+                 }
+                 
+                 
+                
+                
                 
                 synchronized (this) {
                 for (int i = 0; i < maxClientsCount; i++) {
                   if (threads[i] != null && threads[i] != this
                       && threads[i].clientName != null
                       && threads[i].clientName.equals(listaD.toString())) {
-                    threads[i].os.writeUTF("cayo correo");
+                    threads[i].os.writeUTF("<correo> mensaje recibido </correo>");
+                    
                     /*
                      * Echo this message to let the client know the private
                      * message was sent.
                      */
-                  //  this.os.writeUTF(">" + name + "> " + words[1]);
+                    System.out.println("comparar: "+this.clientName+"="+listaD);
+                   
+                    
                     break;
+                  }else{
+                   if (this.clientName.equals(listaD.toString())){
+                     System.out.println("comparar: "+this.clientName+"="+listaD);
+                       this.os.writeUTF("<correo> mensaje recibido </correo>");
+                       break;
+                   }
                   }
                 }
               }
                 
                 
                }
-     
+            
+            response+="</correo>";
+             this.os.writeUTF(response);
+     System.out.println("respuesta envio : "+response);
                       break;
+                      
               }
                
                

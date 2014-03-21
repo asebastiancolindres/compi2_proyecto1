@@ -371,7 +371,7 @@ redactarCorreo.setTitle("Redactar "+txtUser.getText());
                break;
            case 4:
             listaC = parser.listaCorreos;
-         //System.out.println("####CORREOS ----");
+         System.out.println("####CORREOS ----");
 
             Iterator<correo> itM = listaC.iterator(); /*
              * Listar los errores que se han guardado en la variable lista
@@ -397,6 +397,18 @@ redactarCorreo.setTitle("Redactar "+txtUser.getText());
                break;
            default:
                txtAdjunto.append(content+"\n");
+               break;
+               
+           case 8:
+                JOptionPane.showMessageDialog(null, "Mensaje Recibido", txtUser.getText() ,JOptionPane.INFORMATION_MESSAGE);
+               String peticion_n = "<sesion id=\"correo\" peticion=\"Lista correos\">\n"+
+                                "<usuario>"+txtUser.getText()+"</usuario>\n"+
+                                "</sesion>";
+               writeUTF(peticion_n);
+                break;
+               
+               case 9:
+                JOptionPane.showMessageDialog(null, parser.rCorreo, txtUser.getText(),JOptionPane.INFORMATION_MESSAGE);
                break;
                
        
