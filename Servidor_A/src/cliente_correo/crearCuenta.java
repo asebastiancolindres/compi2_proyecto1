@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 
-package cliente;
+package cliente_correo;
 
 
+import server_correo.server;
 import javax.swing.JOptionPane;
-import server.*;
 
 
 /**

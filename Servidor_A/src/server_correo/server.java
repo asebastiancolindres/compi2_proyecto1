@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package server;
+package server_correo;
 
 /**
  *
@@ -13,7 +13,7 @@ package server;
 //Example 26 (updated)
 
 
-import cliente.loginCorreo;
+import cliente_correo.loginCorreo;
 import java.io.PrintStream;
 import java.io.IOException;
 import java.net.Socket;

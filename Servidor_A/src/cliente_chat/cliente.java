@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 
-package cliente;
+package cliente_chat;
 
+import cliente_correo.*;
 import servidor_a.*;
 import java.io.BufferedReader;
 import java.io.File;
@@ -17,10 +18,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
-import parser.Errores;
-import parser.correo;
-import parser.parser;
-import parser.scanner;
+import parser_correo.Errores;
+import parser_correo.correo;
+import parser_correo.parser;
+import parser_correo.scanner;
 
 
 /**

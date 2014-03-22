@@ -23,4 +23,16 @@
 <fecha>10-03-2014,12:40:02</fecha>
 <clave>a</clave>
 </usuario>
+<usuario>
+<usuario>Sebastian@servidorA.com</usuario>
+<nombre>Angel Sebastian</nombre>
+<fecha>21-03-2014,10:40:02</fecha>
+<clave>sebas</clave>
+</usuario>
+<usuario>
+<usuario>anderson@servidorA.com</usuario>
+<nombre>anderson vicente</nombre>
+<fecha>21-03-2014,11:20:02</fecha>
+<clave>and</clave>
+</usuario>
 </usuarios>

@@ -4,8 +4,9 @@
  * and open the template in the editor.
  */
 
-package server;
+package server_chat;
 
+import server_correo.*;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -14,9 +15,9 @@ import java.net.Socket;
 import java.util.Iterator;
 import java.util.LinkedList;
 import javax.swing.JTextArea;
-import parser.correo;
-import parser.parser;
-import parser.usuario;
+import parser_correo.correo;
+import parser_correo.parser;
+import parser_correo.usuario;
 
 /**
  *
@@ -149,6 +150,7 @@ class clientThread extends Thread {
       while (true) {
           
         String line = is.readUTF();
+        listaCorreos = servidor.getListaCorreo(usuario.getUsername());
         // System.err.println("line="+line);
         if (line.startsWith("/quit")) {
           break;
@@ -231,7 +233,7 @@ System.out.println("respuesta: "+parser.respuesta+"\n");
                             "</enviado>\n";
                    usuario usuario = servidor.getUsuario(listaD);
                    LinkedList<correo> listaCorreos = servidor.getListaCorreo(usuario.username);
-                   servidor.actualizarCorreos(listaCorreos, parser.correo_envio, listaD, usuario.nombre, usuario.username);
+                   servidor.actualizarCorreos(listaCorreos, parser.correo_envio, listaD, this.usuario.nombre, usuario.username);
                    c=0;
                    break;
                    

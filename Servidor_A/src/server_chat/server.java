@@ -1,0 +1,95 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package server_chat;
+
+/**
+ *
+ * @author jonhatan
+ */
+//Example 26 (updated)
+
+
+import server_correo.*;
+import cliente_correo.loginCorreo;
+import java.io.PrintStream;
+import java.io.IOException;
+import java.net.Socket;
+import java.net.ServerSocket;
+import java.util.ArrayList;
+
+/*
+ * A chat server that delivers public and private messages.
+ */
+public class server extends compilador{
+
+  // The server socket.
+  private static ServerSocket serverSocket = null;
+  // The client socket.
+  private static Socket clientSocket = null;
+
+  // This chat server can accept up to maxClientsCount clients' connections.
+  private static final int maxClientsCount = 10;
+  private static final clientThread[] threads = new clientThread[maxClientsCount];
+  
+  //public static ArrayList<usuario> usuario = new ArrayList<usuario>();
+  
+  public static void main(String args[]) {
+
+    // The default port number.
+    int portNumber = 4444;
+    if (args.length < 1) {
+      System.out.println("Usage: java MultiThreadChatServerSync <portNumber>\n"
+          + "Now using port number=" + portNumber);
+    } else {
+      portNumber = Integer.valueOf(args[0]).intValue();
+    }
+
+    /*
+     * Open a server socket on the portNumber (default 2222). Note that we can
+     * not choose a port less than 1023 if we are not privileged users (root).
+     */
+    try {
+      serverSocket = new ServerSocket(portNumber);
+       //new loginCorreo().setVisible(true);
+    } catch (IOException e) {
+      System.out.println(e);
+    }
+
+    /*
+     * Create a client socket for each connection and pass it to a new client
+     * thread.
+     */
+    while (true) {
+      try {
+        clientSocket = serverSocket.accept();
+        int i = 0;
+        for (i = 0; i < maxClientsCount; i++) {
+          if (threads[i] == null) {
+             threads[i] = new clientThread(clientSocket, threads);
+             // System.out.println("conectado");
+          //    System.out.println("Nombre2: "+threads[i].c);
+            threads[i].start();
+           //  System.out.println("Nombre: "+threads[i].getNombre());
+            break;
+          }
+        }
+        if (i == maxClientsCount) {
+          PrintStream os = new PrintStream(clientSocket.getOutputStream());
+          os.println("Server too busy. Try later.");
+          os.close();
+          clientSocket.close();
+        }
+      } catch (IOException e) {
+        System.out.println(e);
+      }
+    }
+  }
+}
+
+
+
+

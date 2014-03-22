@@ -4,7 +4,7 @@
 // Thu Mar 20 23:20:47 CST 2014
 //----------------------------------------------------
 
-package parser;
+package parser_correo;
 
 /** CUP generated class containing symbol constants. */
 public class simbolo {

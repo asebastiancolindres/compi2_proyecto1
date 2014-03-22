@@ -6,8 +6,7 @@
 
 package servidor_a;
 
-import server.*;
-import cliente.*;
+import server_correo.server;
 
 /**
  *

@@ -4,9 +4,10 @@
  * and open the template in the editor.
  */
 
-package cliente;
+package cliente_correo;
 
 
+import server_correo.server;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -17,9 +18,8 @@ import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import parser.correo;
-import parser.parser;
-import server.*;
+import parser_correo.correo;
+import parser_correo.parser;
 
 /**
  *
@@ -44,6 +44,21 @@ public LinkedList<correo>  listaC;
      */
     public loginCorreo() {
         initComponents();
+        String r = "<sesion peticion=\"envio\" >\n" +
+"<usuario> Usuario1@servidorA.com </usuario>\n" +
+"<destinatarios>\n" +
+"<destinatario> Usuario1@servidorA.com </destinatario>\n" +
+"<destinatario> Usuario2@servidorA.com </destinatario>\n" +
+"<destinatario> Usuario3@servidorA.com </destinatario>\n" +
+"</destinatarios>\n" +
+"<asunto> asunto 1</asunto>\n" +
+"<fecha> 10-03-2014,12:40:02 </fecha>\n" +
+"<contenido> xxxxxxxx </contenido>\n" +
+"<archivo></archivo>\n" +
+"</sesion>";
+        
+        txtCorreo.setText(r);
+        
          int portNumber = 2222;
         // The default host.
         String host = "localhost";
@@ -315,7 +330,7 @@ redactarCorreo.setTitle("Redactar "+txtUser.getText());
     try {
             os.writeUTF(content);
         } catch (IOException ex) {
-            Logger.getLogger(Login2.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(loginCorreo.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -401,7 +416,8 @@ redactarCorreo.setTitle("Redactar "+txtUser.getText());
                
            case 8:
                 JOptionPane.showMessageDialog(null, "Mensaje Recibido", txtUser.getText() ,JOptionPane.INFORMATION_MESSAGE);
-               String peticion_n = "<sesion id=\"correo\" peticion=\"Lista correos\">\n"+
+              
+                String peticion_n = "<sesion id=\"correo\" peticion=\"Lista correos\">\n"+
                                 "<usuario>"+txtUser.getText()+"</usuario>\n"+
                                 "</sesion>";
                writeUTF(peticion_n);

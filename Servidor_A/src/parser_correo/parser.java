@@ -4,7 +4,7 @@
 // Thu Mar 20 23:20:47 CST 2014
 //----------------------------------------------------
 
-package parser;
+package parser_correo;
 
 import java.io.*;
 import java.util.LinkedList;
