@@ -1,0 +1,97 @@
+package parser_chat;
+import java.io.*;
+import java.util.LinkedList;
+import java.util.ArrayList;
+import java_cup.runtime.*;
+import java.util.Iterator;
+parser code
+{:
+public  String lUsuario;
+public  String lNombre;
+public  String pass;
+public int respuesta;
+public String msjCuenta;
+public String rCorreo="";
+    
+        public LinkedList<Errores> lista         = new LinkedList<Errores>();
+        public LinkedList<usuario> listaUsuarios = new LinkedList<usuario>();
+        public usuario usuario;
+      /*  public LinkedList<correo> listaCorreos =new LinkedList<correo>();
+        public correo correo;
+
+        public correo_envio correo_envio;*/
+
+        /*Variable de salida*/
+        public String Salida=new String();
+
+            /**Metodo al que se llama automaticamente ante algun error sintactico.*/
+public void syntax_error(Symbol s){
+       // System.out.println("Error en la Linea " + (s.right+1) +" Columna "+s.left+ ". Identificador " +s.value + " no reconocido." );
+        lista.add(new Errores(s.right+1,s.left,"Error sintactico Identificador " +s.value + " no reconocido." ));
+}
+             /**Metodo al que se llama en el momento en que ya no es posible una recuperacion de errores.*/
+public void unrecovered_syntax_error(Symbol s) throws java.lang.Exception{
+       // System.out.println("Error en la Linea " + (s.right+1)+ "Columna "+s.left+". Identificador " + s.value + " no reconocido.");
+       // lista.add(new Errores(s.right+1,s.left,"Error sintactico2 Identificador " +s.value + " no reconocido." ));
+}
+
+:}
+action code
+{:
+int c=0;
+String[] username;
+LinkedList<String> destinatarios = new LinkedList<String>();
+:}
+
+terminal String  signos, num, cad, c2, fecha, hora, correo;
+terminal String fecha_t, correo_t;
+terminal String abrir, cerrar, coma, igual, usuario1, usuario2, clave1, clave2, login1, login2, estado1, estado2;
+
+terminal String inicio1, inicio2, error1, error2, usuarios1, usuarios2, nombre1, nombre2, fecha1, fecha2;
+
+
+non terminal String INICIA, TEXTO, CADENA;
+
+non terminal String IS1, IS2, RIS1, RIS2, LU1, LU2, LU3;
+
+
+
+start with INICIA;
+
+INICIA::= IS1
+          |RIS1
+          |LU1;
+
+/******************Inicia Sesion ****************************/
+
+IS1::= login1 IS2 login2;
+
+IS2::= usuario1 correo:t1 usuario2 clave1 TEXTO:t2 clave2 estado1 TEXTO:t3 estado2 {: username = t1.split("@"); parser.usuario = new usuario(t1, username[0], "", "", t2, t3); :};
+
+
+/**********************Texto archivos ****************************************/
+TEXTO::=  CADENA:t1 TEXTO:t2   {:  t1 = t1+" "+t2;  RESULT=t1; :}
+        | CADENA:t             {:  RESULT= t.toString();  :};
+
+CADENA::= cad:t     {:  RESULT=t; :}
+         |num:t     {:  RESULT=t; :}
+         |signos:t  {:  RESULT=t; :};
+
+
+/************** Respuesta Inicio Sesion ***************************/
+
+
+RIS1::= login1 RIS2 login2;
+       
+RIS2::= inicio1 TEXTO:t1 inicio2 {: parser.respuesta=2; parser.msjCuenta= t1; :}
+        |error1 TEXTO:t1 error2 {: parser.respuesta=1; parser.msjCuenta= t1;  :};
+
+
+/****************** LISTA USUARIOS *********************/
+
+LU1::= usuarios1 LU2 usuarios2;
+
+LU2::= LU3:nt1 LU2:nt2  {:   :}
+     | LU3:nt1       {:  :};
+
+LU3::= usuario1 usuario1 correo:t1 usuario2 nombre1 TEXTO:t2 nombre2  fecha1 fecha:t31 coma hora:t32 fecha2 clave1 TEXTO:t4 clave2 usuario2 {: username = t1.split("@");  parser.listaUsuarios.add(new usuario(t1, username[0], t2, t31+","+t32, t4, ""));  :};

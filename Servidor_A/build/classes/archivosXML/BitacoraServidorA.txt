@@ -444,3 +444,89 @@
 21-03-2014 , 00:08:59 , Session iniciada: Usuario1@servidorA.com
 21-03-2014 , 00:09:50 , Session iniciada: Usuario2@servidorA.com
 21-03-2014 , 00:10:22 , Linea: 8 Columna :205 Descr: Error sintactico Identificador <correo> no reconocido.
+21-03-2014 , 10:40:41 , Usuario Registrado: Sebastian@servidorA.com
+21-03-2014 , 10:40:41 , El archivo de mensajes de Sebastian se ha creado correctamente
+21-03-2014 , 10:41:06 , Usuario : Sebastian@servidorA.comintento iniciar session
+21-03-2014 , 10:41:10 , Session iniciada: Sebastian@servidorA.com
+21-03-2014 , 10:41:10 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+21-03-2014 , 10:46:20 , Session iniciada: Usuario1@servidorA.com
+21-03-2014 , 10:47:05 , Session iniciada: Sebastian@servidorA.com
+21-03-2014 , 10:47:05 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+21-03-2014 , 10:48:19 , Linea: 7 Columna :229 Descr: Error sintactico Identificador Correo no reconocido.
+21-03-2014 , 10:48:50 , Linea: 9 Columna :304 Descr: Error sintactico Identificador de no reconocido.
+21-03-2014 , 10:49:09 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+21-03-2014 , 10:50:33 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+21-03-2014 , 10:50:41 , Linea: 8 Columna :202 Descr: Error sintactico Identificador <correo> no reconocido.
+21-03-2014 , 10:50:48 , Linea: 8 Columna :202 Descr: Error sintactico Identificador <correo> no reconocido.
+21-03-2014 , 10:50:52 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+21-03-2014 , 10:50:57 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+21-03-2014 , 10:52:04 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+21-03-2014 , 10:59:43 , Session iniciada: Sebastian@servidorA.com
+21-03-2014 , 11:01:53 , Session iniciada: Sebastian@servidorA.com
+21-03-2014 , 11:02:53 , Session iniciada: Sebastian@servidorA.com
+21-03-2014 , 11:03:50 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+21-03-2014 , 11:04:02 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+21-03-2014 , 11:10:14 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+21-03-2014 , 11:11:27 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+21-03-2014 , 11:12:01 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+21-03-2014 , 11:12:56 , Session iniciada: Sebastian@servidorA.com
+21-03-2014 , 11:15:51 , Session iniciada: Sebastian@servidorA.com
+21-03-2014 , 11:20:52 , Usuario Registrado: anderson@servidorA.com
+21-03-2014 , 11:20:52 , El archivo de mensajes de anderson se ha creado correctamente
+21-03-2014 , 11:21:02 , Session iniciada: anderson@servidorA.com
+21-03-2014 , 11:21:02 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+21-03-2014 , 11:21:53 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+21-03-2014 , 11:21:53 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+21-03-2014 , 17:16:45 , Session iniciada: Usuario1@servidorA.com
+22-03-2014 , 23:29:01 , Linea: 1 Columna :91 Descr: Error sintactico Identificador < no reconocido.
+22-03-2014 , 23:29:46 , Linea: 1 Columna :91 Descr: Error sintactico Identificador < no reconocido.
+22-03-2014 , 23:31:22 , Linea: 1 Columna :91 Descr: Error sintactico Identificador < no reconocido.
+22-03-2014 , 23:31:58 , Linea: 1 Columna :0 Descr: Error sintactico Identificador < no reconocido.
+22-03-2014 , 23:31:58 , Usuario : Usuario1@servidorA.comintento iniciar session
+22-03-2014 , 23:31:58 , Linea: 1 Columna :0 Descr: Error sintactico Identificador < no reconocido.
+22-03-2014 , 23:33:32 , Linea: 1 Columna :0 Descr: Error sintactico Identificador < no reconocido.
+22-03-2014 , 23:33:32 , Usuario : Usuario1@servidorA.comintento iniciar session
+22-03-2014 , 23:33:32 , Linea: 1 Columna :0 Descr: Error sintactico Identificador < no reconocido.
+22-03-2014 , 23:35:25 , Linea: 1 Columna :0 Descr: Error sintactico Identificador < no reconocido.
+22-03-2014 , 23:35:25 , Usuario : Usuario1@servidorA.comintento iniciar session
+22-03-2014 , 23:35:25 , Linea: 1 Columna :0 Descr: Error sintactico Identificador < no reconocido.
+22-03-2014 , 23:38:20 , Linea: 1 Columna :0 Descr: Error sintactico Identificador < no reconocido.
+22-03-2014 , 23:38:20 , Usuario : Usuario1@servidorA.comintento iniciar session
+22-03-2014 , 23:38:20 , Linea: 1 Columna :0 Descr: Error sintactico Identificador < no reconocido.
+22-03-2014 , 23:43:21 , Linea: 1 Columna :0 Descr: Error sintactico Identificador < no reconocido.
+22-03-2014 , 23:43:21 , Usuario : Usuario1@servidorA.comintento iniciar session
+22-03-2014 , 23:43:21 , Linea: 1 Columna :0 Descr: Error sintactico Identificador < no reconocido.
+22-03-2014 , 23:49:02 , Session iniciada: Usuario1@servidorA.com
+22-03-2014 , 23:49:20 , Usuario : Usuario1@servidorA.comintento iniciar session
+22-03-2014 , 23:49:24 , Usuario : Usuario1@servidorA.comintento iniciar session
+22-03-2014 , 23:49:26 , Usuario : Usuario1@servidorA.comintento iniciar session
+23-03-2014 , 00:06:02 , Usuario Registrado: Sebitas@servidorA.com
+23-03-2014 , 00:06:02 , El archivo de mensajes de Sebitas se ha creado correctamente
+23-03-2014 , 00:07:05 , Error Registrar: Sebitas@servidorA.com
+23-03-2014 , 00:07:13 , Usuario Registrado: Sebitas2@servidorA.com
+23-03-2014 , 00:07:13 , El archivo de mensajes de Sebitas2 se ha creado correctamente
+23-03-2014 , 00:08:56 , Usuario Registrado: Sebotas@servidorA.com
+23-03-2014 , 00:08:56 , El archivo de mensajes de Sebotas se ha creado correctamente
+23-03-2014 , 00:10:09 , Usuario Registrado: Sebotitas@servidorA.com
+23-03-2014 , 00:10:09 , El archivo de mensajes de Sebotitas se ha creado correctamente
+23-03-2014 , 00:13:23 , Usuario Registrado: Usuario5555@servidorA.com
+23-03-2014 , 00:13:23 , El archivo de mensajes de Usuario5555 se ha creado correctamente
+23-03-2014 , 00:14:21 , Usuario Registrado: Usuario77777@servidorA.com
+23-03-2014 , 00:14:21 , El archivo de mensajes de Usuario77777 se ha creado correctamente
+23-03-2014 , 00:14:21 , El archivo de mensajes de Usuario77777 se ha creado correctamente
+23-03-2014 , 00:15:21 , Usuario Registrado: Usuario777774@servidorA.com
+23-03-2014 , 00:15:21 , El archivo de mensajes de Usuario777774 se ha creado correctamente
+23-03-2014 , 00:15:21 , El archivo de mensajes de Usuario777774 se ha creado correctamente
+23-03-2014 , 00:21:58 , Usuario Registrado: UsuarioXXX@servidorA.com
+23-03-2014 , 00:21:58 , El archivo de mensajes de UsuarioXXX se ha creado correctamente
+23-03-2014 , 00:21:58 , El archivo de mensajes de UsuarioXXX se ha creado correctamente
+23-03-2014 , 00:22:24 , Usuario Registrado: UsuarioYYY@servidorA.com
+23-03-2014 , 00:22:24 , El archivo de mensajes de UsuarioYYY se ha creado correctamente
+23-03-2014 , 00:22:24 , El archivo de mensajes de UsuarioYYY se ha creado correctamente
+23-03-2014 , 00:23:29 , Usuario Registrado: UsuarioTTT@servidorA.com
+23-03-2014 , 00:23:29 , El archivo de mensajes de UsuarioTTT se ha creado correctamente
+23-03-2014 , 00:23:29 , El archivo de mensajes de UsuarioTTT se ha creado correctamente
+23-03-2014 , 00:23:54 , Usuario Registrado: UsuarioVVV@servidorA.com
+23-03-2014 , 00:23:54 , El archivo de mensajes de UsuarioVVV se ha creado correctamente
+23-03-2014 , 00:23:54 , El archivo de contactos de UsuarioVVV se ha creado correctamente
+23-03-2014 , 00:23:54 , El archivo de solicitudes de UsuarioVVV se ha creado correctamente

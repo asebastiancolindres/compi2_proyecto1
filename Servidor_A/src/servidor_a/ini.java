@@ -17,5 +17,7 @@ public class ini {
     public static String DS  = File.separator;
     public static String dir = System.getProperty("user.dir")+DS+"src"+DS+"archivosXML"+DS;
     public static String dir_mensajes = dir+"mensajes"+DS;
+    public static String dir_contactos = dir+"contactos"+DS;
+    public static String dir_solicitudes = dir+"solicitudes"+DS;
     public static String usuarios_xml = dir+"UsuariosServidorA.xml";
 }

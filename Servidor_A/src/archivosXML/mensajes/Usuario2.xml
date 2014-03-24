@@ -1,4 +1,20 @@
-<correos usuario="Usuario1@servidorA.com">
+<correos usuario="anderson@servidorA.com">
+<correo>
+<asunto>asunto 1</asunto>
+<fecha>21-03-2014,11:45:02</fecha>
+<de>Usuario2@servidorA.com</de>
+<nombre>anderson vicente</nombre>
+<contenido>que va haber hoy</contenido>
+<archivo></archivo>
+</correo>
+<correo>
+<asunto>asunto 69</asunto>
+<fecha>21-03-2014,11:16:02</fecha>
+<de>Usuario2@servidorA.com</de>
+<nombre>Angel Sebastian</nombre>
+<contenido>mmmmmm</contenido>
+<archivo></archivo>
+</correo>
 <correo>
 <asunto>maybe</asunto>
 <fecha>10-03-2014,12:40:02</fecha>

@@ -1,0 +1,34 @@
+<correos usuario="anderson@servidorA.com">
+<correo>
+<asunto>asunto 1</asunto>
+<fecha>21-03-2014,11:45:02</fecha>
+<de>Sebastian@servidorA.com</de>
+<nombre>anderson vicente</nombre>
+<contenido>que va haber hoy</contenido>
+<archivo></archivo>
+</correo>
+<correo>
+<asunto>asunto 69</asunto>
+<fecha>21-03-2014,11:16:02</fecha>
+<de>Sebastian@servidorA.com</de>
+<nombre>Angel Sebastian</nombre>
+<contenido>mmmmmm</contenido>
+<archivo></archivo>
+</correo>
+<correo>
+<asunto>asunto 99</asunto>
+<fecha>10-03-2014,12:40:02</fecha>
+<de>Sebastian@servidorA.com</de>
+<nombre>Angel Sebastian</nombre>
+<contenido>asdfsdf</contenido>
+<archivo></archivo>
+</correo>
+<correo>
+<asunto>probando</asunto>
+<fecha>21-03-2014,11:00:01</fecha>
+<de>Usuario1@servidorA.com</de>
+<nombre>Angel Sebastian</nombre>
+<contenido>pruebaaaadd</contenido>
+<archivo></archivo>
+</correo>
+</correos>
