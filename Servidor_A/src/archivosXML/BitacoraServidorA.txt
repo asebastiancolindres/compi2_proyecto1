@@ -530,3 +530,142 @@
 23-03-2014 , 00:23:54 , El archivo de mensajes de UsuarioVVV se ha creado correctamente
 23-03-2014 , 00:23:54 , El archivo de contactos de UsuarioVVV se ha creado correctamente
 23-03-2014 , 00:23:54 , El archivo de solicitudes de UsuarioVVV se ha creado correctamente
+24-03-2014 , 12:53:28 , Usuario Registrado: ASYC@servidorA.com
+24-03-2014 , 12:53:28 , El archivo de mensajes de ASYC se ha creado correctamente
+24-03-2014 , 12:53:28 , El archivo de contactos de ASYC se ha creado correctamente
+24-03-2014 , 12:53:28 , El archivo de solicitudes de ASYC se ha creado correctamente
+24-03-2014 , 12:56:09 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 13:01:02 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 13:02:51 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 13:03:50 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 13:40:00 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 13:40:47 , Linea: 7 Columna :168 Descr: Error sintactico Identificador <solicitud_amistad> no reconocido.
+24-03-2014 , 16:36:26 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 16:36:35 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 16:36:42 , Linea: 1 Columna :0 Descr: Error sintactico Identificador < no reconocido.
+24-03-2014 , 16:38:02 , Linea: 1 Columna :0 Descr: Error sintactico Identificador < no reconocido.
+24-03-2014 , 16:39:28 , Usuario : ASCY@servidorA.comintento iniciar session
+24-03-2014 , 16:39:37 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 16:39:47 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 16:40:13 , Linea: 1 Columna :0 Descr: Error sintactico Identificador < no reconocido.
+24-03-2014 , 16:43:29 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 16:43:34 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 16:47:00 , Linea: 1 Columna :0 Descr: Error sintactico Identificador < no reconocido.
+24-03-2014 , 16:54:09 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 16:54:13 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 16:54:39 , Linea: 1 Columna :0 Descr: Error sintactico Identificador < no reconocido.
+24-03-2014 , 16:58:46 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 16:58:49 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 16:59:03 , Linea: 1 Columna :0 Descr: Error sintactico Identificador < no reconocido.
+24-03-2014 , 18:01:38 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 18:01:45 , Linea: 1 Columna :0 Descr: Error sintactico Identificador < no reconocido.
+24-03-2014 , 18:04:32 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 18:11:06 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 18:12:42 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 18:14:38 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 18:14:49 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 18:15:16 , Linea: 1 Columna :0 Descr: Error sintactico Identificador < no reconocido.
+24-03-2014 , 18:32:42 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 18:32:48 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 18:33:04 , Linea: 1 Columna :0 Descr: Error sintactico Identificador < no reconocido.
+24-03-2014 , 18:42:24 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 18:42:26 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 18:42:41 , Linea: 1 Columna :0 Descr: Error sintactico Identificador < no reconocido.
+24-03-2014 , 18:54:20 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 18:54:23 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 19:19:08 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 19:19:16 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 19:20:09 , Linea: 2 Columna :35 Descr: Error sintactico Identificador <respuesta> no reconocido.
+24-03-2014 , 19:22:14 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 19:22:25 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 20:17:38 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 20:17:49 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 20:20:56 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 20:21:03 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 20:28:44 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 20:28:52 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 20:32:44 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 20:32:52 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 20:38:06 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 20:38:13 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 20:42:29 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 20:42:37 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 20:50:43 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 20:50:54 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 20:56:33 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 20:56:41 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 21:05:14 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 21:05:21 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 21:08:33 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 21:08:41 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 21:23:12 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 21:23:19 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 21:24:40 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 21:24:48 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 21:33:38 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 21:33:53 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 21:35:26 , Session iniciada: ASYC@servidorA.com
+24-03-2014 , 21:35:35 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 21:45:29 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 21:48:10 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 21:49:23 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 21:50:22 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 21:51:23 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 21:52:27 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 21:54:10 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 21:54:42 , Session iniciada: Usuario2@servidorA.com
+24-03-2014 , 22:24:26 , Session iniciada: Usuario2@servidorA.com
+24-03-2014 , 22:26:43 , Session iniciada: Usuario2@servidorA.com
+24-03-2014 , 22:32:12 , Session iniciada: Usuario2@servidorA.com
+24-03-2014 , 22:32:48 , Session iniciada: Usuario2@servidorA.com
+24-03-2014 , 22:32:58 , Linea: 1 Columna :13 Descr: Error sintactico Identificador </solicitudes> no reconocido.
+24-03-2014 , 22:34:03 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 22:34:45 , Linea: 1 Columna :13 Descr: Error sintactico Identificador </solicitudes> no reconocido.
+24-03-2014 , 22:36:37 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 22:36:49 , Session iniciada: Usuario2@servidorA.com
+24-03-2014 , 22:38:32 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 22:38:42 , Session iniciada: Usuario2@servidorA.com
+24-03-2014 , 22:42:23 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 22:42:32 , Session iniciada: Usuario2@servidorA.com
+24-03-2014 , 22:47:36 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 22:47:46 , Usuario : Usuario2@servidorA.comintento iniciar session
+24-03-2014 , 22:47:52 , Session iniciada: Usuario2@servidorA.com
+24-03-2014 , 22:50:58 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 22:51:10 , Session iniciada: Usuario2@servidorA.com
+24-03-2014 , 22:53:16 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 22:53:28 , Session iniciada: Usuario2@servidorA.com
+24-03-2014 , 22:55:39 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 22:56:15 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 22:56:23 , Session iniciada: Usuario2@servidorA.com
+24-03-2014 , 22:58:31 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 22:58:40 , Session iniciada: Usuario2@servidorA.com
+24-03-2014 , 23:01:32 , Session iniciada: Usuario2@servidorA.com
+24-03-2014 , 23:02:46 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 23:02:53 , Linea: 1 Columna :13 Descr: Error sintactico Identificador </solicitudes> no reconocido.
+24-03-2014 , 23:05:19 , Session iniciada: Usuario2@servidorA.com
+24-03-2014 , 23:05:40 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 23:10:43 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 23:11:16 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 23:12:56 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 23:14:44 , Session iniciada: Usuario2@servidorA.com
+24-03-2014 , 23:15:08 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 23:16:56 , Session iniciada: Usuario2@servidorA.com
+24-03-2014 , 23:17:16 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 23:20:43 , Session iniciada: Usuario2@servidorA.com
+24-03-2014 , 23:21:17 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 23:23:51 , Session iniciada: Usuario2@servidorA.com
+24-03-2014 , 23:24:14 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 23:26:16 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 23:26:17 , Linea: 1 Columna :0 Descr: Error sintactico Identificador <solicitud> no reconocido.
+24-03-2014 , 23:27:24 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 23:29:34 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 23:29:59 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 23:33:06 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 23:34:33 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 23:35:36 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 23:37:18 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 23:38:41 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 23:39:53 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 23:40:40 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 23:42:24 , Session iniciada: Usuario1@servidorA.com
+24-03-2014 , 23:43:05 , Session iniciada: Usuario1@servidorA.com

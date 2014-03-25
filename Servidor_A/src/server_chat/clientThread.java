@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.Iterator;
 import java.util.LinkedList;
+import javax.swing.JOptionPane;
 import parser_chat.*;
 
 /**
@@ -37,7 +38,7 @@ class clientThread extends Thread {
   private int maxClientsCount;
   public compilador servidor = new compilador();
   private usuario usuario;
-  private LinkedList<correo> listaCorreos;
+  private LinkedList<contacto> listaContactos;
 
   public clientThread(Socket clientSocket, clientThread[] threads) {
     this.clientSocket = clientSocket;
@@ -85,19 +86,23 @@ class clientThread extends Thread {
         //  break;
         } else {
              
-          
+         
           
             break;
         }
       }
       
         usuario = servidor.getUsuario(res);
+        
+  //      listaContactos = servidor.
       //  listaCorreos = servidor.getListaCorreo(usuario.getUsername());
           name = usuario.usuario;
             System.err.println("login correcto: "+name);
              msj = "<login>\n" +
                    "<inicio> Session iniciada </inicio>\n" +
                    "</login>";
+          
+             
               
       //  listaCorreos = servidor.get
              os.writeUTF(msj);
@@ -146,7 +151,7 @@ class clientThread extends Thread {
       while (true) {
           
         String line = is.readUTF();
-        listaCorreos = servidor.getListaCorreo(usuario.getUsername());
+     //   listaCorreos = servidor.getListaCorreo(usuario.getUsername());
         // System.err.println("line="+line);
         if (line.startsWith("/quit")) {
           break;
@@ -184,12 +189,84 @@ System.out.println("respuesta: "+parser.respuesta+"\n");
               switch (parser.respuesta) {
                   
                   case 3:
-               String respuestaLC = servidor.getListaCorreos(usuario.usuario, usuario.nombre, usuario.username);
-         System.out.println("respuesta para cliente: "+respuestaLC);
-         if (respuestaLC.length()>1) 
-         os.writeUTF(respuestaLC);
-              break;
+              // System.out.println("compilado correcto: \n"+parser.eSolicitud.getDestinatario_usuario());
+               System.out.println("comparar1: "+this.clientName+"="+parser.eSolicitud.getDestinatario_usuario());
+                           
+                synchronized (this) {
+                for (int i = 0; i < maxClientsCount; i++) {
+                     System.out.println("comparar2: "+threads[i].clientName+"="+parser.eSolicitud.getDestinatario_usuario());
+                   
+                  if (threads[i] != null && threads[i] != this
+                      && threads[i].clientName != null
+                      && threads[i].clientName.equals(parser.eSolicitud.getDestinatario_usuario())) {
+                  
+                      
+                      threads[i].os.writeUTF(line);
+                    
+                    
+                    /*
+                     * Echo this message to let the client know the private
+                     * message was sent.
+                     */
+                   
+                    
+                    break;
+                  }else{
+                      
+                      JOptionPane.showMessageDialog(null, "solicitud Enviada", "Inicio Sesion", JOptionPane.INFORMATION_MESSAGE);
 
+                 //  if (this.clientName.equals(parser.eSolicitud.getEmisor_usuario())){
+                    // System.out.println("comparar: "+this.clientName+"="+listaD);
+                     //  this.os.writeUTF(line);
+                       usuario usuario1 = servidor.getUsuario(parser.eSolicitud.getDestinatario_usuario());
+                    LinkedList<solicitud> listaSolicitudes1 = servidor.getListaSolicitudes(usuario1.username);
+                    usuario usuario2 = servidor.getUsuario(parser.eSolicitud.getEmisor_usuario());
+                   
+                       servidor.actualizarSolicitudes(listaSolicitudes1, usuario2, usuario1.getUsername());
+                   
+                       break;
+                  // }
+                  }
+                }
+              }
+                
+                
+               
+              break;
+                  case 4:
+                  System.out.println("respuesta es: "+parser.eSolicitud.getRespuesta());
+                  if(parser.eSolicitud.getRespuesta().equals("Si")){
+                      
+                   usuario usuario1 = servidor.getUsuario(parser.eSolicitud.getDestinatario_usuario());
+                    LinkedList<contacto> listaContactos1 = servidor.getListaContactos(usuario1.username);
+                   
+                    usuario usuario2 = servidor.getUsuario(parser.eSolicitud.getEmisor_usuario());
+              //     contacto contacto2 = servidor.getContacto(parser.eSolicitud.getEmisor_usuario());
+                   LinkedList<contacto> listaContactos2 = servidor.getListaContactos(usuario2.username);
+                    
+                    servidor.actualizarContactos(listaContactos1, usuario2, usuario1.getUsername());
+                    servidor.actualizarContactos(listaContactos2, usuario1, usuario2.getUsername());
+                   
+                    for (int i = 0; i < maxClientsCount; i++) {
+                  if ( (threads[i].clientName.equals(parser.eSolicitud.getDestinatario_usuario())||threads[i].clientName.equals(parser.eSolicitud.getEmisor_usuario()))) {
+                  threads[i].os.writeUTF(line);      
+                  }
+                    }
+                //   contacto contacto1 = servidor.getContacto(parser.eSolicitud.getDestinatario_usuario());
+               //    LinkedList<contacto> listaContactos1 = servidor.getListaContactos(usuario1.username);
+                   
+               //    usuario usuario2 = servidor.getUsuario(parser.eSolicitud.getEmisor_usuario());
+              //     contacto contacto2 = servidor.getContacto(parser.eSolicitud.getEmisor_usuario());
+                //   LinkedList<contacto> listaContactos2 = servidor.getListaContactos(usuario2.username);
+                   
+                   
+            // servidor.actualizarContactos(listaContactos1, contacto2, usuario1.getUsername());
+             // servidor.actualizarContactos(listaContactos2, contacto1, usuario2.getUsername());
+                  }else{
+                  
+                  }
+                      
+                      break;
                   case 5:
 
                       System.out.println("get Correo: \n" + line);

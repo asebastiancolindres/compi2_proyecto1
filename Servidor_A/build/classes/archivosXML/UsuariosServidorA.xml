@@ -101,4 +101,10 @@
 <fecha>10-03-2014,12:40:02</fecha>
 <clave>clave</clave>
 </usuario>
+<usuario>
+<usuario>ASYC@servidorA.com</usuario>
+<nombre>Angel Sebastian</nombre>
+<fecha>24-03-2014,02:40:02</fecha>
+<clave>a</clave>
+</usuario>
 </usuarios>

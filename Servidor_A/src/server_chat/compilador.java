@@ -22,9 +22,11 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
 import parser_chat.Errores;
+import parser_chat.contacto;
 import parser_chat.correo;
 import parser_chat.parser;
 import parser_chat.scanner;
+import parser_chat.solicitud;
 import parser_chat.usuario;
 
 
@@ -68,7 +70,7 @@ public  class compilador {
                     "<Error> Usuario ya existe </Error>\n" +
                     "</sesion>";
          }
-                // System.out.println("existe");            
+                // System.out.pringettln("existe");            
          }else{
               return "<sesion id=\"correo\">\n" +
                     "<Error> Error procesar parser </Error>\n" +
@@ -357,24 +359,63 @@ public  class compilador {
      
      }
      
-     public String getListaCorreos(String usuario, String nombre, String username){
+     
+     public contacto getContacto(String username){
+         
+         String username2[]  = username.split("@");
+         LinkedList<contacto> lista= getListaContactos(username2[0]);
+         contacto contacto;
+          Iterator<contacto> itC = lista.iterator(); /*
+             * Listar los errores que se han guardado en la variable lista
+             */
+
+            while (itC.hasNext()) {
+                contacto listaC = itC.next();
+              //  System.out.println("User: " + listaU.usuario + " Nombre :" + listaU.nombre + " Clave: " + listaU.clave);
+              System.out.println("User: " + listaC.usuario + " User2 :" + username );
+            //   String usuario, String username, String nombre, String fecha, String clave
+                if (listaC.getUsuario().equals(username)) {
+                     System.out.println("Encotro: User: " + listaC.usuario + " User2 :" + username );
+                    contacto = new contacto(listaC.getUsuario(), listaC.getNombre(), listaC.getEstado(), listaC.getInSession());
+                    return contacto;
+                }
+            }
+         
+         return null;
+     
+     }
+     
+     public LinkedList<contacto> getListaContactos(String username){
         
         
         
         //LinkedList<correo> listaCorreos = compilar(content).listaCorreos;
-   /*     String content = leerArchivo(dir_mensajes+username+ ".xml");
-         
-        if (content.length()>1){
-       LinkedList<correo> listaCorreos= compilar(content).listaCorreos;
-        
-       String listaM = getCorreos(listaCorreos, usuario, nombre);
-        return listaM;
+        String content = leerArchivo(dir_contactos+username+ ".xml");
+         System.out.println("archivo: "+dir_contactos+username+", contenido:"+content);
+        if (content.length()>0){
+       LinkedList<contacto> listaContactos= compilar(content).listaContactos;
+         return listaContactos;
         }else{
-        return "";
-        }
-       
-    */
-         return "";
+        return null;
+        }  
+
+    }
+     
+     
+      public LinkedList<solicitud> getListaSolicitudes(String username){
+        
+        
+        
+        //LinkedList<correo> listaCorreos = compilar(content).listaCorreos;
+        String content = leerArchivo(dir_solicitudes+username+ ".xml");
+          System.out.println("archivo: "+dir_solicitudes+username+", contenido2:"+content);
+        if (content.length()>0){
+       LinkedList<solicitud> listaSolicitudes= compilar(content).listaSolicitudes;
+         return listaSolicitudes;
+        }else{
+        return null;
+        }  
+
     }
      
      public LinkedList<correo> getListaCorreo(String username){
@@ -484,45 +525,121 @@ public  class compilador {
     return xml;
     }
     
-//    public void actualizarCorreos(LinkedList<correo> lista, correo_envio correo, String de, String nombre_de, String username){
-    /*    
-        <correo>
-<asunto> asunto </asunto>
-<fecha> fecha,hora </fecha>
-<de> emisor </de>
-<nombre> nombre <nombre>
-<contenido> contenido </contenido>
-<archivo>
-<archivo tipo="PG" tama="100x100">
-<celda fila="1" columna="1" color="azul" >
-</celda>
-</archivo>
-</archivo>
-</correo>
+   public void actualizarContactos(LinkedList<contacto> lista, usuario usuario, String username){
+    /*   
+<contactos>
+<contacto>
+<usuario> Usuario2@servidorA.com </usuario>
+<nombre> nombre2 </nombre>
+<estado> Ocupado </estado>
+</contacto>
+</contactos>
 */
         
-      /*  String contenido="<correos usuario=\""+correo.usuario+"\">\n";
+       String contenido="<contactos>\n";
         
 
-    Iterator<correo> itC = lista.iterator(); /*
+    /*
              * Listar los errores que se han guardado en la variable lista
              */
         //     System.out.println("Nuevos Usuarios");
-    /*   contenido+="<correo>\n<asunto>" + correo.asunto + "</asunto>\n<fecha>" + correo.fecha + "</fecha>\n<de>" +de+"</de>\n<nombre>"+nombre_de+"</nombre>\n<contenido>"+correo.contenido+"</contenido>\n<archivo></archivo>\n</correo>\n";
+       contenido+="<contacto>\n<usuario>" + usuario.usuario+ "</usuario>\n<nombre>" + usuario.nombre+ "</nombre>\n<estado>Disponible</estado>\n</contacto>\n";
+            if (lista!=null){ 
+                Iterator<contacto> itC = lista.iterator(); 
             
             while (itC.hasNext()) {
-                correo listaC = itC.next();
-                contenido+="<correo>\n<asunto>" + listaC.asunto + "</asunto>\n<fecha>" + listaC.fecha + "</fecha>\n<de>" + listaC.de+"</de>\n<nombre>"+listaC.nombre_de+"</nombre>\n<contenido>"+listaC.contenido+"</contenido>\n<archivo></archivo>\n</correo>\n";
+                contacto listaC = itC.next();
+                contenido+="<contacto>\n<usuario>" + listaC.getUsuario() + "</usuario>\n<nombre>" + listaC.getNombre() + "</nombre>\n<estado>" +listaC.getEstado()+"</estado>\n</contacto>\n";
+        
+               // contenido+="<correo>\n<asunto>" + listaC.asunto + "</asunto>\n<fecha>" + listaC.fecha + "</fecha>\n<de>" + listaC.de+"</de>\n<nombre>"+listaC.nombre_de+"</nombre>\n<contenido>"+listaC.contenido+"</contenido>\n<archivo></archivo>\n</correo>\n";
               
             }
+            }
            // contenido+="<usuario>\n<usuario>" + correo_envio + "</usuario>\n<nombre>" + correo_envio.nombre + "</nombre>\n<fecha>" + correo_envio.fecha+"</fecha>\n<clave>"+correo_envio.clave+"</clave>\n</usuario>\n";
-            contenido+="</correos>";
+            contenido+="</contactos>";
             
             System.out.println("update lista: "+contenido);
-            escribirArchivo(dir_mensajes+username+ ".xml", contenido);
+            escribirArchivo(dir_contactos+username+ ".xml", contenido);
     }
 
+   
+    public void actualizarSolicitudes(LinkedList<solicitud> lista, usuario usuario, String username){
+    /*   
+<contactos>
+<contacto>
+<usuario> Usuario2@servidorA.com </usuario>
+<nombre> nombre2 </nombre>
+<estado> Ocupado </estado>
+</contacto>
+</contactos>
 */
+        
+       String contenido="<solicitudes>\n";
+        
+
+    /*
+             * Listar los errores que se han guardado en la variable lista
+             */
+        //     System.out.println("Nuevos Usuarios");
+       contenido+="<solicitud>\n<usuario>" + usuario.usuario+ "</usuario>\n<nombre>" + usuario.nombre+ "</nombre>\n</solicitud>\n";
+       if (lista!=null){     
+       Iterator<solicitud> itC = lista.iterator(); 
+            while (itC.hasNext()) {
+                solicitud listaC = itC.next();
+                contenido+="<solicitud>\n<usuario>" + listaC.getUsuario() + "</usuario>\n<nombre>" + listaC.getNombre() + "</nombre>\n</solicitud>\n";
+        
+               // contenido+="<correo>\n<asunto>" + listaC.asunto + "</asunto>\n<fecha>" + listaC.fecha + "</fecha>\n<de>" + listaC.de+"</de>\n<nombre>"+listaC.nombre_de+"</nombre>\n<contenido>"+listaC.contenido+"</contenido>\n<archivo></archivo>\n</correo>\n";
+              
+            }
+       }
+           // contenido+="<usuario>\n<usuario>" + correo_envio + "</usuario>\n<nombre>" + correo_envio.nombre + "</nombre>\n<fecha>" + correo_envio.fecha+"</fecha>\n<clave>"+correo_envio.clave+"</clave>\n</usuario>\n";
+            contenido+="</solicitudes>";
+            
+            System.out.println("update lista: "+contenido);
+            escribirArchivo(dir_solicitudes+username+ ".xml", contenido);
+    }
+    
+    public void actualizarSolicitudes2(LinkedList<solicitud> lista, String username){
+    /*   
+<contactos>
+<contacto>
+<usuario> Usuario2@servidorA.com </usuario>
+<nombre> nombre2 </nombre>
+<estado> Ocupado </estado>
+</contacto>
+</contactos>
+*/
+        
+       
+        
+
+    /*
+             * Listar los errores que se han guardado en la variable lista
+             */
+           System.out.println("Lista Size"+lista.size());
+       //contenido+="<solicitud>\n<usuario>" + usuario.usuario+ "</usuario>\n<nombre>" + usuario.nombre+ "</nombre>\n</solicitud>\n";
+       if (lista.size()>0){  
+           String contenido="<solicitudes>\n";
+       Iterator<solicitud> itC = lista.iterator(); 
+            while (itC.hasNext()) {
+                solicitud listaC = itC.next();
+                contenido+="<solicitud>\n<usuario>" + listaC.getUsuario() + "</usuario>\n<nombre>" + listaC.getNombre() + "</nombre>\n</solicitud>\n";
+        
+               // contenido+="<correo>\n<asunto>" + listaC.asunto + "</asunto>\n<fecha>" + listaC.fecha + "</fecha>\n<de>" + listaC.de+"</de>\n<nombre>"+listaC.nombre_de+"</nombre>\n<contenido>"+listaC.contenido+"</contenido>\n<archivo></archivo>\n</correo>\n";
+              
+            }
+             contenido+="</solicitudes>";
+             System.out.println("update lista: "+contenido);
+            escribirArchivo(dir_solicitudes+username+ ".xml", contenido);
+       }else{
+            escribirArchivo(dir_solicitudes+username+ ".xml", "");
+       }
+           // contenido+="<usuario>\n<usuario>" + correo_envio + "</usuario>\n<nombre>" + correo_envio.nombre + "</nombre>\n<fecha>" + correo_envio.fecha+"</fecha>\n<clave>"+correo_envio.clave+"</clave>\n</usuario>\n";
+           
+            
+            
+    }
+
      
     
 }

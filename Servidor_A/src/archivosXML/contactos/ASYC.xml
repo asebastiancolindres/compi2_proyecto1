@@ -1,0 +1,17 @@
+<contactos>
+<contacto>
+<usuario>Usuario2@servidorA.com</usuario>
+<nombre>nombres</nombre>
+<estado>Disponible</estado>
+</contacto>
+<contacto>
+<usuario>Usuario2@servidorA.com</usuario>
+<nombre>nombres</nombre>
+<estado>Disponible</estado>
+</contacto>
+<contacto>
+<usuario>Usuario1@servidorA.com</usuario>
+<nombre>nombres1</nombre>
+<estado>Disponible</estado>
+</contacto>
+</contactos>

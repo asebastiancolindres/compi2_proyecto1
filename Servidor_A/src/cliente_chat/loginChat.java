@@ -34,7 +34,8 @@ public class loginChat extends javax.swing.JFrame implements Runnable {
     // The input stream
    public DataInputStream is = null;
     public String responseLine = "";
-public LinkedList<correo>  listaC;
+    public LinkedList<contacto>  listaC;
+    public LinkedList<solicitud>  listaS;
     Thread t = null;
     server servidor = new server();
      cliente cliente = new cliente();
@@ -137,10 +138,10 @@ public LinkedList<correo>  listaC;
         txtConversacion.setRows(5);
         jScrollPane4.setViewportView(txtConversacion);
 
-        listSolicitudes.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
+        listSolicitudes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listSolicitudesMouseClicked(evt);
+            }
         });
         jScrollPane5.setViewportView(listSolicitudes);
 
@@ -261,21 +262,64 @@ public LinkedList<correo>  listaC;
         no = listContactos.getSelectedIndex();
 
    //     System.out.println("click"+listaM.get(no-1).correo_d);
-        String content = "<sesion id=\"correo\" peticion=\"correo\" de=\""+listaC.get(no-1).de+"\" fecha=\""+listaC.get(no-1).fecha +"\">\n" +
-        "<usuario>"+listaC.get(no-1).usuario+"</usuario>\n" +
-        "</sesion>";
-        System.err.println("content: "+content);
-        writeUTF(content);
+//        String content = "<sesion id=\"correo\" peticion=\"correo\" de=\""+listaC.get(no-1).de+"\" fecha=\""+listaC.get(no-1).fecha +"\">\n" +
+     //   "<usuario>"+listaC.get(no-1).usuario+"</usuario>\n" +
+     //   "</sesion>";
+     //   System.err.println("content: "+content);
+     //   writeUTF(content);
     }//GEN-LAST:event_listContactosMouseClicked
 
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
         // TODO add your handling code here:
-//writeUTF(txtContenido.getText());
+
+        writeUTF(txtMensaje.getText());
 //txtAdjunto.append(txtContenido.getText()+"\n");
 //redactarCorreo.setVisible(true);
 //redactarCorreo.setTitle("Redactar "+txtUser.getText());
 
     }//GEN-LAST:event_btnEnviarActionPerformed
+
+    private void listSolicitudesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listSolicitudesMouseClicked
+        // TODO add your handling code here:
+       // listarSolicitudes();
+         int no;
+//String username[] = txtUser.getText().split("@");
+           //    listaS = cliente.getListaSolicitudes(username[0]);
+        no = listSolicitudes.getSelectedIndex();
+        System.out.println("click: "+no);
+        int reply = JOptionPane.showConfirmDialog(null, "Desea agregara a "+listaS.get(no-1).nombre+"("+listaS.get(no-1).usuario+")", "Solicitud de Amistad", JOptionPane.YES_NO_OPTION);
+                String resp="<solicitud_amistad>\n";
+                           
+                           
+                if (reply == JOptionPane.YES_OPTION) {
+                  
+                    resp+= "<respuesta> Si </respuesta>\n";
+                }
+                else {
+                  // JOptionPane.showMessageDialog(null, "GOODBYE");
+                    resp+= "<respuesta> No </respuesta>\n";
+                 //  System.exit(0);
+                }
+    usuario usuario = servidor.getUsuario(txtUser.getText());             
+            resp+="<destinatario>"+listaS.get(no-1).usuario +"</destinatario>\n" +
+                            "<emisor>\n" +
+                            "<usuario>"+txtUser.getText()+"</usuario>\n" +
+                            "<nombre> "+usuario.getNombre()+" </nombre>\n" +
+                            "</emisor>\n" +
+                            "</solicitud_amistad>";
+        //    listSolicitudes.remove(no);
+           // listSolicitudes.removeSelectionInterval(no-1, no-1);
+            listaS.remove(no-1);
+            listSolicitudes.updateUI();
+             System.out.println("Lista Size1: "+listaS.size());
+            servidor.actualizarSolicitudes2(listaS, usuario.getUsername());
+            
+               writeUTF(resp);
+        
+               listSolicitudes.repaint();
+            System.err.println(resp);
+           // listarSolicitudes();
+    }//GEN-LAST:event_listSolicitudesMouseClicked
 
     public void crearCuenta(String contentCuenta){
         
@@ -331,21 +375,45 @@ public LinkedList<correo>  listaC;
             //  jLabel3.setText("uno"+t.getName());
                break;
            case 2:
-               JOptionPane.showMessageDialog(null, parser.msjCuenta, "Inicio Sesion",JOptionPane.INFORMATION_MESSAGE);
-               
+               JOptionPane.showMessageDialog(null, parser.msjCuenta, "Inicio Sesion", JOptionPane.INFORMATION_MESSAGE);
+
                this.setVisible(false);
                mainChat.setVisible(true);
-             //  jLabel3.setText("dos"+t.getName());
                mainChat.setTitle(txtUser.getText());
                
+               listarContactos();
+               listarSolicitudes();
                
-             //  String peticion = "<sesion id=\"correo\" peticion=\"Lista correos\">\n"+
-                            //    "<usuario>"+txtUser.getText()+"</usuario>\n"+
-                              //  "</sesion>";
-              // writeUTF(peticion);
                break;
+           case 3:
+              //  JOptionPane.showMessageDialog(null, parser.msjCuenta, "Inicio Sesion", JOptionPane.INFORMATION_MESSAGE);
+                
+                int reply = JOptionPane.showConfirmDialog(null, "Desea agregara a "+parser.eSolicitud.getEmisor_nombre() +"("+parser.eSolicitud.getEmisor_usuario()+")", "Solicitud de Amistad", JOptionPane.YES_NO_OPTION);
+                String resp="<solicitud_amistad>\n";
+                           
+                           
+                if (reply == JOptionPane.YES_OPTION) {
+                  
+                    resp+= "<respuesta> Si </respuesta>\n";
+                }
+                else {
+                  // JOptionPane.showMessageDialog(null, "GOODBYE");
+                    resp+= "<respuesta> No </respuesta>\n";
+                 //  System.exit(0);
+                }
+                
+            resp+="<destinatario>"+parser.eSolicitud.getDestinatario_usuario() +"</destinatario>\n" +
+                            "<emisor>\n" +
+                            "<usuario>"+parser.eSolicitud.getEmisor_usuario()+"</usuario>\n" +
+                            "<nombre> "+parser.eSolicitud.getEmisor_nombre()+" </nombre>\n" +
+                            "</emisor>\n" +
+                            "</solicitud_amistad>";
+               
+               writeUTF(resp);
+               
            case 4:
-           
+               listarContactos();
+               listarSolicitudes();
                break;
            case 6:
               // labelDestinatario.setText("Mensaje de "+parser.correo.nombre_de);
@@ -372,6 +440,43 @@ public LinkedList<correo>  listaC;
        }
         
     
+    }
+    
+    public void listarContactos(){
+        String username[] = txtUser.getText().split("@");
+               listaC = cliente.getListaContactos(username[0]);
+               
+               if(listaC!= null){
+               Iterator<contacto> itC = listaC.iterator(); 
+  
+               String[] contactos = new String[1000];
+               int c = 0;
+               while (itC.hasNext()) {
+                   c++;
+                   contacto contacto = itC.next();
+                   contactos[c] = contacto.nombre + "-" + contacto.usuario + "-" + contacto.estado;
+
+               }
+               listContactos.setListData(contactos);
+               }
+    }
+    
+    public void listarSolicitudes(){
+        String username[] = txtUser.getText().split("@");
+               listaS = cliente.getListaSolicitudes(username[0]);
+               if(listaS != null){
+               Iterator<solicitud> itS = listaS.iterator(); 
+  
+               String[] solicitudes = new String[1000];
+               int c = 0;
+               while (itS.hasNext()) {
+                   c++;
+                   solicitud solicitud = itS.next();
+                   solicitudes[c] = solicitud.nombre + "-" + solicitud.usuario;
+
+               }
+               listSolicitudes.setListData(solicitudes);
+               }
     }
     
     /**

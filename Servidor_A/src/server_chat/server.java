@@ -54,7 +54,7 @@ public class server extends compilador{
      */
     try {
       serverSocket = new ServerSocket(portNumber);
-       new loginChat().setVisible(true);
+      // new loginChat().setVisible(true);
     } catch (IOException e) {
       System.out.println(e);
     }

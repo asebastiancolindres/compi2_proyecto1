@@ -17,6 +17,9 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedList;
 import parser_chat.*;
+import static server_chat.compilador.leerArchivo;
+import static servidor_a.ini.dir_contactos;
+import static servidor_a.ini.dir_solicitudes;
 
 
 
@@ -108,6 +111,39 @@ public class cliente {
           
         
         return s;
+    }
+    
+       public LinkedList<contacto> getListaContactos(String username){
+        
+        
+        
+        //LinkedList<correo> listaCorreos = compilar(content).listaCorreos;
+        String content = leerArchivo(dir_contactos+username+ ".xml");
+         
+        if (content.length()>1){
+       LinkedList<contacto> listaContactos= compilar(content).listaContactos;
+         return listaContactos;
+        }else{
+        return null;
+        }  
+
+    }
+     
+     
+      public LinkedList<solicitud> getListaSolicitudes(String username){
+        
+        
+        
+        //LinkedList<correo> listaCorreos = compilar(content).listaCorreos;
+        String content = leerArchivo(dir_solicitudes+username+ ".xml");
+         
+        if (content.length()>1){
+       LinkedList<solicitud> listaSolicitudes= compilar(content).listaSolicitudes;
+         return listaSolicitudes;
+        }else{
+        return null;
+        }  
+
     }
     
     

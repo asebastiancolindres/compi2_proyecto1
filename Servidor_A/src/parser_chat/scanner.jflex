@@ -72,6 +72,30 @@ lista.add(new Errores(linea, columna, "Error lexico en el caracter "+valor) );}
 "<FECHA>"     {return new Symbol(simbolo.fecha1, yychar,yyline,new String(yytext()));}
 "</FECHA>"    {return new Symbol(simbolo.fecha2, yychar,yyline,new String(yytext()));}
 
+"<CONTACTOS>"     {return new Symbol(simbolo.contactos1, yychar,yyline,new String(yytext()));}
+"</CONTACTOS>"    {return new Symbol(simbolo.contactos2, yychar,yyline,new String(yytext()));}
+
+"<CONTACTO>"     {return new Symbol(simbolo.contacto1, yychar,yyline,new String(yytext()));}
+"</CONTACTO>"    {return new Symbol(simbolo.contacto2, yychar,yyline,new String(yytext()));}
+
+"<SOLICITUDES>"     {return new Symbol(simbolo.solicitudes1, yychar,yyline,new String(yytext()));}
+"</SOLICITUDES>"    {return new Symbol(simbolo.solicitudes2, yychar,yyline,new String(yytext()));}
+
+"<SOLICITUD>"     {return new Symbol(simbolo.solicitud1, yychar,yyline,new String(yytext()));}
+"</SOLICITUD>"    {return new Symbol(simbolo.solicitud2, yychar,yyline,new String(yytext()));}
+
+"<SOLICITUD_AMISTAD>"     {return new Symbol(simbolo.solicitudA1, yychar,yyline,new String(yytext()));}
+"</SOLICITUD_AMISTAD>"    {return new Symbol(simbolo.solicitudA2, yychar,yyline,new String(yytext()));}
+
+    "<DESTINATARIO>"     {return new Symbol(simbolo.destinatario1, yychar,yyline,new String(yytext()));}
+"</DESTINATARIO>"    {return new Symbol(simbolo.destinatario2, yychar,yyline,new String(yytext()));}
+
+
+"<EMISOR>"     {return new Symbol(simbolo.emisor1, yychar,yyline,new String(yytext()));}
+"</EMISOR>"    {return new Symbol(simbolo.emisor2, yychar,yyline,new String(yytext()));}
+
+"<RESPUESTA>"     {return new Symbol(simbolo.respuesta1, yychar,yyline,new String(yytext()));}
+"</RESPUESTA>"    {return new Symbol(simbolo.respuesta2, yychar,yyline,new String(yytext()));}
 
 {num}          {return new Symbol(simbolo.num, yychar,yyline,new String(yytext()));}
 {cad}          {return new Symbol(simbolo.cad, yychar,yyline,new String(yytext()));}
