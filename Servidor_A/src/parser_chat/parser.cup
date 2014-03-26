@@ -20,6 +20,7 @@ public String rCorreo="";
 
         public LinkedList<solicitud> listaSolicitudes =new LinkedList<solicitud>();
 
+        public mensaje mensaje;
         public enviarSolicitud eSolicitud;
      /*   public correo correo;
 
@@ -57,6 +58,8 @@ terminal String contactos1, contactos2, contacto1, contacto2, solicitudes1, soli
 
 terminal String solicitudA1, solicitudA2, destinatario1, destinatario2, emisor1, emisor2, respuesta1, respuesta2;
 
+terminal String mensaje1, mensaje2, destino1, destino2, contenido1, contenido2;
+
 non terminal String INICIA, TEXTO, CADENA;
 
 non terminal String IS1, IS2, RIS1, RIS2, LU1, LU2, LU3;
@@ -67,6 +70,8 @@ non terminal String LS1, LS2, LS3;
 
 non terminal String ES1, ES2, ES3;
 
+non terminal String M1, M2;
+
 start with INICIA;
 
 INICIA::= IS1
@@ -74,7 +79,8 @@ INICIA::= IS1
           |LU1
           |LC1
           |LS1
-          |ES1;
+          |ES1
+          |M1;
 
 /******************Inicia Sesion ****************************/
 
@@ -136,3 +142,7 @@ ES1::= solicitudA1 ES2 solicitudA2;
 
 ES2::= respuesta1 TEXTO:t4 respuesta2 destinatario1 correo:t1 destinatario2 emisor1 usuario1 correo:t2 usuario2 nombre1 TEXTO:t3 nombre2 emisor2 {:  parser.respuesta=4; parser.eSolicitud = new enviarSolicitud(t1, t2, t3, t4); :}
       |destinatario1 correo:t1 destinatario2 emisor1 usuario1 correo:t2 usuario2 nombre1 TEXTO:t3 nombre2 emisor2 {: parser.respuesta=3;  parser.eSolicitud = new enviarSolicitud(t1, t2, t3, "No"); :};
+
+/**************************** Envio mensajes *******************/
+
+M1::= mensaje1 emisor1 correo:t1 emisor2 nombre1 TEXTO:t2 nombre2 destino1 correo:t3 destino2 contenido1 TEXTO:t4 contenido2 fecha1 fecha:t51 coma hora:t52 fecha2 mensaje2 {: parser.respuesta=5;  parser.mensaje = new mensaje(t1, t2, t3, t4, t51+","+t52); :};

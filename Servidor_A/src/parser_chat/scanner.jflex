@@ -97,6 +97,16 @@ lista.add(new Errores(linea, columna, "Error lexico en el caracter "+valor) );}
 "<RESPUESTA>"     {return new Symbol(simbolo.respuesta1, yychar,yyline,new String(yytext()));}
 "</RESPUESTA>"    {return new Symbol(simbolo.respuesta2, yychar,yyline,new String(yytext()));}
 
+"<MENSAJE>"     {return new Symbol(simbolo.mensaje1, yychar,yyline,new String(yytext()));}
+"</MENSAJE>"    {return new Symbol(simbolo.mensaje2, yychar,yyline,new String(yytext()));}
+
+"<DESTINO>"     {return new Symbol(simbolo.destino1, yychar,yyline,new String(yytext()));}
+"</DESTINO>"    {return new Symbol(simbolo.destino2, yychar,yyline,new String(yytext()));}
+
+"<CONTENIDO>"     {return new Symbol(simbolo.contenido1, yychar,yyline,new String(yytext()));}
+"</CONTENIDO>"    {return new Symbol(simbolo.contenido2, yychar,yyline,new String(yytext()));}
+
+
 {num}          {return new Symbol(simbolo.num, yychar,yyline,new String(yytext()));}
 {cad}          {return new Symbol(simbolo.cad, yychar,yyline,new String(yytext()));}
 

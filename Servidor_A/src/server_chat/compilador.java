@@ -640,6 +640,29 @@ public  class compilador {
             
     }
 
+    public int verificarContacto(String contacto1, String contacto2){
+    
+         String username2[]  = contacto1.split("@");
+         LinkedList<contacto> lista= getListaContactos(username2[0]);
+        // contacto contacto;
+          Iterator<contacto> itC = lista.iterator(); /*
+             * Listar los errores que se han guardado en la variable lista
+             */
+
+            while (itC.hasNext()) {
+                contacto listaC = itC.next();
+              //  System.out.println("User: " + listaU.usuario + " Nombre :" + listaU.nombre + " Clave: " + listaU.clave);
+              System.out.println("User: " + listaC.usuario + " User2 :" + contacto2 );
+            //   String usuario, String username, String nombre, String fecha, String clave
+                if (listaC.getUsuario().equals(contacto2)) {
+                     System.out.println("Encotro: User: " + listaC.usuario + " User2 :" + contacto2 );
+                  //  contacto = new contacto(listaC.getUsuario(), listaC.getNombre(), listaC.getEstado(), listaC.getInSession());
+                    return 1;
+                }
+            }
+        
+    return 0;
+    }
      
     
 }

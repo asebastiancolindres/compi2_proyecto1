@@ -9,6 +9,14 @@
 <Registro> Usuario registrado </Registro>
 </sesion>
 
+<mensaje>
+    <emisor>Usuario1@servidorA.com</emisor>
+    <nombre>Sebastian</nombre>
+    <destino>Usuario2@servidorA.com</destino>
+    <contenido>Hola mUndo</contenido>
+    <fecha>10-03-2014,12:40:02</fecha>
+</mensaje>
+
 
 <sesion id="correo">
 <Error> descripción del error </Error>

@@ -193,7 +193,7 @@ public class loginChat extends javax.swing.JFrame implements Runnable {
 
         txtUser.setText("Usuario1@servidorA.com");
 
-        jLabel2.setText("Correo:");
+        jLabel2.setText("Contraseña:");
 
         btnIniciarSesion.setText("Iniciar Sesion");
         btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
@@ -223,7 +223,7 @@ public class loginChat extends javax.swing.JFrame implements Runnable {
                     .addComponent(txtPass)
                     .addComponent(comboEstado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnIniciarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -415,13 +415,18 @@ public class loginChat extends javax.swing.JFrame implements Runnable {
                listarContactos();
                listarSolicitudes();
                break;
-           case 6:
+           case 5:
+               
+               
+               if(parser.mensaje.getEmisor().equals(txtUser.getText())){
+                   txtConversacion.append(parser.mensaje.getEmisor_nombre()+"(yo) :"+parser.mensaje.getContenido()+"\n");
+               }else{
+                   txtConversacion.append(parser.mensaje.getEmisor_nombre()+":"+parser.mensaje.getContenido()+"\n");
+               }
               // labelDestinatario.setText("Mensaje de "+parser.correo.nombre_de);
             //   txtContenido.setText(parser.correo.contenido);
                break;
-           default:
-               txtMensaje.append(content+"\n");
-               break;
+          
                
            case 8:
                 JOptionPane.showMessageDialog(null, "Mensaje Recibido", txtUser.getText() ,JOptionPane.INFORMATION_MESSAGE);
@@ -434,6 +439,10 @@ public class loginChat extends javax.swing.JFrame implements Runnable {
                
                case 9:
                 JOptionPane.showMessageDialog(null, parser.rCorreo, txtUser.getText(),JOptionPane.INFORMATION_MESSAGE);
+               break;
+                    default:
+            //   txtMensaje.append(content+"\n");
+                JOptionPane.showMessageDialog(null, "Error Lexico/Sintactico", "Error", JOptionPane.INFORMATION_MESSAGE);
                break;
                
        
@@ -523,9 +532,10 @@ public class loginChat extends javax.swing.JFrame implements Runnable {
                // if (responseLine.contains("exito")) {
               //      System.err.println("exito");
                // }
+                System.out.println("response: "+responseLine);
                 compilar(responseLine);
               //  mostrarMensaje(responseLine);
-                System.out.println("response: "+responseLine);
+                
 
             } catch (IOException e) {
                 System.out.println("Could not read from server");

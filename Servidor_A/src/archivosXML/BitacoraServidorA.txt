@@ -669,3 +669,35 @@
 24-03-2014 , 23:40:40 , Session iniciada: Usuario1@servidorA.com
 24-03-2014 , 23:42:24 , Session iniciada: Usuario1@servidorA.com
 24-03-2014 , 23:43:05 , Session iniciada: Usuario1@servidorA.com
+25-03-2014 , 16:15:08 , Session iniciada: Usuario2@servidorA.com
+25-03-2014 , 16:15:17 , Session iniciada: Usuario1@servidorA.com
+25-03-2014 , 16:15:36 , Linea: 5 Columna :156 Descr: Error sintactico Identificador </contenido> no reconocido.
+25-03-2014 , 16:17:17 , Session iniciada: Usuario2@servidorA.com
+25-03-2014 , 16:17:24 , Session iniciada: Usuario1@servidorA.com
+25-03-2014 , 16:18:26 , Session iniciada: Usuario2@servidorA.com
+25-03-2014 , 16:18:33 , Session iniciada: Usuario1@servidorA.com
+25-03-2014 , 16:18:59 , Linea: 7 Columna :218 Descr: Error sintactico Identificador <mensaje> no reconocido.
+25-03-2014 , 16:19:26 , Session iniciada: Usuario2@servidorA.com
+25-03-2014 , 16:19:32 , Session iniciada: Usuario1@servidorA.com
+25-03-2014 , 16:19:45 , Linea: 0 Columna :-1 Descr: Error sintactico Identificador null no reconocido.
+25-03-2014 , 16:24:25 , Session iniciada: Usuario1@servidorA.com
+25-03-2014 , 16:24:33 , Session iniciada: Usuario2@servidorA.com
+25-03-2014 , 16:56:08 , Session iniciada: Usuario1@servidorA.com
+25-03-2014 , 16:56:21 , Session iniciada: Usuario2@servidorA.com
+25-03-2014 , 17:00:03 , Session iniciada: Usuario1@servidorA.com
+25-03-2014 , 17:00:12 , Session iniciada: Usuario2@servidorA.com
+25-03-2014 , 17:12:44 , Session iniciada: Usuario1@servidorA.com
+25-03-2014 , 17:12:53 , Session iniciada: Usuario2@servidorA.com
+25-03-2014 , 17:16:42 , Session iniciada: Usuario1@servidorA.com
+25-03-2014 , 17:16:50 , Session iniciada: Usuario2@servidorA.com
+25-03-2014 , 17:18:31 , Linea: 5 Columna :155 Descr: Error sintactico Identificador < no reconocido.
+25-03-2014 , 17:31:58 , Session iniciada: Usuario1@servidorA.com
+25-03-2014 , 17:32:08 , Session iniciada: Usuario2@servidorA.com
+25-03-2014 , 17:32:28 , Linea: 5 Columna :156 Descr: Error sintactico Identificador < no reconocido.
+25-03-2014 , 17:35:57 , Session iniciada: Usuario1@servidorA.com
+25-03-2014 , 17:36:06 , Session iniciada: Usuario2@servidorA.com
+25-03-2014 , 17:36:34 , Linea: 5 Columna :156 Descr: Error sintactico Identificador < no reconocido.
+25-03-2014 , 17:47:54 , Session iniciada: Usuario1@servidorA.com
+25-03-2014 , 17:48:03 , Session iniciada: Usuario2@servidorA.com
+25-03-2014 , 17:51:15 , Session iniciada: Usuario1@servidorA.com
+25-03-2014 , 17:51:22 , Session iniciada: Usuario2@servidorA.com

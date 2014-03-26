@@ -188,6 +188,10 @@ class clientThread extends Thread {
 System.out.println("respuesta: "+parser.respuesta+"\n");
               switch (parser.respuesta) {
                   
+                   case 0:
+               JOptionPane.showMessageDialog(null, "error parser", "Error",JOptionPane.INFORMATION_MESSAGE);
+           //   txtMensaje.append(content+"\n");
+               break;
                   case 3:
               // System.out.println("compilado correcto: \n"+parser.eSolicitud.getDestinatario_usuario());
                System.out.println("comparar1: "+this.clientName+"="+parser.eSolicitud.getDestinatario_usuario());
@@ -269,14 +273,35 @@ System.out.println("respuesta: "+parser.respuesta+"\n");
                       break;
                   case 5:
 
-                      System.out.println("get Correo: \n" + line);
+                      System.out.println("get Mensaje: \n" + line);
+                      
+                       synchronized (this) {
+                for (int i = 0; i < maxClientsCount; i++) {
+                   // if(threads[i] != null)
+                   // System.out.println("get client name: \n" + threads[i].clientName+"="+parser.mensaje.getDestinatario());
+                  if (threads[i] != null && threads[i] != this
+                      && threads[i].clientName != null
+                      && threads[i].clientName.equals(parser.mensaje.getDestinatario())) {
+                     //    System.out.println("get destinatario: \n" + clientName);
+                      if(servidor.verificarContacto(parser.mensaje.getEmisor(), parser.mensaje.getDestinatario())==1) {
+                      
+                      threads[i].os.writeUTF(line);
+                      
+                      }else{
+                             JOptionPane.showMessageDialog(null, "Usuario: "+parser.mensaje.getDestinatario()+" no esta en lista de contactos.", "Error",JOptionPane.INFORMATION_MESSAGE);
+                        }
+                  }
+                  }
+                }
+                       this.os.writeUTF(line);
               // if(parser.respuesta==5){
 
                //       String content = servidor.getCorreo(listaCorreos, usuario.usuario, parser.correo.de, parser.correo.fecha);
-String content="";
-                      System.out.println("correo click es: \n" + content);
+                       
+                    //  String content="";
+                     // System.out.println("correo click es: \n" + content);
 //    this.os.writeUTF(parser.);
-                      this.os.writeUTF(content);
+                   //   this.os.writeUTF(content);
                       break;
                       
                   

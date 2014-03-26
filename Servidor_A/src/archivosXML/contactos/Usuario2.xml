@@ -4,4 +4,9 @@
 <nombre>Angel Sebastian</nombre>
 <estado>Disponible</estado>
 </contacto>
+<contacto>
+<usuario>Usuario1@servidorA.com</usuario>
+<nombre>Angel Sebastian</nombre>
+<estado>Disponible</estado>
+</contacto>
 </contactos>
