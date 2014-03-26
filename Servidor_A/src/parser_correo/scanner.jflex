@@ -1,4 +1,4 @@
-package parser_chat;
+package parser_correo;
 import java_cup.runtime.Symbol;
 
 import java.util.LinkedList;
@@ -99,8 +99,25 @@ lista.add(new Errores(linea, columna, "Error lexico en el caracter "+valor) );}
 "<CONTENIDO>"      {return new Symbol(simbolo.contenido1, yychar,yyline,new String(yytext()));}
 "</CONTENIDO>"     {return new Symbol(simbolo.contenido2, yychar,yyline,new String(yytext()));}
 
-"<ARCHIVO>"      {return new Symbol(simbolo.archivo1, yychar,yyline,new String(yytext()));}
+"<ARCHIVO"      {return new Symbol(simbolo.archivo1, yychar,yyline,new String(yytext()));}
 "</ARCHIVO>"     {return new Symbol(simbolo.archivo2, yychar,yyline,new String(yytext()));}
+
+"<ARCHIVOS>"      {return new Symbol(simbolo.archivos1, yychar,yyline,new String(yytext()));}
+"</ARCHIVOS>"     {return new Symbol(simbolo.archivos2, yychar,yyline,new String(yytext()));}
+
+"<CELDA"      {return new Symbol(simbolo.celda1, yychar,yyline,new String(yytext()));}
+"</CELDA>"     {return new Symbol(simbolo.celda2, yychar,yyline,new String(yytext()));}
+
+
+"TAMAÑO"           {return new Symbol(simbolo.tamanio, yychar,yyline,new String(yytext()));}
+
+"COLOR"           {return new Symbol(simbolo.color, yychar,yyline,new String(yytext()));}
+
+"FILA"           {return new Symbol(simbolo.fila, yychar,yyline,new String(yytext()));}
+
+"COLUMNA"           {return new Symbol(simbolo.columna, yychar,yyline,new String(yytext()));}
+
+"PG"           {return new Symbol(simbolo.pg, yychar,yyline,new String(yytext()));}
 
 "DE"           {return new Symbol(simbolo.de, yychar,yyline,new String(yytext()));}
 

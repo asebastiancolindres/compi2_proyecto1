@@ -1,3 +1,21 @@
+<sesion peticion="envio" >
+<usuario> Usuario1@servidorA.com </usuario>
+<destinatarios>
+<destinatario> Usuario1@servidorA.com </destinatario>
+</destinatarios>
+<asunto> asuntoSEBAS</asunto>
+<fecha> 20-03-2014,10:41:02 </fecha>
+<contenido> nananananananana </contenido>
+<archivos>
+<archivo tipo="PG" tamaño="100x100">
+<celda fila=1 columna=1 color="azul" >
+</celda>
+<celda fila=1 columna=1 color="negro">
+</celda>
+</archivo>
+</archivos>
+</sesion>
+
 <sesion id="correo" tipo="registro">
 <usuario> Usuario@servidorA.com </usuario>
 <nombre> nombres </nombre>

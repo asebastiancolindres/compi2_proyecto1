@@ -503,7 +503,7 @@ public  class compilador {
                     "<fecha>"+listaC.fecha+"</fecha>\n" +
                     "<de>"+listaC.de+"</de>\n" +
                     "<contenido>"+listaC.contenido+"</contenido>\n" +
-                    "<archivo>"+listaC.archivo+"</archivo>\n" +
+                    "<archivos>"+listaC.archivo+"</archivos>\n" +
                     "</correo>";
                }
                 
@@ -543,11 +543,11 @@ public  class compilador {
              * Listar los errores que se han guardado en la variable lista
              */
         //     System.out.println("Nuevos Usuarios");
-       contenido+="<correo>\n<asunto>" + correo.asunto + "</asunto>\n<fecha>" + correo.fecha + "</fecha>\n<de>" +de+"</de>\n<nombre>"+nombre_de+"</nombre>\n<contenido>"+correo.contenido+"</contenido>\n<archivo></archivo>\n</correo>\n";
+       contenido+="<correo>\n<asunto>" + correo.asunto + "</asunto>\n<fecha>" + correo.fecha + "</fecha>\n<de>" +de+"</de>\n<nombre>"+nombre_de+"</nombre>\n<contenido>"+correo.contenido+"</contenido>\n<archivos></archivos>\n</correo>\n";
             
             while (itC.hasNext()) {
                 correo listaC = itC.next();
-                contenido+="<correo>\n<asunto>" + listaC.asunto + "</asunto>\n<fecha>" + listaC.fecha + "</fecha>\n<de>" + listaC.de+"</de>\n<nombre>"+listaC.nombre_de+"</nombre>\n<contenido>"+listaC.contenido+"</contenido>\n<archivo></archivo>\n</correo>\n";
+                contenido+="<correo>\n<asunto>" + listaC.asunto + "</asunto>\n<fecha>" + listaC.fecha + "</fecha>\n<de>" + listaC.de+"</de>\n<nombre>"+listaC.nombre_de+"</nombre>\n<contenido>"+listaC.contenido+"</contenido>\n<archivos></archivos>\n</correo>\n";
               
             }
            // contenido+="<usuario>\n<usuario>" + correo_envio + "</usuario>\n<nombre>" + correo_envio.nombre + "</nombre>\n<fecha>" + correo_envio.fecha+"</fecha>\n<clave>"+correo_envio.clave+"</clave>\n</usuario>\n";

@@ -1,99 +1,11 @@
-<correos usuario="Sebastian@servidorA.com">
+<correos usuario="Usuario1@servidorA.com">
 <correo>
-<asunto>asunto 69</asunto>
-<fecha>21-03-2014,11:16:02</fecha>
-<de>Usuario1@servidorA.com</de>
-<nombre>Angel Sebastian</nombre>
-<contenido>mmmmmm</contenido>
-<archivo></archivo>
-</correo>
-<correo>
-<asunto>asunto 99</asunto>
-<fecha>10-03-2014,12:40:02</fecha>
-<de>Usuario1@servidorA.com</de>
-<nombre>Angel Sebastian</nombre>
-<contenido>asdfsdf</contenido>
-<archivo></archivo>
-</correo>
-<correo>
-<asunto>Prueba Asunto</asunto>
-<fecha>21-03-2014,10:48:02</fecha>
+<asunto>asuntoSEBAS</asunto>
+<fecha>20-03-2014,10:41:02</fecha>
 <de>Usuario1@servidorA.com</de>
 <nombre>nombres1</nombre>
-<contenido>Contenido prueba</contenido>
-<archivo></archivo>
-</correo>
-<correo>
-<asunto>maybe</asunto>
-<fecha>10-03-2014,12:40:02</fecha>
-<de>Usuario1@servidorA.com</de>
-<nombre>nombres1</nombre>
-<contenido>xxxxxxxx</contenido>
-<archivo></archivo>
-</correo>
-<correo>
-<asunto>nooooooo</asunto>
-<fecha>10-03-2014,12:40:02</fecha>
-<de>Usuario1@servidorA.com</de>
-<nombre>nombres1</nombre>
-<contenido>xxxxxxxx</contenido>
-<archivo></archivo>
-</correo>
-<correo>
-<asunto>siiiiiiiiiiiiiii</asunto>
-<fecha>10-03-2014,12:40:02</fecha>
-<de>Usuario1@servidorA.com</de>
-<nombre>nombres1</nombre>
-<contenido>xxxxxxxx</contenido>
-<archivo></archivo>
-</correo>
-<correo>
-<asunto>recarrrr</asunto>
-<fecha>10-03-2014,12:40:02</fecha>
-<de>Usuario1@servidorA.com</de>
-<nombre>nombres1</nombre>
-<contenido>xxxxxxxx</contenido>
-<archivo></archivo>
-</correo>
-<correo>
-<asunto>recargado</asunto>
-<fecha>10-03-2014,12:40:02</fecha>
-<de>Usuario1@servidorA.com</de>
-<nombre>nombres1</nombre>
-<contenido>cagate</contenido>
-<archivo></archivo>
-</correo>
-<correo>
-<asunto>fuck yeah2</asunto>
-<fecha>20-03-2014,12:00:02</fecha>
-<de>Usuario1@servidorA.com</de>
-<nombre>nombres1</nombre>
-<contenido>sebas rules</contenido>
-<archivo></archivo>
-</correo>
-<correo>
-<asunto>fuck yeah</asunto>
-<fecha>20-03-2014,12:00:02</fecha>
-<de>Usuario1@servidorA.com</de>
-<nombre>nombres1</nombre>
-<contenido>sebas rules</contenido>
-<archivo></archivo>
-</correo>
-<correo>
-<asunto>asunto 1</asunto>
-<fecha>10-03-2014,12:40:02</fecha>
-<de>Usuario1@servidorA.com</de>
-<nombre>nombres1</nombre>
-<contenido>xxxxxxxx</contenido>
-<archivo></archivo>
-</correo>
-<correo>
-<asunto>sebastian</asunto>
-<fecha>10-03-2014,12:40:02</fecha>
-<de>usuario2@servidorA.com</de>
-<nombre>sebas</nombre>
-<contenido>contenido1</contenido>
-<archivo></archivo>
+<contenido>nananananananana</contenido>
+<archivos></archivos>
 </correo>
 <correo>
 <asunto>yoc</asunto>
@@ -101,6 +13,6 @@
 <de>usuario3@servidorA.com</de>
 <nombre>yoc</nombre>
 <contenido>contenido2</contenido>
-<archivo></archivo>
+<archivos></archivos>
 </correo>
 </correos>
