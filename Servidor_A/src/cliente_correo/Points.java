@@ -124,7 +124,7 @@ public class Points extends JFrame {
     private void initUI() {
         
         setTitle("Archivo PG");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       // setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         add(new Surface(this.archivo));
 

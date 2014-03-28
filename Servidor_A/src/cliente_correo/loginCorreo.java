@@ -7,6 +7,7 @@
 package cliente_correo;
 
 
+import java.awt.BorderLayout;
 import server_correo.server;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -116,11 +117,16 @@ public LinkedList<correo>  listaC;
         btnIniciarSesion = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         txtPass = new javax.swing.JPasswordField();
+        jLabel4 = new javax.swing.JLabel();
 
+        mainCorreo.setBackground(java.awt.Color.white);
+        mainCorreo.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
         mainCorreo.setMinimumSize(new java.awt.Dimension(792, 354));
 
-        jLabel5.setText("Bandeja de Entrada");
+        jLabel5.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
+        jLabel5.setText("INBOX");
 
+        listBandeja.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         listBandeja.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 listBandejaMouseClicked(evt);
@@ -128,7 +134,8 @@ public LinkedList<correo>  listaC;
         });
         jScrollPane6.setViewportView(listBandeja);
 
-        jButton1.setText("Redactar");
+        jButton1.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        jButton1.setText("New");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -136,11 +143,14 @@ public LinkedList<correo>  listaC;
         });
 
         txtContenido.setColumns(20);
+        txtContenido.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         txtContenido.setRows(5);
         jScrollPane2.setViewportView(txtContenido);
 
+        labelDestinatario.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         labelDestinatario.setText("destinatario");
 
+        listAdjunto.setFont(new java.awt.Font("Courier New", 1, 14)); // NOI18N
         listAdjunto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 listAdjuntoMouseClicked(evt);
@@ -153,19 +163,23 @@ public LinkedList<correo>  listaC;
         mainCorreoLayout.setHorizontalGroup(
             mainCorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainCorreoLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(mainCorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainCorreoLayout.createSequentialGroup()
+                        .addGap(115, 115, 115)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(mainCorreoLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(mainCorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
-                            .addComponent(jLabel5))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 419, Short.MAX_VALUE)
+                            .addGroup(mainCorreoLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)))
                 .addGroup(mainCorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelDestinatario)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(labelDestinatario, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         mainCorreoLayout.setVerticalGroup(
@@ -191,11 +205,13 @@ public LinkedList<correo>  listaC;
         redactarCorreo.setMinimumSize(new java.awt.Dimension(597, 395));
 
         txtCorreo.setColumns(20);
+        txtCorreo.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         txtCorreo.setRows(5);
         txtCorreo.setMinimumSize(new java.awt.Dimension(260, 95));
         jScrollPane1.setViewportView(txtCorreo);
 
-        btnEnviar.setText("Enviar");
+        btnEnviar.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
+        btnEnviar.setText("SEND");
         btnEnviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEnviarActionPerformed(evt);
@@ -207,13 +223,10 @@ public LinkedList<correo>  listaC;
         redactarCorreoLayout.setHorizontalGroup(
             redactarCorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(redactarCorreoLayout.createSequentialGroup()
-                .addGroup(redactarCorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(redactarCorreoLayout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(redactarCorreoLayout.createSequentialGroup()
-                        .addGap(236, 236, 236)
-                        .addComponent(btnEnviar)))
+                .addGap(21, 21, 21)
+                .addGroup(redactarCorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnEnviar)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 551, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
         redactarCorreoLayout.setVerticalGroup(
@@ -223,8 +236,11 @@ public LinkedList<correo>  listaC;
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnEnviar)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
+
+        adjuntoCorreo.setMinimumSize(new java.awt.Dimension(400, 400));
+        adjuntoCorreo.setPreferredSize(new java.awt.Dimension(400, 400));
 
         javax.swing.GroupLayout adjuntoCorreoLayout = new javax.swing.GroupLayout(adjuntoCorreo.getContentPane());
         adjuntoCorreo.getContentPane().setLayout(adjuntoCorreoLayout);
@@ -239,21 +255,27 @@ public LinkedList<correo>  listaC;
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Usuario:");
+        jLabel1.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        jLabel1.setText("USER:");
 
+        txtUser.setBackground(java.awt.Color.lightGray);
+        txtUser.setFont(new java.awt.Font("Courier New", 1, 15)); // NOI18N
         txtUser.setText("Usuario1@servidorA.com");
 
-        jLabel2.setText("Correo:");
+        jLabel2.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        jLabel2.setText("PASS:");
 
-        btnIniciarSesion.setText("Iniciar Sesion");
+        btnIniciarSesion.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        btnIniciarSesion.setText("LOG IN");
         btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIniciarSesionActionPerformed(evt);
             }
         });
 
-        jLabel3.setForeground(java.awt.Color.blue);
-        jLabel3.setText("Crear Cuenta");
+        jLabel3.setFont(new java.awt.Font("Courier New", 1, 18)); // NOI18N
+        jLabel3.setForeground(java.awt.Color.gray);
+        jLabel3.setText("SIGN UP");
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -261,41 +283,51 @@ public LinkedList<correo>  listaC;
             }
         });
 
+        txtPass.setBackground(java.awt.Color.lightGray);
+        txtPass.setFont(new java.awt.Font("Courier New", 1, 15)); // NOI18N
+
+        jLabel4.setFont(new java.awt.Font("Courier New", 1, 36)); // NOI18N
+        jLabel4.setText("CORREO");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(73, 73, 73)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addComponent(jLabel2))
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel3))
-                    .addComponent(txtUser, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
-                    .addComponent(txtPass))
-                .addContainerGap(49, Short.MAX_VALUE))
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel3)
+                            .addComponent(btnIniciarSesion))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(67, 67, 67)
+                .addGap(21, 21, 21)
+                .addComponent(jLabel4)
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnIniciarSesion)
-                .addGap(27, 27, 27)
+                    .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 183, Short.MAX_VALUE)
                 .addComponent(jLabel3)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -314,13 +346,13 @@ public LinkedList<correo>  listaC;
 
     private void listBandejaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listBandejaMouseClicked
         // TODO add your handling code here:
-        //    System.out.println("click: "+listBandeja.getSelectedIndex());
-        //    System.out.println("click: "+listBandeja.getSelectedValue().toString());
+        //    ////System.out.println("click: "+listBandeja.getSelectedIndex());
+        //    ////System.out.println("click: "+listBandeja.getSelectedValue().toString());
         int no;
 
         no = listBandeja.getSelectedIndex();
 
-   //     System.out.println("click"+listaM.get(no-1).correo_d);
+   //     //System.out.println("click"+listaM.get(no-1).correo_d);
         String content = "<sesion id=\"correo\" peticion=\"correo\" de=\""+listaC.get(no-1).de+"\" fecha=\""+listaC.get(no-1).fecha +"\">\n" +
         "<usuario>"+listaC.get(no-1).usuario+"</usuario>\n" +
         "</sesion>";
@@ -349,16 +381,16 @@ redactarCorreo.setTitle("Redactar "+txtUser.getText());
 
         no = listAdjunto.getSelectedIndex();
 
-   //     System.out.println("click"+listaM.get(no-1).correo_d);
+   //     //System.out.println("click"+listaM.get(no-1).correo_d);
        
         archivo adjunto = adjuntos.get(no-1);
-        
-        new Points(adjunto).setVisible(true);
+   
+    new Points(adjunto).setVisible(true);
     }//GEN-LAST:event_listAdjuntoMouseClicked
 
     public void crearCuenta(String contentCuenta){
         
-        System.out.println("Cuenta: "+contentCuenta);
+        //System.out.println("Cuenta: "+contentCuenta);
     }
     
     public void writeUTF(String content){
@@ -387,8 +419,8 @@ redactarCorreo.setTitle("Redactar "+txtUser.getText());
        
       // if (msj.contains("iniciada"))
            // new correo(user).setVisible(true);
-    //   System.out.println(respuesta);
-        //System.out.println("xmlLogin: "+xmlLogin);
+    //   //System.out.println(respuesta);
+        ////System.out.println("xmlLogin: "+xmlLogin);
         
      }
     
@@ -421,7 +453,7 @@ redactarCorreo.setTitle("Redactar "+txtUser.getText());
                break;
            case 4:
             listaC = parser.listaCorreos;
-         System.out.println("####CORREOS ----");
+         //System.out.println("####CORREOS ----");
 
             Iterator<correo> itM = listaC.iterator(); /*
              * Listar los errores que se han guardado en la variable lista
@@ -431,7 +463,7 @@ redactarCorreo.setTitle("Redactar "+txtUser.getText());
             while (itM.hasNext()) {
                 c++;
                 correo correo = itM.next();
-               // System.out.println("nombre: " + listaM.getNombre_d() + " asunto :" + listaM.getAsunto() + " de: " + listaM.getEmisor());
+               // //System.out.println("nombre: " + listaM.getNombre_d() + " asunto :" + listaM.getAsunto() + " de: " + listaM.getEmisor());
               // txtBandeja.append(listaM.getNombre_d()+"-"+listaM.getAsunto()+"-"+listaM.getFecha()+"\n");
              correos[c]= correo.nombre_de+"-"+correo.asunto+"-"+correo.fecha;
                
@@ -454,7 +486,7 @@ redactarCorreo.setTitle("Redactar "+txtUser.getText());
             while (itA.hasNext()) {
                 cc++;
                 archivo archivo = itA.next();
-               // System.out.println("nombre: " + listaM.getNombre_d() + " asunto :" + listaM.getAsunto() + " de: " + listaM.getEmisor());
+               // //System.out.println("nombre: " + listaM.getNombre_d() + " asunto :" + listaM.getAsunto() + " de: " + listaM.getEmisor());
               // txtBandeja.append(listaM.getNombre_d()+"-"+listaM.getAsunto()+"-"+listaM.getFecha()+"\n");
              archivos[cc]= "archivo"+cc;
              adjuntos.add(new archivo(archivo.tipo, archivo.tamanio, archivo.celdas));
@@ -534,10 +566,10 @@ redactarCorreo.setTitle("Redactar "+txtUser.getText());
                // }
                 compilar(responseLine);
               //  mostrarMensaje(responseLine);
-                System.out.println("response: "+responseLine);
+                //System.out.println("response: "+responseLine);
 
             } catch (IOException e) {
-                System.out.println("Could not read from server");
+                //System.out.println("Could not read from server");
             }
             //jTextArea1.append(responseLine);
 
@@ -553,6 +585,7 @@ redactarCorreo.setTitle("Redactar "+txtUser.getText());
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

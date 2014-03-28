@@ -107,11 +107,14 @@ public class loginChat extends javax.swing.JFrame implements Runnable {
         txtPass = new javax.swing.JPasswordField();
         comboEstado = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         mainChat.setMinimumSize(new java.awt.Dimension(792, 354));
 
-        jLabel5.setText("Contactos");
+        jLabel5.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        jLabel5.setText("CONTACTS");
 
+        listContactos.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         listContactos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 listContactosMouseClicked(evt);
@@ -119,7 +122,8 @@ public class loginChat extends javax.swing.JFrame implements Runnable {
         });
         jScrollPane6.setViewportView(listContactos);
 
-        btnEnviar.setText("Enviar");
+        btnEnviar.setFont(new java.awt.Font("Courier New", 1, 24)); // NOI18N
+        btnEnviar.setText("SEND");
         btnEnviar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEnviarActionPerformed(evt);
@@ -127,17 +131,22 @@ public class loginChat extends javax.swing.JFrame implements Runnable {
         });
 
         txtMensaje.setColumns(20);
+        txtMensaje.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         txtMensaje.setRows(5);
         jScrollPane3.setViewportView(txtMensaje);
 
-        labelDestinatario.setText("Solicitudes amistades Pendientes");
+        labelDestinatario.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        labelDestinatario.setText("FRIEND REQUESTS");
 
-        jLabel3.setText("Conversación");
+        jLabel3.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        jLabel3.setText("CONVERSATIONS");
 
         txtConversacion.setColumns(20);
+        txtConversacion.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         txtConversacion.setRows(5);
         jScrollPane4.setViewportView(txtConversacion);
 
+        listSolicitudes.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         listSolicitudes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 listSolicitudesMouseClicked(evt);
@@ -152,26 +161,32 @@ public class loginChat extends javax.swing.JFrame implements Runnable {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainChatLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(mainChatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel5)
                     .addComponent(jScrollPane6)
-                    .addComponent(jLabel3)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 419, Short.MAX_VALUE)
-                    .addComponent(btnEnviar, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(btnEnviar, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainChatLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(12, 12, 12)))
                 .addGap(18, 18, Short.MAX_VALUE)
-                .addGroup(mainChatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE)
-                    .addComponent(labelDestinatario)
-                    .addComponent(jScrollPane5))
+                .addGroup(mainChatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainChatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE)
+                        .addComponent(jScrollPane5))
+                    .addComponent(labelDestinatario, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         mainChatLayout.setVerticalGroup(
             mainChatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainChatLayout.createSequentialGroup()
-                .addGap(9, 9, 9)
-                .addGroup(mainChatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(labelDestinatario))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(mainChatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(mainChatLayout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(labelDestinatario))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainChatLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel5)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(mainChatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE))
@@ -180,7 +195,7 @@ public class loginChat extends javax.swing.JFrame implements Runnable {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(mainChatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainChatLayout.createSequentialGroup()
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnEnviar)
                         .addContainerGap())
@@ -189,60 +204,80 @@ public class loginChat extends javax.swing.JFrame implements Runnable {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Usuario:");
+        jLabel1.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        jLabel1.setText("USER:");
 
+        txtUser.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         txtUser.setText("Usuario1@servidorA.com");
 
-        jLabel2.setText("Contraseña:");
+        jLabel2.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        jLabel2.setText("PASS:");
 
-        btnIniciarSesion.setText("Iniciar Sesion");
+        btnIniciarSesion.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        btnIniciarSesion.setText("LOG IN");
         btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnIniciarSesionActionPerformed(evt);
             }
         });
 
+        txtPass.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+
+        comboEstado.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
         comboEstado.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Disponible", "Ocupado" }));
 
-        jLabel4.setText("Estado:");
+        jLabel4.setFont(new java.awt.Font("Courier New", 1, 12)); // NOI18N
+        jLabel4.setText("STATE:");
+
+        jLabel6.setFont(new java.awt.Font("Courier New", 1, 36)); // NOI18N
+        jLabel6.setText("CHAT");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(73, 73, 73)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel4)
-                        .addComponent(jLabel2)))
-                .addGap(37, 37, 37)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtUser, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
-                    .addComponent(txtPass)
-                    .addComponent(comboEstado, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnIniciarSesion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(20, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel1)))
+                        .addGap(37, 37, 37)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtUser)
+                            .addComponent(txtPass)
+                            .addComponent(comboEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addComponent(btnIniciarSesion, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(130, 130, 130)
+                        .addComponent(jLabel6)))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(67, 67, 67)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
+                    .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4)
+                    .addComponent(comboEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnIniciarSesion)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addGap(136, 136, 136))
         );
 
         pack();
@@ -255,13 +290,13 @@ public class loginChat extends javax.swing.JFrame implements Runnable {
 
     private void listContactosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listContactosMouseClicked
         // TODO add your handling code here:
-        //    System.out.println("click: "+listBandeja.getSelectedIndex());
-        //    System.out.println("click: "+listBandeja.getSelectedValue().toString());
+        //    //System.out.println("click: "+listBandeja.getSelectedIndex());
+        //    //System.out.println("click: "+listBandeja.getSelectedValue().toString());
         int no;
 
         no = listContactos.getSelectedIndex();
 
-   //     System.out.println("click"+listaM.get(no-1).correo_d);
+   //     //System.out.println("click"+listaM.get(no-1).correo_d);
 //        String content = "<sesion id=\"correo\" peticion=\"correo\" de=\""+listaC.get(no-1).de+"\" fecha=\""+listaC.get(no-1).fecha +"\">\n" +
      //   "<usuario>"+listaC.get(no-1).usuario+"</usuario>\n" +
      //   "</sesion>";
@@ -286,7 +321,7 @@ public class loginChat extends javax.swing.JFrame implements Runnable {
 //String username[] = txtUser.getText().split("@");
            //    listaS = cliente.getListaSolicitudes(username[0]);
         no = listSolicitudes.getSelectedIndex();
-        System.out.println("click: "+no);
+        //System.out.println("click: "+no);
         int reply = JOptionPane.showConfirmDialog(null, "Desea agregara a "+listaS.get(no-1).nombre+"("+listaS.get(no-1).usuario+")", "Solicitud de Amistad", JOptionPane.YES_NO_OPTION);
                 String resp="<solicitud_amistad>\n";
                            
@@ -311,7 +346,7 @@ public class loginChat extends javax.swing.JFrame implements Runnable {
            // listSolicitudes.removeSelectionInterval(no-1, no-1);
             listaS.remove(no-1);
             listSolicitudes.updateUI();
-             System.out.println("Lista Size1: "+listaS.size());
+             //System.out.println("Lista Size1: "+listaS.size());
             servidor.actualizarSolicitudes2(listaS, usuario.getUsername());
             
                writeUTF(resp);
@@ -323,7 +358,7 @@ public class loginChat extends javax.swing.JFrame implements Runnable {
 
     public void crearCuenta(String contentCuenta){
         
-        System.out.println("Cuenta: "+contentCuenta);
+        //System.out.println("Cuenta: "+contentCuenta);
     }
     
     public void writeUTF(String content){
@@ -343,7 +378,7 @@ public class loginChat extends javax.swing.JFrame implements Runnable {
                           "</login>";
         
      //  String msj;
-       System.out.println(xmlLogin);
+       //System.out.println(xmlLogin);
      //  mainChat.setVisible(true);
         writeUTF(xmlLogin);
        //msj = servidor.iniciarSesion(xmlLogin);
@@ -354,8 +389,8 @@ public class loginChat extends javax.swing.JFrame implements Runnable {
        
       // if (msj.contains("iniciada"))
            // new correo(user).setVisible(true);
-    //   System.out.println(respuesta);
-        //System.out.println("xmlLogin: "+xmlLogin);
+    //   //System.out.println(respuesta);
+        ////System.out.println("xmlLogin: "+xmlLogin);
         
      }
     
@@ -532,13 +567,13 @@ public class loginChat extends javax.swing.JFrame implements Runnable {
                // if (responseLine.contains("exito")) {
               //      System.err.println("exito");
                // }
-                System.out.println("response: "+responseLine);
+                //System.out.println("response: "+responseLine);
                 compilar(responseLine);
               //  mostrarMensaje(responseLine);
                 
 
             } catch (IOException e) {
-                System.out.println("Could not read from server");
+                //System.out.println("Could not read from server");
             }
             //jTextArea1.append(responseLine);
 
@@ -555,6 +590,7 @@ public class loginChat extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;

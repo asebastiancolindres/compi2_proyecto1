@@ -831,3 +831,15 @@
 28-03-2014 , 00:27:55 , Session iniciada: Usuario1@servidorA.com
 28-03-2014 , 00:29:59 , Session iniciada: Usuario1@servidorA.com
 28-03-2014 , 00:30:42 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 00:45:10 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 01:00:33 , Usuario : Usuario1@servidorA.comintento iniciar session
+28-03-2014 , 01:00:37 , Usuario : Usuario1@servidorA.comintento iniciar session
+28-03-2014 , 01:00:50 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 01:01:54 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 01:04:07 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 01:05:59 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 01:06:57 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 01:09:25 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 01:10:19 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 01:11:24 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 01:12:10 , Session iniciada: Usuario1@servidorA.com
