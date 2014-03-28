@@ -18,6 +18,7 @@ import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import parser_correo.archivo;
 import parser_correo.correo;
 import parser_correo.parser;
 
@@ -38,6 +39,9 @@ public LinkedList<correo>  listaC;
     Thread t = null;
     server servidor = new server();
      cliente cliente = new cliente();
+     
+    public LinkedList<archivo>  adjuntos = new LinkedList<archivo>();
+     
    //  clientThread ct = 
     /**
      * Creates new form loginCorreo
@@ -48,13 +52,18 @@ public LinkedList<correo>  listaC;
 "<usuario> Usuario1@servidorA.com </usuario>\n" +
 "<destinatarios>\n" +
 "<destinatario> Usuario1@servidorA.com </destinatario>\n" +
-"<destinatario> Usuario2@servidorA.com </destinatario>\n" +
-"<destinatario> Usuario3@servidorA.com </destinatario>\n" +
 "</destinatarios>\n" +
-"<asunto> asunto 1</asunto>\n" +
-"<fecha> 10-03-2014,12:40:02 </fecha>\n" +
-"<contenido> xxxxxxxx </contenido>\n" +
-"<archivo></archivo>\n" +
+"<asunto> asuntoSEBAS</asunto>\n" +
+"<fecha> 20-03-2014,10:41:02 </fecha>\n" +
+"<contenido> nananananananana </contenido>\n" +
+"<archivos>\n" +
+"<archivo tipo=\"PG\" tamaño=\"100x100\">\n" +
+"<celda fila=1 columna=1 color=\"azul\" >\n" +
+"</celda>\n" +
+"<celda fila=1 columna=1 color=\"negro\">\n" +
+"</celda>\n" +
+"</archivo>\n" +
+"</archivos>\n" +
 "</sesion>";
         
         txtCorreo.setText(r);
@@ -91,15 +100,16 @@ public LinkedList<correo>  listaC;
         jScrollPane6 = new javax.swing.JScrollPane();
         listBandeja = new javax.swing.JList();
         jButton1 = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        txtAdjunto = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtContenido = new javax.swing.JTextArea();
         labelDestinatario = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        listAdjunto = new javax.swing.JList();
         redactarCorreo = new javax.swing.JFrame();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtCorreo = new javax.swing.JTextArea();
         btnEnviar = new javax.swing.JButton();
+        adjuntoCorreo = new javax.swing.JFrame();
         jLabel1 = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -125,15 +135,18 @@ public LinkedList<correo>  listaC;
             }
         });
 
-        txtAdjunto.setColumns(20);
-        txtAdjunto.setRows(5);
-        jScrollPane3.setViewportView(txtAdjunto);
-
         txtContenido.setColumns(20);
         txtContenido.setRows(5);
         jScrollPane2.setViewportView(txtContenido);
 
         labelDestinatario.setText("destinatario");
+
+        listAdjunto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listAdjuntoMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(listAdjunto);
 
         javax.swing.GroupLayout mainCorreoLayout = new javax.swing.GroupLayout(mainCorreo.getContentPane());
         mainCorreo.getContentPane().setLayout(mainCorreoLayout);
@@ -151,9 +164,8 @@ public LinkedList<correo>  listaC;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(mainCorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(labelDestinatario)
-                    .addGroup(mainCorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 331, Short.MAX_VALUE)
-                        .addComponent(jScrollPane3)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 323, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         mainCorreoLayout.setVerticalGroup(
@@ -168,13 +180,12 @@ public LinkedList<correo>  listaC;
                     .addGroup(mainCorreoLayout.createSequentialGroup()
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addContainerGap())
+                        .addComponent(jButton1))
                     .addGroup(mainCorreoLayout.createSequentialGroup()
                         .addComponent(jScrollPane2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
 
         redactarCorreo.setMinimumSize(new java.awt.Dimension(597, 395));
@@ -213,6 +224,17 @@ public LinkedList<correo>  listaC;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnEnviar)
                 .addContainerGap(28, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout adjuntoCorreoLayout = new javax.swing.GroupLayout(adjuntoCorreo.getContentPane());
+        adjuntoCorreo.getContentPane().setLayout(adjuntoCorreoLayout);
+        adjuntoCorreoLayout.setHorizontalGroup(
+            adjuntoCorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        adjuntoCorreoLayout.setVerticalGroup(
+            adjuntoCorreoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -321,6 +343,19 @@ redactarCorreo.setTitle("Redactar "+txtUser.getText());
            
     }//GEN-LAST:event_btnEnviarActionPerformed
 
+    private void listAdjuntoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listAdjuntoMouseClicked
+        // TODO add your handling code here:
+         int no;
+
+        no = listAdjunto.getSelectedIndex();
+
+   //     System.out.println("click"+listaM.get(no-1).correo_d);
+       
+        archivo adjunto = adjuntos.get(no-1);
+        
+        new Points(adjunto).setVisible(true);
+    }//GEN-LAST:event_listAdjuntoMouseClicked
+
     public void crearCuenta(String contentCuenta){
         
         System.out.println("Cuenta: "+contentCuenta);
@@ -366,7 +401,7 @@ redactarCorreo.setTitle("Redactar "+txtUser.getText());
        
            case 0:
                JOptionPane.showMessageDialog(null, "error parser", "Error",JOptionPane.INFORMATION_MESSAGE);
-              txtAdjunto.append(content+"\n");
+            //  txtAdjunto.append(content+"\n");
                break;
            case 1:
                JOptionPane.showMessageDialog(null, parser.msjCuenta, "Inicio Sesion",JOptionPane.INFORMATION_MESSAGE);
@@ -409,9 +444,29 @@ redactarCorreo.setTitle("Redactar "+txtUser.getText());
            case 6:
                labelDestinatario.setText("Mensaje de "+parser.correo.nombre_de);
                txtContenido.setText(parser.correo.contenido);
+               
+               if(parser.correo.archivo.size()>0){
+               Iterator<archivo> itA = parser.correo.archivo.iterator(); /*
+             * Listar los errores que se han guardado en la variable lista
+             */
+            String[] archivos = new String[1000];
+            int cc =0;
+            while (itA.hasNext()) {
+                cc++;
+                archivo archivo = itA.next();
+               // System.out.println("nombre: " + listaM.getNombre_d() + " asunto :" + listaM.getAsunto() + " de: " + listaM.getEmisor());
+              // txtBandeja.append(listaM.getNombre_d()+"-"+listaM.getAsunto()+"-"+listaM.getFecha()+"\n");
+             archivos[cc]= "archivo"+cc;
+             adjuntos.add(new archivo(archivo.tipo, archivo.tamanio, archivo.celdas));
+               
+            }
+             listAdjunto.setListData(archivos);
+               }
+            
+              
                break;
            default:
-               txtAdjunto.append(content+"\n");
+              // txtAdjunto.append(content+"\n");
                break;
                
            case 8:
@@ -491,6 +546,7 @@ redactarCorreo.setTitle("Redactar "+txtUser.getText());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JFrame adjuntoCorreo;
     private javax.swing.JButton btnEnviar;
     private javax.swing.JButton btnIniciarSesion;
     private javax.swing.JButton jButton1;
@@ -500,13 +556,13 @@ redactarCorreo.setTitle("Redactar "+txtUser.getText());
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JLabel labelDestinatario;
+    private javax.swing.JList listAdjunto;
     private javax.swing.JList listBandeja;
     private javax.swing.JFrame mainCorreo;
     private javax.swing.JFrame redactarCorreo;
-    private javax.swing.JTextArea txtAdjunto;
     private javax.swing.JTextArea txtContenido;
     private javax.swing.JTextArea txtCorreo;
     private javax.swing.JPasswordField txtPass;

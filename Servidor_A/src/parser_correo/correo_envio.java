@@ -18,9 +18,9 @@ public class correo_envio {
     public String asunto;
     public String fecha;
     public String contenido;
-    public String archivos;
+    public LinkedList<archivo> archivos;
 
-    public correo_envio(String usuario, LinkedList<String> destinatarios, String asunto, String fecha, String contenido, String archivos) {
+    public correo_envio(String usuario, LinkedList<String> destinatarios, String asunto, String fecha, String contenido, LinkedList<archivo> archivos) {
         this.usuario = usuario;
         this.destinatarios = destinatarios;
         this.asunto = asunto;
@@ -69,13 +69,14 @@ public class correo_envio {
         this.contenido = contenido;
     }
 
-    public String getArchivos() {
+    public LinkedList<archivo> getArchivos() {
         return archivos;
     }
 
-    public void setArchivos(String archivos) {
+    public void setArchivos(LinkedList<archivo> archivos) {
         this.archivos = archivos;
     }
-    
+
+   
     
 }

@@ -13,6 +13,7 @@ import java.io.PrintStream;
 import java.net.Socket;
 import java.util.Iterator;
 import java.util.LinkedList;
+import javax.sound.midi.SysexMessage;
 import javax.swing.JTextArea;
 import parser_correo.correo;
 import parser_correo.parser;
@@ -95,18 +96,19 @@ class clientThread extends Thread {
       }
       
         usuario = servidor.getUsuario(res);
-        listaCorreos = servidor.getListaCorreo(usuario.getUsername());
+        //listaCorreos = servidor.getListaCorreo(usuario.getUsername());
           name = usuario.usuario;
-            System.err.println("login correcto: "+name);
+            System.out.println("login correcto: "+name);
              msj = "<sesion id=\"correo\">\n" +
                    "<Registro> Session iniciada </Registro>\n" +
                    "</sesion>";
               
       //  listaCorreos = servidor.get
              os.writeUTF(msj);
-       //   System.out.println("respuesta login: "+is.readUTF());
+             String res_login=is.readUTF();
+          System.out.println("respuesta login: "+res_login);
           
-          parser = servidor.compilar(is.readUTF());
+          parser = servidor.compilar(res_login);
           System.out.println("res: "+parser.respuesta);
           if(parser.respuesta==3){
             String respuestaLC = servidor.getListaCorreos(usuario.usuario, usuario.nombre, usuario.username);
@@ -208,7 +210,7 @@ System.out.println("respuesta: "+parser.respuesta+"\n");
                   case 7:
                       System.out.println("compilado correcto: \n");
                       
-                      
+                     // System.out.println("Archivo es: "+servidor.getArchivoContent(parser.listaArchivos));
                       Iterator<String> itD = parser.correo_envio.destinatarios.iterator(); 
    
             System.out.println("TEXTO: " + parser.correo_envio.contenido); 

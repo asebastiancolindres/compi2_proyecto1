@@ -396,7 +396,7 @@ public  class compilador {
      
      public String getListaCorreos(String usuario, String nombre, String username){
         
-        
+        System.out.println("here");
         
         //LinkedList<correo> listaCorreos = compilar(content).listaCorreos;
         String content = leerArchivo(dir_mensajes+username+ ".xml");
@@ -429,7 +429,7 @@ public  class compilador {
     
     public String getCorreos(LinkedList<correo> listaCorreos, String usuario, String nombre){
     
-        System.out.println("####MENSAJES ----");
+        System.out.println("####MENSAJES 22----");
 
             Iterator<correo> itC = listaCorreos.iterator(); /*
              * Listar los errores que se han guardado en la variable lista
@@ -503,7 +503,7 @@ public  class compilador {
                     "<fecha>"+listaC.fecha+"</fecha>\n" +
                     "<de>"+listaC.de+"</de>\n" +
                     "<contenido>"+listaC.contenido+"</contenido>\n" +
-                    "<archivos>"+listaC.archivo+"</archivos>\n" +
+                   getArchivoContent(listaC.archivo) +
                     "</correo>";
                }
                 
@@ -543,11 +543,15 @@ public  class compilador {
              * Listar los errores que se han guardado en la variable lista
              */
         //     System.out.println("Nuevos Usuarios");
-       contenido+="<correo>\n<asunto>" + correo.asunto + "</asunto>\n<fecha>" + correo.fecha + "</fecha>\n<de>" +de+"</de>\n<nombre>"+nombre_de+"</nombre>\n<contenido>"+correo.contenido+"</contenido>\n<archivos></archivos>\n</correo>\n";
+       contenido+="<correo>\n<asunto>" + correo.asunto + "</asunto>\n<fecha>" + correo.fecha + "</fecha>\n<de>" +de+"</de>\n<nombre>"+nombre_de+"</nombre>\n<contenido>"+correo.contenido+"</contenido>\n";
+        contenido+=getArchivoContent(correo.archivos);
+       contenido+="</correo>\n";
             
             while (itC.hasNext()) {
                 correo listaC = itC.next();
-                contenido+="<correo>\n<asunto>" + listaC.asunto + "</asunto>\n<fecha>" + listaC.fecha + "</fecha>\n<de>" + listaC.de+"</de>\n<nombre>"+listaC.nombre_de+"</nombre>\n<contenido>"+listaC.contenido+"</contenido>\n<archivos></archivos>\n</correo>\n";
+                contenido+="<correo>\n<asunto>" + listaC.asunto + "</asunto>\n<fecha>" + listaC.fecha + "</fecha>\n<de>" + listaC.de+"</de>\n<nombre>"+listaC.nombre_de+"</nombre>\n<contenido>"+listaC.contenido+"</contenido>\n";
+                contenido+=getArchivoContent(listaC.archivo);
+                contenido+="</correo>\n";
               
             }
            // contenido+="<usuario>\n<usuario>" + correo_envio + "</usuario>\n<nombre>" + correo_envio.nombre + "</nombre>\n<fecha>" + correo_envio.fecha+"</fecha>\n<clave>"+correo_envio.clave+"</clave>\n</usuario>\n";
@@ -557,6 +561,43 @@ public  class compilador {
             escribirArchivo(dir_mensajes+username+ ".xml", contenido);
     }
 
+    public String getArchivoContent(LinkedList<archivo> lista){
+    
+     /*
+        
+        <archivo tipo=”PG” tamaño=”100x100”>
+<celda fila=1 columna=1 color=”azul” >
+</celda>
+..........
+<celda fila=1 columna=1 color=”negro”>
+</celda>
+</archivo>
+
+        
+        */ 
+        String contenido="<archivos>\n";
+        
+
+        Iterator<archivo> itA = lista.iterator(); 
+            while (itA.hasNext()) {
+                archivo listaA = itA.next();
+                contenido+="<archivo tipo=\"PG\" tamaño =\""+listaA.tamanio+"\">\n";
+                
+                Iterator<celdaPG> itC = listaA.celdas.iterator(); 
+                while (itC.hasNext()) {
+                    celdaPG listaC = itC.next();
+                    contenido+="<celda fila="+listaC.fila+" columna="+listaC.columna+" color=\""+listaC.color+"\">\n";
+                    contenido+="</celda>\n";
+                }
+                 contenido+="</archivo>\n";
+            }
+           // contenido+="<usuario>\n<usuario>" + correo_envio + "</usuario>\n<nombre>" + correo_envio.nombre + "</nombre>\n<fecha>" + correo_envio.fecha+"</fecha>\n<clave>"+correo_envio.clave+"</clave>\n</usuario>\n";
+            contenido+="</archivos>\n";
+        
+    
+   
+        return contenido;
+    }
 
      
     

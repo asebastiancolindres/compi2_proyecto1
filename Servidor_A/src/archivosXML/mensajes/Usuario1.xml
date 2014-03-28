@@ -1,18 +1,77 @@
 <correos usuario="Usuario1@servidorA.com">
 <correo>
-<asunto>asuntoSEBAS</asunto>
-<fecha>20-03-2014,10:41:02</fecha>
+<asunto>asuntoSEBASddda</asunto>
+<fecha>66-02-2014,10:41:02</fecha>
 <de>Usuario1@servidorA.com</de>
 <nombre>nombres1</nombre>
-<contenido>nananananananana</contenido>
-<archivos></archivos>
+<contenido>ggggg</contenido>
+<archivos>
+<archivo tipo="PG" tamaño ="100 x100">
+<celda fila=1 columna=1 color="azul">
+</celda>
+<celda fila=1 columna=2 color="verde">
+</celda>
+<celda fila=1 columna=3 color="amarillo">
+</celda>
+<celda fila=1 columna=1 color="rojo">
+</celda>
+<celda fila=2 columna=1 color="verde">
+</celda>
+<celda fila=100 columna=100 color="negro">
+</celda>
+<celda fila=100 columna=1 color="azul">
+</celda>
+<celda fila=25 columna=25 color="negro">
+</celda>
+<celda fila=50 columna=50 color="rojo">
+</celda>
+<celda fila=50 columna=25 color="amarillo">
+</celda>
+<celda fila=1 columna=100 color="verde">
+</celda>
+</archivo>
+</archivos>
 </correo>
 <correo>
-<asunto>yoc</asunto>
-<fecha>10-03-2014,12:40:02</fecha>
-<de>usuario3@servidorA.com</de>
-<nombre>yoc</nombre>
-<contenido>contenido2</contenido>
-<archivos></archivos>
+<asunto>asuntoSEBASggg</asunto>
+<fecha>66-03-2014,10:41:02</fecha>
+<de>Usuario1@servidorA.com</de>
+<nombre>nombres1</nombre>
+<contenido>hhhhh</contenido>
+<archivos>
+<archivo tipo="PG" tamaño ="50 x50">
+<celda fila=1 columna=1 color="azul">
+</celda>
+<celda fila=1 columna=1 color="negro">
+</celda>
+</archivo>
+</archivos>
+</correo>
+<correo>
+<asunto>asuntoSEBAS11</asunto>
+<fecha>11-03-2014,10:41:02</fecha>
+<de>Usuario1@servidorA.com</de>
+<nombre>nombres1</nombre>
+<contenido>iiiii</contenido>
+<archivos>
+</archivos>
+</correo>
+<correo>
+<asunto>asuntoSEBAS4</asunto>
+<fecha>44-03-2014,10:41:02</fecha>
+<de>Usuario1@servidorA.com</de>
+<nombre>nombres1</nombre>
+<contenido>kkkkk</contenido>
+<archivos>
+</archivos>
+</correo>
+<correo>
+<asunto>asuntoSEBAS22</asunto>
+<fecha>88-03-2014,10:41:02</fecha>
+<de>Usuario1@servidorA.com</de>
+<nombre>nombres1</nombre>
+<contenido>llll</contenido>
+<archivos>
+</archivos>
 </correo>
 </correos>

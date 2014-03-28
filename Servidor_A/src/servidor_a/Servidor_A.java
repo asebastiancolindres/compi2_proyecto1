@@ -6,7 +6,7 @@
 
 package servidor_a;
 
-import server_chat.server;
+import server_correo.server;
 
 /**
  *

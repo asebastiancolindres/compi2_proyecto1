@@ -17,7 +17,8 @@ public String rCorreo="";
         public LinkedList<usuario> listaUsuarios = new LinkedList<usuario>();
         public usuario usuario;
         public LinkedList<correo> listaCorreos =new LinkedList<correo>();
-        public correo correo;
+        public LinkedList<archivo> listaArchivos = new LinkedList<archivo>();
+public correo correo;
 
         public correo_envio correo_envio;
 
@@ -41,6 +42,8 @@ action code
 int c=0;
 String[] username;
 LinkedList<String> destinatarios = new LinkedList<String>();
+LinkedList<celdaPG> celdas = new LinkedList<celdaPG>();
+
 :}
 
 terminal String  signos, num, cad, c2, fecha, hora, envio, destinatarios1, destinatarios2, destinatario1, destinatario2;
@@ -51,7 +54,7 @@ terminal String usuario, correos1, correos2, correo1, correo2, asunto1, asunto2,
 
 terminal String pg, archivos1, archivos2, archivo1, archivo2, tamanio,  fila, columna, color, celda1, celda2; 
 
-non terminal String A1, A2, A3, CPG1, CPG2;
+non terminal String A1, A2, A3, CPG1, CPG2, A11;
 
 non terminal String INICIA, C1, C2, TEXTO, CADENA;
 
@@ -148,7 +151,7 @@ LC1 ::= abrir correos1 usuario igual c2 correo c2 cerrar LC2 correos2;
 LC2 ::= LC3 LC2
         |LC3;
 
-LC3 ::= correo1 asunto1 TEXTO:t1 asunto2 fecha1 fecha:t21 coma hora:t22 fecha2 de1 correo:t3 de2 nombre1 TEXTO:t4 nombre2 contenido1 TEXTO:t5 contenido2 archivos1 archivos2 correo2{: c++; parser.listaCorreos.add(new correo(c,"","",t1,t21+","+t22,t3,t4,t5,"")); :};
+LC3 ::= correo1 asunto1 TEXTO:t1 asunto2 fecha1 fecha:t21 coma hora:t22 fecha2 de1 correo:t3 de2 nombre1 TEXTO:t4 nombre2 contenido1 TEXTO:t5 contenido2 A1 correo2{: c++; parser.listaCorreos.add(new correo(c,"","",t1,t21+","+t22,t3,t4,t5, parser.listaArchivos)); :};
 
 
 /******************* Respuesta Lista Correos **************************************/
@@ -158,21 +161,21 @@ RLC1::= abrir sesion1 id igual c2 correo_t c2 tipo igual c2 lista c2 cerrar RLC2
 RLC2 ::= RLC3 RLC2
         |RLC3;
 
-RLC3 ::= correo1 usuario1 correo:t1 usuario2 nombre1 TEXTO:t2 nombre2 asunto1 TEXTO:t3 asunto2 fecha1 fecha:t41 coma hora:t42 fecha2 de1 correo:t5 de2 nombre1 TEXTO:t6 nombre2  correo2{: c++; parser.listaCorreos.add(new correo(c,t1,t2,t3,t41+","+t42,t5,t6, "", ""));  :};
+RLC3 ::= correo1 usuario1 correo:t1 usuario2 nombre1 TEXTO:t2 nombre2 asunto1 TEXTO:t3 asunto2 fecha1 fecha:t41 coma hora:t42 fecha2 de1 correo:t5 de2 nombre1 TEXTO:t6 nombre2  correo2{: c++; parser.listaCorreos.add(new correo(c,t1,t2,t3,t41+","+t42,t5,t6, "", null));  :};
 
 
 /******************* PETICION DE UN CORREO **************************************/
 
-PC1::=  abrir sesion1 id igual c2 correo_t c2 peticion igual c2 correo_t c2 de igual c2 correo:t3 c2 fecha_t igual c2 fecha:t21 coma hora:t22 c2 cerrar usuario1 correo:t1 usuario2 sesion2 {: parser.respuesta=5; c++; parser.correo = new correo(c,t1,"","",t21+","+t22,t3,"", "", "");  :};
+PC1::=  abrir sesion1 id igual c2 correo_t c2 peticion igual c2 correo_t c2 de igual c2 correo:t3 c2 fecha_t igual c2 fecha:t21 coma hora:t22 c2 cerrar usuario1 correo:t1 usuario2 sesion2 {: parser.respuesta=5; c++; parser.correo = new correo(c,t1,"","",t21+","+t22,t3,"", "", null);  :};
 
 
 /*******************Respuesta de un correo ***************************/
 
-RPC1::= correo1 usuario1 correo:t1 usuario2 asunto1 TEXTO:t2 asunto2 fecha1 fecha:t31 coma hora:t32 fecha2 de1 correo:t4 de2 contenido1 TEXTO:t5 contenido2 archivos1 archivos2 correo2{: parser.respuesta=6; c++; parser.correo = new correo(c,t1,"",t2,t31+","+t32,t4,"",t5,""); :};
+RPC1::= correo1 usuario1 correo:t1 usuario2 asunto1 TEXTO:t2 asunto2 fecha1 fecha:t31 coma hora:t32 fecha2 de1 correo:t4 de2 contenido1 TEXTO:t5 contenido2 A1 correo2{: parser.respuesta=6; c++; parser.correo = new correo(c,t1,"",t2,t31+","+t32,t4,"",t5, parser.listaArchivos); :};
 
 /**************************Redactar Correo ***********************************/
 
-RNC1::=  abrir sesion1 peticion igual c2 envio c2 cerrar usuario1 correo:t1 usuario2 destinatarios1 LD1 destinatarios2 asunto1 TEXTO:t2 asunto2 fecha1 fecha:t31 coma hora:t32 fecha2 contenido1 TEXTO:t4 contenido2 A1 sesion2 {: parser.respuesta=7;  parser.correo_envio = new correo_envio(t1,destinatarios,t2,t31+","+t32,t4,""); :};
+RNC1::=  abrir sesion1 peticion igual c2 envio c2 cerrar usuario1 correo:t1 usuario2 destinatarios1 LD1 destinatarios2 asunto1 TEXTO:t2 asunto2 fecha1 fecha:t31 coma hora:t32 fecha2 contenido1 TEXTO:t4 contenido2 A1 sesion2 {: parser.respuesta=7;  parser.correo_envio = new correo_envio(t1,destinatarios,t2,t31+","+t32,t4, parser.listaArchivos); :};
 
 LD1 ::= LD2:t1 LD1:t2  {: destinatarios.add(t1.toString());  :}
         |LD2:t1     {: destinatarios.add(t1.toString()); RESULT=t1; :};
@@ -184,19 +187,20 @@ LD2::= destinatario1 correo:t1 destinatario2 {: RESULT= t1; :};
 
 
 
-A1::= archivos1 A2 archivos2;
+A1::= archivos1 A2 archivos2
+      | archivos1 archivos2;
 
 A2::= A2 A3 
       |A3;
 
 /***************************Archivos imagenes ****************************/
 
-A3::= archivo1 tipo igual c2 pg c2 tamanio igual c2 TEXTO c2 cerrar CPG1 archivo2;
-
+A3::= archivo1 tipo igual c2 pg:t1 c2 tamanio igual c2 TEXTO:t2 c2 cerrar CPG1 archivo2 {: parser.listaArchivos.add(new archivo(t1, t2, celdas));  :}; 
+    
 CPG1::= CPG1 CPG2 
       |CPG2;
 
-CPG2::= celda1 fila igual num columna igual num color igual c2 TEXTO c2 cerrar celda2;
+CPG2::= celda1 fila igual num:t1 columna igual num:t2 color igual c2 TEXTO:t3 c2 cerrar celda2 {: celdas.add(new celdaPG(t1, t2, t3));  :};
 
 /************************* color *******************************/
 

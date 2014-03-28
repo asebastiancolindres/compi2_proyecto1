@@ -53,7 +53,7 @@ public class server extends compilador{
      */
     try {
       serverSocket = new ServerSocket(portNumber);
-       //new loginCorreo().setVisible(true);
+       new loginCorreo().setVisible(true);
     } catch (IOException e) {
       System.out.println(e);
     }

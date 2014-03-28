@@ -718,3 +718,116 @@
 25-03-2014 , 22:44:45 , Linea: 1 Columna :207 Descr: Error sintactico Identificador <archivo no reconocido.
 25-03-2014 , 22:44:45 , Linea: 2 Columna :34 Descr: Error sintactico Identificador </sesion> no reconocido.
 25-03-2014 , 22:47:08 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 20:48:38 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 21:00:35 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 21:05:31 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 21:06:01 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 21:10:45 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 21:12:34 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 21:20:20 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 21:25:22 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 21:41:28 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 21:55:54 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 21:55:54 , Linea: 1 Columna :219 Descr: Error sintactico Identificador </archivos> no reconocido.
+27-03-2014 , 21:55:56 , Linea: 1 Columna :219 Descr: Error sintactico Identificador </archivos> no reconocido.
+27-03-2014 , 21:55:56 , Linea: 2 Columna :34 Descr: Error sintactico Identificador </sesion> no reconocido.
+27-03-2014 , 21:56:16 , Linea: 1 Columna :219 Descr: Error sintactico Identificador </archivos> no reconocido.
+27-03-2014 , 21:56:16 , Linea: 1 Columna :219 Descr: Error sintactico Identificador </archivos> no reconocido.
+27-03-2014 , 21:56:18 , Linea: 1 Columna :219 Descr: Error sintactico Identificador </archivos> no reconocido.
+27-03-2014 , 21:56:18 , Linea: 1 Columna :219 Descr: Error sintactico Identificador </archivos> no reconocido.
+27-03-2014 , 21:56:19 , Linea: 2 Columna :34 Descr: Error sintactico Identificador </sesion> no reconocido.
+27-03-2014 , 21:59:21 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 22:03:57 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 22:04:04 , Linea: 1 Columna :426 Descr: Error sintactico Identificador + no reconocido.
+27-03-2014 , 22:04:04 , Linea: 1 Columna :426 Descr: Error sintactico Identificador + no reconocido.
+27-03-2014 , 22:05:09 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 22:05:09 , Linea: 1 Columna :426 Descr: Error sintactico Identificador + no reconocido.
+27-03-2014 , 22:05:10 , Linea: 1 Columna :426 Descr: Error sintactico Identificador + no reconocido.
+27-03-2014 , 22:05:29 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 22:05:41 , Linea: 1 Columna :428 Descr: Error sintactico Identificador + no reconocido.
+27-03-2014 , 22:05:41 , Linea: 1 Columna :428 Descr: Error sintactico Identificador + no reconocido.
+27-03-2014 , 22:11:29 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 22:11:29 , Linea: 1 Columna :428 Descr: Error sintactico Identificador + no reconocido.
+27-03-2014 , 22:11:31 , Linea: 1 Columna :428 Descr: Error sintactico Identificador + no reconocido.
+27-03-2014 , 22:11:47 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 22:11:56 , Linea: 1 Columna :221 Descr: Error sintactico Identificador <archivo no reconocido.
+27-03-2014 , 22:11:56 , Linea: 1 Columna :221 Descr: Error sintactico Identificador <archivo no reconocido.
+27-03-2014 , 22:11:57 , Linea: 2 Columna :34 Descr: Error sintactico Identificador </sesion> no reconocido.
+27-03-2014 , 22:12:56 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 22:12:56 , Linea: 1 Columna :221 Descr: Error sintactico Identificador <archivo no reconocido.
+27-03-2014 , 22:12:57 , Linea: 1 Columna :221 Descr: Error sintactico Identificador <archivo no reconocido.
+27-03-2014 , 22:12:57 , Linea: 2 Columna :34 Descr: Error sintactico Identificador </sesion> no reconocido.
+27-03-2014 , 22:14:01 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 22:14:01 , Linea: 1 Columna :221 Descr: Error sintactico Identificador <archivo no reconocido.
+27-03-2014 , 22:14:02 , Linea: 1 Columna :221 Descr: Error sintactico Identificador <archivo no reconocido.
+27-03-2014 , 22:14:02 , Linea: 2 Columna :34 Descr: Error sintactico Identificador </sesion> no reconocido.
+27-03-2014 , 22:21:27 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 22:21:27 , Linea: 1 Columna :221 Descr: Error sintactico Identificador <archivo no reconocido.
+27-03-2014 , 22:21:28 , Linea: 1 Columna :221 Descr: Error sintactico Identificador <archivo no reconocido.
+27-03-2014 , 22:21:28 , Linea: 2 Columna :34 Descr: Error sintactico Identificador </sesion> no reconocido.
+27-03-2014 , 22:26:38 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 22:26:38 , Linea: 1 Columna :221 Descr: Error sintactico Identificador <archivo no reconocido.
+27-03-2014 , 22:26:39 , Linea: 1 Columna :221 Descr: Error sintactico Identificador <archivo no reconocido.
+27-03-2014 , 22:26:39 , Linea: 2 Columna :34 Descr: Error sintactico Identificador </sesion> no reconocido.
+27-03-2014 , 22:30:00 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 22:30:01 , Linea: 1 Columna :221 Descr: Error sintactico Identificador <archivo no reconocido.
+27-03-2014 , 22:30:01 , Linea: 2 Columna :34 Descr: Error sintactico Identificador </sesion> no reconocido.
+27-03-2014 , 22:40:10 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 22:40:11 , Linea: 1 Columna :221 Descr: Error sintactico Identificador <archivo no reconocido.
+27-03-2014 , 22:40:11 , Linea: 2 Columna :34 Descr: Error sintactico Identificador </sesion> no reconocido.
+27-03-2014 , 22:43:03 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 22:43:04 , Linea: 1 Columna :271 Descr: Error sintactico Identificador " no reconocido.
+27-03-2014 , 22:43:04 , Linea: 2 Columna :34 Descr: Error sintactico Identificador </sesion> no reconocido.
+27-03-2014 , 22:46:17 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 22:46:40 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 22:51:39 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 22:51:42 , Linea: 6 Columna :201 Descr: Error lexico en el caracter [
+27-03-2014 , 22:51:42 , Linea: 7 Columna :202 Descr: Error sintactico Identificador parser_correo no reconocido.
+27-03-2014 , 22:51:44 , Linea: 6 Columna :199 Descr: Error lexico en el caracter [
+27-03-2014 , 22:51:44 , Linea: 7 Columna :200 Descr: Error sintactico Identificador parser_correo no reconocido.
+27-03-2014 , 22:51:46 , Linea: 6 Columna :198 Descr: Error lexico en el caracter [
+27-03-2014 , 22:51:46 , Linea: 7 Columna :199 Descr: Error sintactico Identificador parser_correo no reconocido.
+27-03-2014 , 22:51:48 , Linea: 6 Columna :199 Descr: Error lexico en el caracter [
+27-03-2014 , 22:51:48 , Linea: 7 Columna :200 Descr: Error sintactico Identificador parser_correo no reconocido.
+27-03-2014 , 22:51:50 , Linea: 6 Columna :201 Descr: Error lexico en el caracter [
+27-03-2014 , 22:51:50 , Linea: 7 Columna :202 Descr: Error sintactico Identificador parser_correo no reconocido.
+27-03-2014 , 22:53:11 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 22:53:14 , Linea: 8 Columna :202 Descr: Error sintactico Identificador <archivo no reconocido.
+27-03-2014 , 22:54:21 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 22:54:24 , Linea: 8 Columna :202 Descr: Error sintactico Identificador <archivo no reconocido.
+27-03-2014 , 22:54:42 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 22:54:44 , Linea: 15 Columna :368 Descr: Error sintactico Identificador <correo> no reconocido.
+27-03-2014 , 22:55:34 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 22:56:06 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 23:06:00 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 23:21:54 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 23:35:23 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 23:37:32 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 23:37:48 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 23:38:40 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 23:39:31 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 23:46:38 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 23:47:41 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 23:48:07 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 23:48:33 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 23:48:53 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 23:51:45 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 23:54:42 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 23:55:27 , Session iniciada: Usuario1@servidorA.com
+27-03-2014 , 23:57:42 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 00:03:42 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 00:04:33 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 00:05:13 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 00:07:32 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 00:09:32 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 00:14:32 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 00:15:39 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 00:17:45 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 00:22:28 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 00:23:05 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 00:23:58 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 00:24:54 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 00:25:53 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 00:27:55 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 00:29:59 , Session iniciada: Usuario1@servidorA.com
+28-03-2014 , 00:30:42 , Session iniciada: Usuario1@servidorA.com
