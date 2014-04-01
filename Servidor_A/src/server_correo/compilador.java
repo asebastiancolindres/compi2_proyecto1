@@ -581,12 +581,20 @@ public  class compilador {
         Iterator<archivo> itA = lista.iterator(); 
             while (itA.hasNext()) {
                 archivo listaA = itA.next();
-                contenido+="<archivo tipo=\"PG\" tamaño =\""+listaA.tamanio+"\">\n";
+                if(listaA.tipo.equalsIgnoreCase("PG"))
+                    contenido+="<archivo tipo=\"PG\" tamaño =\""+listaA.tamanio+"\">\n";
+                else
+                    contenido+="<archivo tipo=\"XL\">\n";
+                    
                 
                 Iterator<celdaPG> itC = listaA.celdas.iterator(); 
                 while (itC.hasNext()) {
                     celdaPG listaC = itC.next();
-                    contenido+="<celda fila="+listaC.fila+" columna="+listaC.columna+" color=\""+listaC.color+"\">\n";
+                    if(listaA.tipo.equalsIgnoreCase("PG"))
+                        contenido+="<celda fila="+listaC.fila+" columna="+listaC.columna+" color=\""+listaC.color+"\">\n";
+                    else
+                        contenido+="<celda fila="+listaC.fila+" columna="+listaC.columna+" tipo=\""+listaC.tipo+"\" color=\""+listaC.color+"\""+" formula="+listaC.formula+">\n \""+listaC.contenido+"\" \n";
+                    
                     contenido+="</celda>\n";
                 }
                  contenido+="</archivo>\n";

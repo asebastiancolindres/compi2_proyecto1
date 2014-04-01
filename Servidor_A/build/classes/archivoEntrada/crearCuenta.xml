@@ -10,7 +10,12 @@
 <archivo tipo="PG" tamaño="100x100">
 <celda fila=1 columna=1 color="azul" >
 </celda>
-<celda fila=1 columna=1 color="negro">
+<celda fila=1 columna=2 color="negro">
+</celda>
+</archivo>
+<archivo tipo="XL">
+<celda fila=1 columna=1 tipo="string" color="azul" formula=false >
+"lalalalalal"
 </celda>
 </archivo>
 </archivos>

@@ -1,5 +1,31 @@
 <correos usuario="Usuario1@servidorA.com">
 <correo>
+<asunto>asuntoSEBAS</asunto>
+<fecha>20-03-2014,10:41:02</fecha>
+<de>Usuario1@servidorA.com</de>
+<nombre>nombres1</nombre>
+<contenido>nananananananana</contenido>
+<archivos>
+<archivo tipo="PG" tamaño ="100 x100">
+<celda fila=1 columna=1 color="azul">
+</celda>
+<celda fila=1 columna=2 color="negro">
+</celda>
+</archivo>
+<archivo tipo="XL">
+<celda fila=1 columna=1 tipo="string" color="azul" formula=false>
+ "lalalalalal" 
+</celda>
+<celda fila=3 columna=5 tipo="string" color="azul" formula=false>
+ "hahahah" 
+</celda>
+<celda fila=2 columna=3 tipo="string" color="azul" formula=false>
+ "gagagag" 
+</celda>
+</archivo>
+</archivos>
+</correo>
+<correo>
 <asunto>asuntoSEBASddda</asunto>
 <fecha>66-02-2014,10:41:02</fecha>
 <de>Usuario1@servidorA.com</de>

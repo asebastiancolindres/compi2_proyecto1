@@ -240,7 +240,6 @@ public LinkedList<correo>  listaC;
         );
 
         adjuntoCorreo.setMinimumSize(new java.awt.Dimension(400, 400));
-        adjuntoCorreo.setPreferredSize(new java.awt.Dimension(400, 400));
 
         javax.swing.GroupLayout adjuntoCorreoLayout = new javax.swing.GroupLayout(adjuntoCorreo.getContentPane());
         adjuntoCorreo.getContentPane().setLayout(adjuntoCorreoLayout);
@@ -384,8 +383,11 @@ redactarCorreo.setTitle("Redactar "+txtUser.getText());
    //     //System.out.println("click"+listaM.get(no-1).correo_d);
        
         archivo adjunto = adjuntos.get(no-1);
-   
-    new Points(adjunto).setVisible(true);
+        if(adjunto.tipo.equals("PG"))
+            new Points(adjunto).setVisible(true);
+        else
+            JOptionPane.showMessageDialog(null, "XL", "Error",JOptionPane.INFORMATION_MESSAGE);
+            new XL(adjunto).setVisible(true);
     }//GEN-LAST:event_listAdjuntoMouseClicked
 
     public void crearCuenta(String contentCuenta){

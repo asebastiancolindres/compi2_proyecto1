@@ -843,3 +843,33 @@
 28-03-2014 , 01:10:19 , Session iniciada: Usuario1@servidorA.com
 28-03-2014 , 01:11:24 , Session iniciada: Usuario1@servidorA.com
 28-03-2014 , 01:12:10 , Session iniciada: Usuario1@servidorA.com
+31-03-2014 , 21:29:32 , Session iniciada: Usuario1@servidorA.com
+31-03-2014 , 21:29:58 , Session iniciada: Usuario1@servidorA.com
+31-03-2014 , 22:04:57 , Session iniciada: Usuario1@servidorA.com
+31-03-2014 , 22:06:33 , Linea: 16 Columna :437 Descr: Error sintactico Identificador XL no reconocido.
+31-03-2014 , 22:09:05 , Session iniciada: Usuario1@servidorA.com
+31-03-2014 , 22:09:14 , Linea: 1 Columna :426 Descr: Error sintactico Identificador fomula no reconocido.
+31-03-2014 , 22:09:14 , Linea: 1 Columna :426 Descr: Error sintactico Identificador fomula no reconocido.
+31-03-2014 , 22:09:15 , Linea: 2 Columna :34 Descr: Error sintactico Identificador </sesion> no reconocido.
+31-03-2014 , 22:11:18 , Linea: 1 Columna :426 Descr: Error sintactico Identificador fomula no reconocido.
+31-03-2014 , 22:11:18 , Linea: 1 Columna :426 Descr: Error sintactico Identificador fomula no reconocido.
+31-03-2014 , 22:11:32 , Linea: 2 Columna :34 Descr: Error sintactico Identificador </sesion> no reconocido.
+31-03-2014 , 22:12:38 , Linea: 1 Columna :426 Descr: Error sintactico Identificador fomula no reconocido.
+31-03-2014 , 22:12:38 , Linea: 1 Columna :426 Descr: Error sintactico Identificador fomula no reconocido.
+31-03-2014 , 22:12:39 , Linea: 2 Columna :34 Descr: Error sintactico Identificador </sesion> no reconocido.
+31-03-2014 , 22:13:19 , Session iniciada: Usuario1@servidorA.com
+31-03-2014 , 22:13:28 , Linea: 1 Columna :426 Descr: Error sintactico Identificador fomrula no reconocido.
+31-03-2014 , 22:13:28 , Linea: 1 Columna :426 Descr: Error sintactico Identificador fomrula no reconocido.
+31-03-2014 , 22:13:29 , Linea: 2 Columna :34 Descr: Error sintactico Identificador </sesion> no reconocido.
+31-03-2014 , 22:16:42 , Session iniciada: Usuario1@servidorA.com
+31-03-2014 , 22:21:27 , Session iniciada: Usuario1@servidorA.com
+31-03-2014 , 22:54:39 , Session iniciada: Usuario1@servidorA.com
+31-03-2014 , 23:06:02 , Session iniciada: Usuario1@servidorA.com
+31-03-2014 , 23:07:48 , Session iniciada: Usuario1@servidorA.com
+31-03-2014 , 23:09:09 , Session iniciada: Usuario1@servidorA.com
+31-03-2014 , 23:10:08 , Session iniciada: Usuario1@servidorA.com
+31-03-2014 , 23:10:52 , Session iniciada: Usuario1@servidorA.com
+31-03-2014 , 23:11:42 , Session iniciada: Usuario1@servidorA.com
+31-03-2014 , 23:13:19 , Session iniciada: Usuario1@servidorA.com
+31-03-2014 , 23:13:41 , Session iniciada: Usuario1@servidorA.com
+31-03-2014 , 23:14:08 , Session iniciada: Usuario1@servidorA.com

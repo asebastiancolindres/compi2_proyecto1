@@ -125,6 +125,10 @@ lista.add(new Errores(linea, columna, "Error lexico en el caracter "+valor) );}
 
 "ENVIO"           {return new Symbol(simbolo.envio, yychar,yyline,new String(yytext()));}
 
+"XL"           {return new Symbol(simbolo.xl, yychar,yyline,new String(yytext()));}
+
+"FORMULA"           {return new Symbol(simbolo.formula, yychar,yyline,new String(yytext()));}
+
 "<DESTINATARIOS>"      {return new Symbol(simbolo.destinatarios1, yychar,yyline,new String(yytext()));}
 "</DESTINATARIOS>"     {return new Symbol(simbolo.destinatarios2, yychar,yyline,new String(yytext()));}
 

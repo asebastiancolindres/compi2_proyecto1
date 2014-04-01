@@ -42,7 +42,9 @@ action code
 int c=0;
 String[] username;
 LinkedList<String> destinatarios = new LinkedList<String>();
-LinkedList<celdaPG> celdas = new LinkedList<celdaPG>();
+LinkedList<celdaPG> celdas;
+
+LinkedList<archivo> archivos;
 
 :}
 
@@ -52,9 +54,9 @@ terminal String id, tipo, correo, registro, abrir, cerrar, coma, igual, sesion1,
 terminal String peticion, listaC, de, lista, enviado1, enviado2;
 terminal String usuario, correos1, correos2, correo1, correo2, asunto1, asunto2, de1, de2, contenido1, contenido2;
 
-terminal String pg, archivos1, archivos2, archivo1, archivo2, tamanio,  fila, columna, color, celda1, celda2; 
+terminal String xl, formula, pg, archivos1, archivos2, archivo1, archivo2, tamanio,  fila, columna, color, celda1, celda2; 
 
-non terminal String A1, A2, A3, CPG1, CPG2, A11;
+non terminal String A1, A2, A3, A4, A5, CXL1, CXL2, CPG1, CPG2, A11;
 
 non terminal String INICIA, C1, C2, TEXTO, CADENA;
 
@@ -151,7 +153,7 @@ LC1 ::= abrir correos1 usuario igual c2 correo c2 cerrar LC2 correos2;
 LC2 ::= LC3 LC2
         |LC3;
 
-LC3 ::= correo1 asunto1 TEXTO:t1 asunto2 fecha1 fecha:t21 coma hora:t22 fecha2 de1 correo:t3 de2 nombre1 TEXTO:t4 nombre2 contenido1 TEXTO:t5 contenido2 A1 correo2{: c++; parser.listaCorreos.add(new correo(c,"","",t1,t21+","+t22,t3,t4,t5, parser.listaArchivos)); :};
+LC3 ::= correo1 asunto1 TEXTO:t1 asunto2 fecha1 fecha:t21 coma hora:t22 fecha2 de1 correo:t3 de2 nombre1 TEXTO:t4 nombre2 contenido1 TEXTO:t5 contenido2 {: archivos = new LinkedList<archivo>(); :} A1 correo2{: c++; parser.listaCorreos.add(new correo(c,"","",t1,t21+","+t22,t3,t4,t5, archivos)); :};
 
 
 /******************* Respuesta Lista Correos **************************************/
@@ -171,11 +173,11 @@ PC1::=  abrir sesion1 id igual c2 correo_t c2 peticion igual c2 correo_t c2 de i
 
 /*******************Respuesta de un correo ***************************/
 
-RPC1::= correo1 usuario1 correo:t1 usuario2 asunto1 TEXTO:t2 asunto2 fecha1 fecha:t31 coma hora:t32 fecha2 de1 correo:t4 de2 contenido1 TEXTO:t5 contenido2 A1 correo2{: parser.respuesta=6; c++; parser.correo = new correo(c,t1,"",t2,t31+","+t32,t4,"",t5, parser.listaArchivos); :};
+RPC1::= correo1 usuario1 correo:t1 usuario2 asunto1 TEXTO:t2 asunto2 fecha1 fecha:t31 coma hora:t32 fecha2 de1 correo:t4 de2 contenido1 TEXTO:t5 contenido2 {: archivos = new LinkedList<archivo>(); :} A1 correo2{: parser.respuesta=6; c++; parser.correo = new correo(c,t1,"",t2,t31+","+t32,t4,"",t5, archivos); :};
 
 /**************************Redactar Correo ***********************************/
 
-RNC1::=  abrir sesion1 peticion igual c2 envio c2 cerrar usuario1 correo:t1 usuario2 destinatarios1 LD1 destinatarios2 asunto1 TEXTO:t2 asunto2 fecha1 fecha:t31 coma hora:t32 fecha2 contenido1 TEXTO:t4 contenido2 A1 sesion2 {: parser.respuesta=7;  parser.correo_envio = new correo_envio(t1,destinatarios,t2,t31+","+t32,t4, parser.listaArchivos); :};
+RNC1::=  abrir sesion1 peticion igual c2 envio c2 cerrar usuario1 correo:t1 usuario2 destinatarios1 LD1 destinatarios2 asunto1 TEXTO:t2 asunto2 fecha1 fecha:t31 coma hora:t32 fecha2 contenido1 TEXTO:t4 contenido2 {: archivos = new LinkedList<archivo>(); :} A1 sesion2 {: parser.respuesta=7;  parser.correo_envio = new correo_envio(t1,destinatarios,t2,t31+","+t32,t4, archivos); :};
 
 LD1 ::= LD2:t1 LD1:t2  {: destinatarios.add(t1.toString());  :}
         |LD2:t1     {: destinatarios.add(t1.toString()); RESULT=t1; :};
@@ -193,16 +195,26 @@ A1::= archivos1 A2 archivos2
 A2::= A2 A3 
       |A3;
 
+
+A3::= A4
+      |A5;
 /***************************Archivos imagenes ****************************/
 
-A3::= archivo1 tipo igual c2 pg:t1 c2 tamanio igual c2 TEXTO:t2 c2 cerrar CPG1 archivo2 {: parser.listaArchivos.add(new archivo(t1, t2, celdas));  :}; 
+A4::= archivo1 tipo igual c2 pg:t1 c2 tamanio igual c2 TEXTO:t2 c2 cerrar {: celdas = new LinkedList<celdaPG>();  :}CPG1 archivo2 {: archivos.add(new archivo(t1, t2, celdas));  :}; 
     
 CPG1::= CPG1 CPG2 
       |CPG2;
 
-CPG2::= celda1 fila igual num:t1 columna igual num:t2 color igual c2 TEXTO:t3 c2 cerrar celda2 {: celdas.add(new celdaPG(t1, t2, t3));  :};
+CPG2::= celda1 fila igual num:t1 columna igual num:t2 color igual c2 TEXTO:t3 c2 cerrar celda2 {: celdas.add(new celdaPG(t1, t2, t3, "", "", ""));  :};
 
-/************************* color *******************************/
+/************************* Archivos XL *******************************/
+
+A5::= archivo1 tipo igual c2 xl:t1 c2 cerrar {: celdas = new LinkedList<celdaPG>(); :}CXL1 archivo2 {: archivos.add(new archivo(t1, "", celdas));  :}; 
+    
+CXL1::= CXL1 CXL2 
+      |CXL2;
+
+CXL2::= celda1 fila igual num:t1 columna igual num:t2 tipo igual c2 TEXTO:t4 c2 color igual c2 TEXTO:t3 c2 formula igual TEXTO:t5 cerrar c2 TEXTO:t6 c2 celda2 {: celdas.add(new celdaPG(t1, t2, t3, t4, t5, t6));  :};
 
 
 
